@@ -12,6 +12,10 @@
            <!-- Divider -->
            <hr class="sidebar-divider my-0">
 
+{{-- ========================================================================== --}}
+{{-- DASHBOARD --}}
+{{-- ========================================================================== --}}
+
            <!-- Nav Item - Dashboard -->
            <li class="nav-item active">
                <a class="nav-link" href="index.html">
@@ -21,7 +25,9 @@
 
            <!-- Divider -->
            <hr class="sidebar-divider">
-
+{{-- ========================================================================== --}}
+{{-- BUSINESS APP --}}
+{{-- ========================================================================== --}}
            <!-- Heading -->
            <div class="sidebar-heading">
                Business App Reports
@@ -78,7 +84,9 @@
 
            <!-- Divider -->
            <hr class="sidebar-divider">
-
+{{-- ========================================================================== --}}
+{{-- INFRA --}}
+{{-- ========================================================================== --}}
            <!-- Heading -->
            <div class="sidebar-heading">
                Infra Reports
@@ -86,21 +94,17 @@
 
            <!-- Nav Item - Pages Collapse Menu -->
            <li class="nav-item">
-               <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+               <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseInfra" aria-expanded="true" aria-controls="collapseInfra">
                    <i class="fas fa-fw fa-folder"></i>
                    <span>ATGN</span>
                </a>
-               <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                   <div class="bg-white py-2 collapse-inner rounded">
-                       <h6 class="collapse-header">Login Screens:</h6>
-                       <a class="collapse-item" href="login.html">Login</a>
-                       <a class="collapse-item" href="register.html">Register</a>
-                       <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-                       <div class="collapse-divider"></div>
-                       <h6 class="collapse-header">Other Pages:</h6>
-                       <a class="collapse-item" href="404.html">404 Page</a>
-                       <a class="collapse-item" href="blank.html">Blank Page</a>
-                   </div>
+               <div id="collapseInfra" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <a class="collapse-item" href="buttons.html">SA</a>
+                    <a class="collapse-item" href="cards.html">ATAC</a>
+                    <a class="collapse-item" href="buttons.html">AIAP</a>
+                    <a class="collapse-item" href="cards.html">AISIN Group</a>
+               </div>
                </div>
            </li>
 
@@ -129,10 +133,59 @@
            <!-- Divider -->
            <hr class="sidebar-divider d-none d-md-block">
 
-           <!-- Sidebar Toggler (Sidebar) -->
-           <div class="text-center d-none d-md-inline">
-               <button class="rounded-circle border-0" id="sidebarToggle"></button>
+
+
+
+{{-- ========================================================================== --}}
+{{-- SAMPLE  --}}
+{{-- ========================================================================== --}}
+           <!-- Heading -->
+           <div class="sidebar-heading">
+               Sample Template
            </div>
+
+
+        <!-- Nav Item - Pages Collapse Menu -->
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+                <i class="fas fa-fw fa-folder"></i>
+                <span>Pages</span>
+            </a>
+            <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Login Screens:</h6>
+                    <a class="collapse-item" href="theme/login.html">Login</a>
+                    <a class="collapse-item" href="theme/register.html">Register</a>
+                    <a class="collapse-item" href="theme/forgot-password.html">Forgot Password</a>
+                    <div class="collapse-divider"></div>
+                    <h6 class="collapse-header">Other Pages:</h6>
+                    <a class="collapse-item" href="theme/404.html">404 Page</a>
+                    <a class="collapse-item" href="theme/blank.html">Blank Page</a>
+                </div>
+            </div>
+        </li>
+
+        <!-- Nav Item - Charts -->
+        <li class="nav-item">
+            <a class="nav-link" href="theme/charts.html">
+                <i class="fas fa-fw fa-chart-area"></i>
+                <span>Charts</span></a>
+        </li>
+
+        <!-- Nav Item - Tables -->
+        <li class="nav-item active">
+            <a class="nav-link" href="theme/tables.html">
+                <i class="fas fa-fw fa-table"></i>
+                <span>Tables</span></a>
+        </li>
+
+{{-- ========================================================================== --}}
+{{-- TOGGER --}}
+{{-- ========================================================================== --}}
+                   <!-- Sidebar Toggler (Sidebar) -->
+                   <div class="text-center d-none d-md-inline">
+                    <button class="rounded-circle border-0" id="sidebarToggle"></button>
+                </div>
 
            {{-- <!-- Sidebar Message -->
            <div class="sidebar-card d-none d-lg-flex">
@@ -141,5 +194,8 @@
                <a class="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">Upgrade to Pro!</a>
            </div> --}}
 
-       </ul>
-       <!-- End of Sidebar -->
+        </ul>
+        <!-- End of Sidebar -->
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
