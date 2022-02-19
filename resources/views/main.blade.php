@@ -59,10 +59,10 @@
 {{-- =============================================================== --}}
     <script>
         $(document).ready(function() {
-            console.log('test')
+            // console.log('test')
             $('#table_id').DataTable({
-                dom: '<"top"fB>t<"bottom"lip>r',
-                // dom: 'Bfrtip',
+                // dom: '<"top"fB>t<"bottom"lip>r',
+                dom: 'Bfrtip',
                 buttons: [
                     'copy', 'csv', 'excel'
                 ]
