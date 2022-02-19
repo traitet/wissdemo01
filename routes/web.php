@@ -13,16 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::get('/menu', function () {
     return view('menu');
 });
 
-Route::get('/main', function () {
-    return view('main');
+Route::get('/', function () {
+    return view('basic-report');
 });
 
 Route::get('/demo', function () {
@@ -33,4 +33,9 @@ Route::get('/demo', function () {
 Route::get('/basic-report', function () {
     return view('basic-report');
 });
+
+Route::get('/basic-report-api', function () {
+    return view('basic-report-api');
+});
+
 
