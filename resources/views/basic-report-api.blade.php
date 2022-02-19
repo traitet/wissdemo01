@@ -46,40 +46,48 @@
             background-color: #dddddd;
         }
     </style>
-    <script>
-        $(document).ready(function() {
-            console.log('test')
-            $('#table_id').DataTable({
-                dom: '<"top"fB>t<"bottom"lip>r',
-                // dom: 'Bfrtip',
-                buttons: [
-                    'copy', 'csv', 'excel'
-                ]
-
-                // responsive: true,
-            });
-
-
-
+{{-- =============================================================== --}}
+{{-- JAVA SCRIPT  --}}
+{{-- =============================================================== --}}
+<script>
+    $(document).ready(function() {
+        // console.log('test')
+        $('#table_id').DataTable({
+        //    dom: '<"top"fB>t<"bottom"lip>r',
+            dom:  '<lf<t>ip>'
+            //dom: 'lBfrtip',
+            // buttons: [
+            //     'copy', 'csv', 'excel'
+            // ]
+            // responsive: true,
         });
+    });
 
-        function dateEndHandler() {
-            const dateStart = $('#dateStart').val();
-            console.log(dateStart);
-            $('#dateEnd').val(dateStart);
-        }
+    // ================================================================
+    // DATE HANDLE
+    // ================================================================
+    function dateEndHandler() {
+        const dateStart = $('#dateStart').val();
+        console.log(dateStart);
+        $('#dateEnd').val(dateStart);
+    }
 
-        const clearForm = () => {
-            $('#myForm')[0].reset();
-        }
+    // ================================================================
+    // CLEAR FORM
+    // ================================================================
+    const clearForm = () => {
+        $('#myForm')[0].reset();
+    }
 
-        function toggle() {
-            $('#sidebarToggle').toggle(
-                console.log('toggle')
-            );
-
-        }
-    </script>
+    // ================================================================
+    // TAGGLE OF SLIDE BAR
+    // ================================================================
+    function toggle() {
+        $('#sidebarToggle').toggle(
+            console.log('toggle')
+        );
+    }
+</script>
 
 </head>
 

@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\MainController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,19 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/welcome', function () {
+    return view('welcome');
+});
 
 Route::get('/menu', function () {
     return view('menu');
 });
 
-// Route::get('/main', function () {
-//     return view('main');
-// });
 
-Route::view('report','main');
+Route::view('main','main');
 Route::post('main',[MainController::class,'getData']);
 
 Route::get('/', function () {
@@ -43,6 +40,10 @@ Route::get('/basic-report', function () {
 
 Route::get('/basic-report-api', function () {
     return view('basic-report-api');
+});
+
+Route::get('/test', function () {
+    return view('test');
 });
 
 

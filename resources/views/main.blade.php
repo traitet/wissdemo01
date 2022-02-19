@@ -61,11 +61,12 @@
         $(document).ready(function() {
             // console.log('test')
             $('#table_id').DataTable({
-                // dom: '<"top"fB>t<"bottom"lip>r',
-                dom: 'Bfrtip',
-                buttons: [
-                    'copy', 'csv', 'excel'
-                ]
+            //    dom: '<"top"fB>t<"bottom"lip>r',
+                dom:  '<lf<t>ip>'
+                //dom: 'lBfrtip',
+                // buttons: [
+                //     'copy', 'csv', 'excel'
+                // ]
                 // responsive: true,
             });
         });
@@ -194,9 +195,9 @@
                     <div class="container-fluid">
 
                         <!-- Page Heading -->
-                        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        {{-- <div class="d-sm-flex align-items-center justify-content-between mb-4">
 
-                        </div>
+                        </div> --}}
 
                         <!-- Content Row -->
                         <div class="row">
@@ -204,9 +205,9 @@
                             <!-- Project Card Example -->
                             <div class="col-xl-12 col-lg-12">
                                 <div class="card shadow mb-4">
-                                    <div class="card-header py-3">
+                                    {{-- <div class="card-header py-3">
                                         <h6 class="m-0 font-weight-bold text-primary">Table Information</h6>
-                                    </div>
+                                    </div> --}}
                                     <div class="card-body">
                                         <div class="table-responsive">
 
