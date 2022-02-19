@@ -28,3 +28,9 @@ Route::get('/main', function () {
 Route::get('/demo', function () {
     return view('demo');
 });
+
+
+Route::get('/basic-report', function () {
+    return view('basic-report');
+});
+
