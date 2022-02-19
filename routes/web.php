@@ -21,6 +21,10 @@ Route::get('/menu', function () {
     return view('menu');
 });
 
+Route::get('/main', function () {
+    return view('main');
+});
+
 Route::get('/', function () {
     return view('basic-report');
 });
