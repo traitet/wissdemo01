@@ -21,9 +21,12 @@ Route::get('/menu', function () {
     return view('menu');
 });
 
-Route::get('/main', function () {
-    return view('main');
-});
+// Route::get('/main', function () {
+//     return view('main');
+// });
+
+Route::view('report','main');
+Route::post('main',[MainController::class,'getData']);
 
 Route::get('/', function () {
     return view('basic-report');
