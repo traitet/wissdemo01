@@ -5,9 +5,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>WISS</title>
+{{-- =============================================================== --}}
+{{-- HEADER  --}}
+{{-- =============================================================== --}}
+    <title>WISS: Web IT Self-Service 2022</title>
     @include('theme.header')
 
+
+{{-- =============================================================== --}}
+{{-- ADJUST TABLE STYLE  --}}
+{{-- =============================================================== --}}
     <!-- Styles -->
     <style>
         @import url(//fonts.googleapis.com/css?family=Lato:700);
@@ -46,6 +53,10 @@
             background-color: #dddddd;
         }
     </style>
+
+{{-- =============================================================== --}}
+{{-- JAVA SCRIPT  --}}
+{{-- =============================================================== --}}
     <script>
         $(document).ready(function() {
             console.log('test')
@@ -55,34 +66,40 @@
                 buttons: [
                     'copy', 'csv', 'excel'
                 ]
-
                 // responsive: true,
             });
-
-
-
         });
 
+        // ================================================================
+        // DATE HANDLE
+        // ================================================================
         function dateEndHandler() {
             const dateStart = $('#dateStart').val();
             console.log(dateStart);
             $('#dateEnd').val(dateStart);
         }
 
+        // ================================================================
+        // CLEAR FORM
+        // ================================================================
         const clearForm = () => {
             $('#myForm')[0].reset();
         }
 
+        // ================================================================
+        // TAGGLE OF SLIDE BAR
+        // ================================================================
         function toggle() {
             $('#sidebarToggle').toggle(
                 console.log('toggle')
             );
-
         }
     </script>
 
 </head>
-
+{{-- =============================================================== --}}
+{{-- BODY  --}}
+{{-- =============================================================== --}}
 <body id="page-top">
 
     <!-- Page Wrapper -->
@@ -95,11 +112,16 @@
 
                 @include('theme.navbar')
 
+{{-- =============================================================== --}}
+{{-- CALL MAIN CONTROLLER  --}}
+{{-- =============================================================== --}}
                 <form method="POST" action="main" id="myForm">
+
+{{-- =============================================================== --}}
+{{-- PARAMTER  --}}
+{{-- =============================================================== --}}
                     @csrf
                     <div class="container-fluid">
-
-
                         <div class="d-sm-flex align-items-center justify-content-between mb-4">
                             <h1 class="h3 mb-0 text-gray-800">Report</h1>
                             <!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
@@ -166,7 +188,9 @@
                         </div>
                     </div>
 
-
+{{-- =============================================================== --}}
+{{-- TABLE VALUE  --}}
+{{-- =============================================================== --}}
                     <div class="container-fluid">
 
                         <!-- Page Heading -->
@@ -224,11 +248,14 @@
                         </div>
                     </div>
                 </form>
+{{-- =============================================================== --}}
+{{-- FOOTER   --}}
+{{-- =============================================================== --}}
                 <!-- Footer -->
                 <footer class="sticky-footer bg-white">
                     <div class="container my-auto">
                         <div class="copyright text-center my-auto">
-                            <span>Copyright &copy; Your Website 2020</span>
+                            <span>Copyright &copy; ITM, AIAP 2022</span>
                         </div>
                     </div>
                 </footer>
@@ -240,11 +267,17 @@
         </div>
         <!-- End of Page Wrapper -->
 
+{{-- =============================================================== --}}
+{{-- SCROLL TOP TO BUTTON   --}}
+{{-- =============================================================== --}}
         <!-- Scroll to Top Button-->
         <a class="scroll-to-top rounded" href="#page-top">
             <i class="fas fa-angle-up"></i>
         </a>
 
+{{-- =============================================================== --}}
+{{-- LOGOUT   --}}
+{{-- =============================================================== --}}
         <!-- Logout Modal-->
         <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -264,6 +297,9 @@
             </div>
         </div>
 
+{{-- =============================================================== --}}
+{{-- INCLUDE FOOTER   --}}
+{{-- =============================================================== --}}
         <!-- @include('theme.footer') -->
 
 </body>

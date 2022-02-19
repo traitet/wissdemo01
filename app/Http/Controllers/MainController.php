@@ -6,36 +6,20 @@ use Facade\FlareClient\View;
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
-
 use Illuminate\Validation\Validator;
 use Illuminate\Validation\Rule;
 
 class MainController extends Controller
 {
 
+// ==========================================================================
+// DECLARE END POINT
+// ==========================================================================
     private $ENDPOINT = 'http://10.100.1.94/wiss-api';
-    //
-    // public function index()
-    // {
 
-    //     // $client = new Client();
-    //     // $response = Http::get('http://10.100.1.94/wiss-api/ErrorLog/Mockup');
-    //     $response = Http::get('http://10.100.1.94/wiss-api/EventLog/1S%20SRCTBS1A4046');
-
-    //     if($response->status() == 200){
-
-    //         $result = json_decode($response->body(),true);
-
-    //         $keyArray = array_keys($result[0]);
-
-    //     }else{
-    //         $result = 'no result';
-    //     }
-
-
-    //     return view('main.main', compact('result','keyArray'));
-    // }
-
+// ==========================================================================
+// GET DATA
+// ==========================================================================
     function getData(Request $req)
     {
         $this->validate($req, [
@@ -44,25 +28,42 @@ class MainController extends Controller
             'pdsNo' => 'string||nullable'
         ]);
         $api = '';
+
+
+// ==========================================================================
+// CHECK INPUT IF NOT EMPTY
+// ==========================================================================
         if (!empty($req->input('dateStart')) || !empty($req->input('dateEnd')) || !empty($req->input('pdsNo'))) {
 
-
+// ==========================================================================
+// GET DATA
+// ==========================================================================
             $dateStart = $req->input('dateStart');
             $dateEnd = $req->input('dateEnd');
             $pdsNo = $req->input('pdsNo');
             // $reportType[] = $req->input('typeOKNG');
             // $reportType[] = $req->input('typeErrorEvent');
+
+            // ==========================================================================
+// CHECK REPORT TYPE "typeOKNG"
+// ==========================================================================
             if (!empty($req->input('typeOKNG'))) {
                 foreach ($req->input('typeOKNG') as $value) {
                     $reportType[] = $value;
                 }
             }
+
+// ==========================================================================
+// CHECK REPORT TYPE "typeErrorEvent"
+// ==========================================================================
             if (!empty($req->input('typeErrorEvent'))) {
                 foreach ($req->input('typeErrorEvent') as $value) {
                     $reportType[] = $value;
                 }
             }
-
+// ==========================================================================
+// CHECK REPORT TYPE
+// ==========================================================================
             if (!empty($reportType)) {
                 foreach ($reportType as $data) {
                     switch ($data) {
@@ -82,13 +83,16 @@ class MainController extends Controller
                 }
             }
 
-            // $response = Http::get('http://10.100.1.94/wiss-api/NgLog/:pdsNum', [
-            //     'pdsNum' => '1S SA11AS1R9777'
-            // ]);
+// ==========================================================================
+// CALL API
+// ==========================================================================
             $url = $this->ENDPOINT . $api ."/". $pdsNo;
             // echo $url;
             $response = Http::get($url);
             // $response = Http::get($this->ENDPOINT . '/EventLog/1S%20SRCTBS1A4046');
+// ==========================================================================
+// IF CALL SUCCCESS
+// ==========================================================================
             if ($response->status() == 200) {
 
                 $result = json_decode($response->body(), true);
@@ -97,12 +101,12 @@ class MainController extends Controller
                 }else{
                     //need to return no data msg
                     $keyArray = [];
-
                 }
-
             }
         }
-
+// ==========================================================================
+// RETURN VIEW
+// ==========================================================================
         return view('main', compact('result', 'keyArray'));
     }
 }
