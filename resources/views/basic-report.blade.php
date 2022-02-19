@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>WISS</title>
+    <title>WISS 2022</title>
     @include('theme.header')
 
     <!-- Styles -->
@@ -46,21 +46,21 @@
             background-color: #dddddd;
         }
     </style>
-    <script>
+
+{{-- =============================================================== --}}
+{{-- JAVA SCRIPT  --}}
+{{-- =============================================================== --}}
+<script>
         $(document).ready(function() {
-            console.log('test')
+            // console.log('test')
             $('#table_id').DataTable({
                 dom: '<"top"fB>t<"bottom"lip>r',
-                // dom: 'Bfrtip',
+                //dom: 'Bfrtip',
                 buttons: [
                     'copy', 'csv', 'excel'
                 ]
-
                 // responsive: true,
             });
-
-
-
         });
 
         function dateEndHandler() {
@@ -103,7 +103,7 @@
 {{-- BASIC SEARCH --}}
 {{-- ========================================================= --}}
                         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                            <h1 class="h5 mb-0 text-gray-800">【 Basic Report Template 】</h1>
+                            <h1 class="h5 mb-0 text-gray-800">【 Basic Report Template 2022 】</h1>
                             <!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
                         </div>
 
