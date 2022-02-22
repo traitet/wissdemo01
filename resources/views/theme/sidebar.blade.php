@@ -35,11 +35,11 @@
 
            <!-- Nav Item - Pages Collapse Menu -->
            <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAdminTemplate" aria-expanded="true" aria-controls="collapseAdminTemplate">
                 <i class="fas fa-fw fa-cog"></i>
                 <span>Admin Template</span>
             </a>
-            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div id="collapseAdminTemplate" class="collapse" aria-labelledby="collapseAdminTemplate" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="main">Main - Pare</a>
                      <a class="collapse-item" href="basic-report">Basic Report</a>
