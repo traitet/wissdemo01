@@ -1,18 +1,27 @@
 <?php
 
+// ==========================================================================
+// IMPORT
+// ==========================================================================
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+use App\Http\Controllers\BasicReportApiController;
 
+// ==========================================================================
+// ROUTE GET/POST "BASIC-REPORT-API"
+// ==========================================================================
+Route::view('basic-report-api','basic-report-api');
+Route::post('basic-report-api',[BasicReportApiController::class,'getData']);
+
+// ==========================================================================
+// ROUTE GET/POST "MAIN"
+// ==========================================================================
+Route::view('main','main');
+Route::post('main',[MainController::class,'getData']);
+
+// ==========================================================================
+// ROUTE VIEW
+// ==========================================================================
 Route::get('/welcome', function () {
     return view('welcome');
 });
@@ -21,9 +30,6 @@ Route::get('/menu', function () {
     return view('menu');
 });
 
-
-Route::view('main','main');
-Route::post('main',[MainController::class,'getData']);
 
 Route::get('/', function () {
     return view('basic-report');
