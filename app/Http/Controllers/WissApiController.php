@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\facades\DB;
 
 class WissApiController extends Controller
 {
@@ -26,6 +27,9 @@ class WissApiController extends Controller
         if ($id == 'b') {$json = '{"id" :1, "name" : "Wiss API"},{"id" :2, "name" : "b"}';}
         if ($id == 'c') {$json = '{"id" :1, "name" : "Wiss API"},{"id" :2, "name" : "c"}';}
 
+        // DB::select('select * from emp where id = ?', [1])
+        $result = DB::select('select * from emp');
+        // echo $result;
         return $json;
 
         // return response()->json(['rowid' => 18015965, 'functionName' => 'Download_Plan']);
