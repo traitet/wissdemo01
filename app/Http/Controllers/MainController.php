@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+// ==========================================================================
+// IMPORT
+// ==========================================================================
 use Facade\FlareClient\View;
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
@@ -9,6 +12,9 @@ use Illuminate\Support\Facades\Http;
 use Illuminate\Validation\Validator;
 use Illuminate\Validation\Rule;
 
+// ==========================================================================
+// CLASS DECLARATION
+// ==========================================================================
 class MainController extends Controller
 {
 
