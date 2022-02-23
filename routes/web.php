@@ -6,12 +6,19 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\BasicReportApiController;
+use App\Http\Controllers\InterfaceSapPoApiController;
 
 // ==========================================================================
 // ROUTE GET/POST "BASIC-REPORT-API"
 // ==========================================================================
 Route::view('basic-report-api','basic-report-api');
 Route::post('basic-report-api',[BasicReportApiController::class,'getData']);
+
+// ==========================================================================
+// ROUTE GET/POST "BASIC-REPORT-API"
+// ==========================================================================
+Route::view('interface-sap-po','interface-sap-po');
+Route::post('interface-sap-po',[BasicReportApiController::class,'getData']);
 
 // ==========================================================================
 // ROUTE GET/POST "MAIN"
