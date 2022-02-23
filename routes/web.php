@@ -18,7 +18,7 @@ Route::post('basic-report-api',[BasicReportApiController::class,'getData']);
 // ROUTE GET/POST "BASIC-REPORT-API"
 // ==========================================================================
 Route::view('interface-sap-po','interface-sap-po');
-Route::post('interface-sap-po',[BasicReportApiController::class,'getData']);
+Route::post('interface-sap-po',[InterfaceSapPoApiController::class,'getData']);
 
 // ==========================================================================
 // ROUTE GET/POST "MAIN"

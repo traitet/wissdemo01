@@ -55,14 +55,13 @@
            <li class="nav-item">
                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                    <i class="fas fa-fw fa-cog"></i>
-                   <span>EPS</span>
+                   <span>EPS and Interface</span>
                </a>
                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="buttons.html">Error Log</a>
-                        <a class="collapse-item" href="cards.html">Event Log</a>
-                        <a class="collapse-item" href="buttons.html">SAP Invoice Interface</a>
-                        <a class="collapse-item" href="cards.html">SAP PO Interface</a>
+                        <a class="collapse-item" href="interface-sap-po">PO Interface</a>
+                        <a class="collapse-item" href="interface-sap-rec">Receive Interface</a>
+                        <a class="collapse-item" href="interface-sap-inv">Invoice Interface</a>
                    </div>
                </div>
            </li>

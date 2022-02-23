@@ -102,14 +102,14 @@
                 {{-- =============================================================== --}}
                 {{-- FORM  ACTION = VIEW --}}
                 {{-- =============================================================== --}}
-                <form method="POST" action="basic-report-api" id="myForm">
+                <form method="POST" action="interface-sap-po" id="myForm">
                     @csrf
                     <div class="container-fluid">
                         {{-- ========================================================= --}}
                         {{-- SUBJECT --}}
                         {{-- ========================================================= --}}
                         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                            <h1 class="h5 mb-0 text-gray-800">【 Basic Report API Template 】</h1>
+                            <h1 class="h5 mb-0 text-gray-800">【 SAP Interface PO 】</h1>
                         </div>
 
                         {{-- ========================================================= --}}
@@ -132,15 +132,6 @@
                                                 <label for="dateEnd">Date End: </label>
                                                 <input class="form-control" type="date" class="" id="dateEnd" name="dateEnd" onchange="dateEndHandler();">
                                                 &nbsp;&nbsp;
-                                            </div>
-                                            {{-- ========================================================= --}}
-                                            {{-- ADVANCED SEARCH --}}
-                                            {{-- ========================================================= --}}
-                                            <div class="form-group form-inline">
-                                                <label for="docNum">Created by: </label>
-                                                <input class="form-control" type="text" class="" id="createdBy" name="createdBy">&nbsp;&nbsp;
-                                                <label for="docNum">Updated by: </label>
-                                                <input class="form-control" type="text" class="" id="updatedBy" name="updatedBy">&nbsp;&nbsp;
                                             </div>
                                         </div>
                                         <div class="form-group">
