@@ -12,26 +12,19 @@ class WissApiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        $json = '{"id" :1, "name" : "Wiss API"},{"id" :2, "name" : "Wiss API2"}';
-        return $json;
 
-        // return response()->json(['rowid' => 18015965, 'functionName' => 'Download_Plan']);
+     public function index()
+    {
+         //curl http://127.0.0.1:8000/api/wiss-apis
+        $result = DB::select('select * from TMIFIO');
+        return json_encode($result);
     }
 
     public function show($id)
     {
-
-        if ($id == 'a') {$json = '{"id" :1, "name" : "Wiss API"},{"id" :2, "name" : $id}';}
-        if ($id == 'b') {$json = '{"id" :1, "name" : "Wiss API"},{"id" :2, "name" : "b"}';}
-        if ($id == 'c') {$json = '{"id" :1, "name" : "Wiss API"},{"id" :2, "name" : "c"}';}
-
-        // DB::select('select * from emp where id = ?', [1])
-        $result = DB::select('select * from emp');
-        // echo $result;
-        return $json;
-
-        // return response()->json(['rowid' => 18015965, 'functionName' => 'Download_Plan']);
+        if ($id == 'a') {$result = DB::select('select TOP 10 * from TMIFIO');}      //curl http://127.0.0.1:8000/api/wiss-apis/a
+        if ($id == 'b') {$result = DB::select('select TOP 10 * from TMIFMAT');}     //curl http://127.0.0.1:8000/api/wiss-apis/b
+        if ($id == 'c') {$result = DB::select('select TOP 10 * from TMIFVEN');}      //curl http://127.0.0.1:8000/api/wiss-apis/c
+        return json_encode($result);
     }
 }
