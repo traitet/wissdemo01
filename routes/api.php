@@ -1,5 +1,4 @@
 <?php
-
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\facades\DB;
@@ -168,7 +167,7 @@ Route::get('eps_interface_sap_pr_outstanding/{doc_num}', function ($doc_num) {
     return json_encode($result);
 });
 
-Route::get('report_budget_checking/', function () {
+Route::get('report_budget_checking', function () {
     $result = DB::connection('sqlsrv_eps_db')->select("EXEC report_budget_checking '20190101','20220101','',100");
     return json_encode($result);
 });
@@ -178,5 +177,22 @@ Route::get('report_budget_checking/{doc_num}', function ($doc_num) {
     return json_encode($result);
 });
 #endregion
+
+
+//========================================================================================================================
+// SAMPLE CALLING WITH QUERY STRING
+//========================================================================================================================
+// http://127.0.0.1:8000/api/emfg_shipping_log_ok_obj/doc_num=D30BA017510&start_date=20190101&end_date=20220401&max_record=100
+Route::get('emfg_shipping_log_ok_obj/{obj}', function ($obj) {
+    parse_str($obj,$myArray);
+    $doc_num = $myArray['doc_num'];
+    $start_date = $myArray['start_date'];
+    $end_date = $myArray['end_date'];
+    $max_record = $myArray['max_record'];
+    $result = DB::connection('sqlsrv_shipping_db')->select("EXEC emfg_shipping_log_ok '$start_date','$end_date','$doc_num',$max_record");
+    // print($obj);
+    // error_log($obj);
+    return json_encode($result);
+});
 
 

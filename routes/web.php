@@ -9,6 +9,7 @@ use App\Http\Controllers\BasicReportApiController;
 use App\Http\Controllers\InterfaceSapPoApiController;
 use App\Http\Controllers\InterfaceSapRecApiController;
 use App\Http\Controllers\InterfaceSapInvApiController;
+use App\Http\Controllers\EmfgShippingLogOkApiController;
 
 // ==========================================================================
 // ROUTE GET/POST "BASIC-REPORT-API"
@@ -33,6 +34,12 @@ Route::post('interface-sap-rec',[InterfaceSapRecApiController::class,'getData'])
 // ==========================================================================
 Route::view('interface-sap-inv','interface-sap-inv');
 Route::post('interface-sap-inv',[InterfaceSapInvApiController::class,'getData']);
+
+// ==========================================================================
+// ROUTE GET/POST "BASIC-REPORT-API"
+// ==========================================================================
+Route::view('emfg-shipping-log-ok','emfg-shipping-log-ok');
+Route::post('emfg-shipping-log-ok',[EmfgShippingLogOkApiController::class,'getData']);
 
 
 // ==========================================================================

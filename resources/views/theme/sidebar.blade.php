@@ -44,9 +44,7 @@
                         <a class="collapse-item" href="main">Main - Pare</a>
                      <a class="collapse-item" href="basic-report">Basic Report</a>
                      <a class="collapse-item" href="basic-report-api">Basic Report API</a>
-                     <a class="collapse-item" href="event-log">Event Log</a>
-                     <a class="collapse-item" href="buttons.html">SAP Invoice Interface</a>
-                     <a class="collapse-item" href="cards.html">SAP PO Interface</a>
+                     <a class="collapse-item" href="emfg-shipping-log-ok">Shipping Log OK (Test)</a>
                 </div>
             </div>
         </li>
