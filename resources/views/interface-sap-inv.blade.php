@@ -102,14 +102,14 @@
                 {{-- =============================================================== --}}
                 {{-- FORM  ACTION = VIEW --}}
                 {{-- =============================================================== --}}
-                <form method="POST" action="interface-sap-po" id="myForm">
+                <form method="POST" action="interface-sap-inv" id="myForm">
                     @csrf
                     <div class="container-fluid">
                         {{-- ========================================================= --}}
                         {{-- SUBJECT --}}
                         {{-- ========================================================= --}}
                         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                            <h1 class="h5 mb-0 text-gray-800">【 SAP Interface PO 】</h1>
+                            <h1 class="h5 mb-0 text-gray-800">【 SAP Interface INV 】</h1>
                         </div>
 
                         {{-- ========================================================= --}}
@@ -132,14 +132,6 @@
                                                 <label for="dateEnd">Date End: </label>
                                                 <input class="form-control" type="date" class="" id="dateEnd" name="dateEnd" onchange="dateEndHandler();">
                                                 &nbsp;&nbsp;
-
-                                                <label for="docNum">Record: </label>
-                                                <select id="record" name="record">
-                                                    <option value="10">10</option>
-                                                    <option value="100">100</option>
-                                                    <option value="1000">1000</option>
-                                                </select>
-
                                             </div>
                                         </div>
                                         <div class="form-group">

@@ -128,3 +128,21 @@ Route::get('/interface_sap_inv/{doc_num}', function ($doc_num) {
 
 
 
+//============================================================
+// E-MFG
+//============================================================
+// http://127.0.0.1:8000/api/emfg_shipping_log_ok/ xxxxxxxxx
+Route::get('emfg_shipping_log_ok/{doc_num}', function ($doc_num) {
+    $result = DB::select("EXEC emfg_shipping_log_ok '20190101','20220101',$doc_num,100");
+    return json_encode($result);
+});
+// http://127.0.0.1:8000/api/emfg_shipping_log_ng/ xxxxxxxxx
+Route::get('emfg_shipping_log_ng/{doc_num}', function ($doc_num) {
+    $result = DB::select("EXEC emfg_shipping_log_ng '20190101','20220101',$doc_num,100");
+    return json_encode($result);
+});
+// http://127.0.0.1:8000/api/emfg_shipping_log_event/ xxxxxxxxx
+Route::get('emfg_shipping_log_event/{doc_num}', function ($doc_num) {
+    $result = DB::select("EXEC emfg_shipping_log_event '20190101','20220101',$doc_num,100");
+    return json_encode($result);
+});

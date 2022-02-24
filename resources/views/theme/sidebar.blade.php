@@ -74,6 +74,7 @@
                </a>
                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="buttons.html"></a>
                         <a class="collapse-item" href="buttons.html">PDS Interface</a>
                         <a class="collapse-item" href="cards.html">ATAC - E-mfg Log</a>
                         <a class="collapse-item" href="buttons.html">SA - E-mfg Log</a>
