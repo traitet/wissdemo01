@@ -85,9 +85,9 @@ Route::get('sp3', function () {
 });
 
 
-// ================================================================
-// WEB API FROM SIAM_EPSINFDB
-// ================================================================
+//============================================================
+// E-MFG DB connection name: default connection
+//============================================================
 
 // http://127.0.0.1:8000/api/interface_sap_po
 Route::get('interface_sap_po', function () {
@@ -127,22 +127,87 @@ Route::get('/interface_sap_inv/{doc_num}', function ($doc_num) {
 });
 
 
+//============================================================
+// E-MFG DB connection name: sqlsrv_shipping_db
+//============================================================
+Route::get('emfg_shipping_order_status', function () {
+    $result = DB::connection('sqlsrv_shipping_db')->select("EXEC emfg_shipping_order_status '20190101','20220101','',100");
+    //DB::connection('mysql2')->select("");
+    return json_encode($result);
+});
+// http://127.0.0.1:8000/api/emfg_shipping_order_status/ xxxxxxxxx
+Route::get('emfg_shipping_order_status/{doc_num}', function ($doc_num) {
+    $result = DB::connection('sqlsrv_shipping_db')->select("EXEC emfg_shipping_order_status '20190101','20220101','$doc_num',100");
+    return json_encode($result);
+});
 
-//============================================================
-// E-MFG
-//============================================================
+Route::get('emfg_shipping_log_ok', function () {
+    $result = DB::connection('sqlsrv_shipping_db')->select("EXEC emfg_shipping_log_ok '20190101','20220101','',100");
+    return json_encode($result);
+});
 // http://127.0.0.1:8000/api/emfg_shipping_log_ok/ xxxxxxxxx
 Route::get('emfg_shipping_log_ok/{doc_num}', function ($doc_num) {
-    $result = DB::select("EXEC emfg_shipping_log_ok '20190101','20220101','$doc_num',100");
+    $result = DB::connection('sqlsrv_shipping_db')->select("EXEC emfg_shipping_log_ok '20190101','20220101','$doc_num',100");
+    //DB::connection('mysql2')->select("");
+    return json_encode($result);
+});
+
+Route::get('emfg_shipping_log_ng', function () {
+    $result = DB::connection('sqlsrv_shipping_db')->select("EXEC emfg_shipping_log_ng '20190101','20220101','',100");
     return json_encode($result);
 });
 // http://127.0.0.1:8000/api/emfg_shipping_log_ng/ xxxxxxxxx
 Route::get('emfg_shipping_log_ng/{doc_num}', function ($doc_num) {
-    $result = DB::select("EXEC emfg_shipping_log_ng '20190101','20220101','$doc_num',100");
+    $result = DB::connection('sqlsrv_shipping_db')->select("EXEC emfg_shipping_log_ng '20190101','20220101','$doc_num',100");
+    //DB::connection('mysql2')->select("");
+    return json_encode($result);
+});
+
+Route::get('emfg_shipping_log_event', function () {
+    $result = DB::connection('sqlsrv_shipping_db')->select("EXEC emfg_shipping_log_event '20190101','20220101','',100");
+    //DB::connection('mysql2')->select("");
     return json_encode($result);
 });
 // http://127.0.0.1:8000/api/emfg_shipping_log_event/ xxxxxxxxx
 Route::get('emfg_shipping_log_event/{doc_num}', function ($doc_num) {
-    $result = DB::select("EXEC emfg_shipping_log_event '20190101','20220101','$doc_num',100");
+    $result = DB::connection('sqlsrv_shipping_db')->select("EXEC emfg_shipping_log_event '20190101','20220101','$doc_num',100");
+    //DB::connection('mysql2')->select("");
     return json_encode($result);
 });
+
+
+//============================================================
+// EPS DB connection name: sqlsrv_eps_db
+//============================================================
+Route::get('eps_interface_pr_po_to_planner/', function () {
+    $result = DB::connection('sqlsrv_eps_db')->select("EXEC eps_interface_pr_po_to_planner '20190101','20220101','',100");
+    return json_encode($result);
+});
+// http://127.0.0.1:8000/api/eps_interface_pr_po_to_planner/ xxxxxxxxx
+Route::get('eps_interface_pr_po_to_planner/{doc_num}', function ($doc_num) {
+    $result = DB::connection('sqlsrv_eps_db')->select("EXEC eps_interface_pr_po_to_planner '20190101','20220101','$doc_num',100");
+    return json_encode($result);
+});
+
+Route::get('eps_interface_sap_pr_outstanding', function () {
+    $result = DB::connection('sqlsrv_eps_db')->select("EXEC eps_interface_sap_pr_outstanding '20190101','20220101','',100");
+    return json_encode($result);
+});
+// http://127.0.0.1:8000/api/eps_interface_sap_pr_outstanding/ xxxxxxxxx
+Route::get('eps_interface_sap_pr_outstanding/{doc_num}', function ($doc_num) {
+    $result = DB::connection('sqlsrv_eps_db')->select("EXEC eps_interface_sap_pr_outstanding '20190101','20220101','$doc_num',100");
+    return json_encode($result);
+});
+
+Route::get('report_budget_checking/', function () {
+    $result = DB::connection('sqlsrv_eps_db')->select("EXEC report_budget_checking '20190101','20220101','',100");
+    return json_encode($result);
+});
+// http://127.0.0.1:8000/api/report_budget_checking/ xxxxxxxxx
+Route::get('report_budget_checking/{doc_num}', function ($doc_num) {
+    $result = DB::connection('sqlsrv_eps_db')->select("EXEC report_budget_checking '20190101','20220101','$doc_num',100");
+    return json_encode($result);
+});
+
+
+
