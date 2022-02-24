@@ -97,7 +97,7 @@ Route::get('interface_sap_po', function () {
 
 // http://127.0.0.1:8000/api/interface_sap_po/PO19000483  /PO21004645
 Route::get('interface_sap_po/{doc_num}', function ($doc_num) {
-    $result = DB::select("EXEC interface_sap_po '20190101','20220101',$doc_num,100");
+    $result = DB::select("EXEC interface_sap_po '20190101','20220101','$doc_num',100");
     return json_encode($result);
 });
 
@@ -109,20 +109,20 @@ Route::get('interface_sap_rec', function () {
 
 // http://127.0.0.1:8000/api/interface_sap_rec/PO19002270
 Route::get('interface_sap_rec/{doc_num}', function ($doc_num) {
-    $result = DB::select("EXEC interface_sap_rec '20190101','20220101',$doc_num,100");
+    $result = DB::select("EXEC interface_sap_rec '20190101','20220101','$doc_num',100");
     return json_encode($result);
 });
 
 // http://127.0.0.1:8000/api/interface_sap_inv
 Route::get('interface_sap_inv', function () {
     $doc_num = 'PO19000483';
-    $result = DB::select("EXEC interface_sap_inv '20190101','20220101', $doc_num ,100");
+    $result = DB::select("EXEC interface_sap_inv '20190101','20220101', '$doc_num' ,100");
     return json_encode($result);
 });
 
 // http://127.0.0.1:8000/api/interface_sap_inv/PO19000483
 Route::get('/interface_sap_inv/{doc_num}', function ($doc_num) {
-    $result = DB::select("EXEC interface_sap_inv '20190101','20220101',$doc_num,100");
+    $result = DB::select("EXEC interface_sap_inv '20190101','20220101','$doc_num',100");
     return json_encode($result);
 });
 
@@ -133,16 +133,16 @@ Route::get('/interface_sap_inv/{doc_num}', function ($doc_num) {
 //============================================================
 // http://127.0.0.1:8000/api/emfg_shipping_log_ok/ xxxxxxxxx
 Route::get('emfg_shipping_log_ok/{doc_num}', function ($doc_num) {
-    $result = DB::select("EXEC emfg_shipping_log_ok '20190101','20220101',$doc_num,100");
+    $result = DB::select("EXEC emfg_shipping_log_ok '20190101','20220101','$doc_num',100");
     return json_encode($result);
 });
 // http://127.0.0.1:8000/api/emfg_shipping_log_ng/ xxxxxxxxx
 Route::get('emfg_shipping_log_ng/{doc_num}', function ($doc_num) {
-    $result = DB::select("EXEC emfg_shipping_log_ng '20190101','20220101',$doc_num,100");
+    $result = DB::select("EXEC emfg_shipping_log_ng '20190101','20220101','$doc_num',100");
     return json_encode($result);
 });
 // http://127.0.0.1:8000/api/emfg_shipping_log_event/ xxxxxxxxx
 Route::get('emfg_shipping_log_event/{doc_num}', function ($doc_num) {
-    $result = DB::select("EXEC emfg_shipping_log_event '20190101','20220101',$doc_num,100");
+    $result = DB::select("EXEC emfg_shipping_log_event '20190101','20220101','$doc_num',100");
     return json_encode($result);
 });
