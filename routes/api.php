@@ -48,6 +48,22 @@ Route::get('a', function () {
     dd($getPost);
 
 });
+//================================================================
+// CHART
+//================================================================
+Route::get('chart', function () {
+
+    $postId = 1;
+    $getPost = DB::select(
+       'select TOP 10 * from TMIFIO'
+    );
+
+    // $getPost;
+    // json_encode($getPost);
+    //dd($getPost);
+    return json_encode($getPost);
+
+});
 
 // ================================================================
 // TEST
@@ -79,7 +95,7 @@ Route::get('interface_sap_po', function () {
     return json_encode($result);
 });
 
-// http://127.0.0.1:8000/api/interface_sap_po/PO19000483
+// http://127.0.0.1:8000/api/interface_sap_po/PO19000483  /PO21004645
 Route::get('interface_sap_po/{doc_num}', function ($doc_num) {
     $result = DB::select("EXEC interface_sap_po '20190101','20220101',$doc_num,100");
     return json_encode($result);
@@ -97,14 +113,12 @@ Route::get('interface_sap_rec/{doc_num}', function ($doc_num) {
     return json_encode($result);
 });
 
-
 // http://127.0.0.1:8000/api/interface_sap_inv
 Route::get('interface_sap_inv', function () {
     $doc_num = 'PO19000483';
     $result = DB::select("EXEC interface_sap_inv '20190101','20220101', $doc_num ,100");
     return json_encode($result);
 });
-
 
 // http://127.0.0.1:8000/api/interface_sap_inv/PO19000483
 Route::get('/interface_sap_inv/{doc_num}', function ($doc_num) {
