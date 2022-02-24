@@ -43,15 +43,17 @@ return [
             'prefix' => '',
             'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
         ],
-
+       //=====================================
+        // MYSQL  (CONFIG AT .ENV)
+        //=====================================
         'mysql' => [
             'driver' => 'mysql',
             'url' => env('DATABASE_URL'),
-            'host' => env('DB_HOST', '127.0.0.1'),
-            'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
+            'host' => env('DB_HOST_MYSQL', '127.0.0.1'),
+            'port' => env('DB_PORT_MYSQL', '3306'),
+            'database' => env('DB_DATABASE_MYSQL', 'forge'),
+            'username' => env('DB_USERNAME_MYSQL', 'forge'),
+            'password' => env('DB_PASSWORD_MYSQL', ''),
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
@@ -79,6 +81,9 @@ return [
             'sslmode' => 'prefer',
         ],
 
+        //=====================================
+        // DB_DATABASE_SIAM_EPSINFDB (CONFIG AT .ENV)
+        //=====================================
         'sqlsrv' => [
             'driver' => 'sqlsrv',
             'url' => env('DATABASE_URL'),
@@ -91,8 +96,9 @@ return [
             'prefix' => '',
             'prefix_indexes' => true,
         ],
+
         //=====================================
-        //shipping db
+        // DB_DATABASE_SIAM_SHIPPINGDB (CONFIG AT .ENV)
         //=====================================
         'sqlsrv_shipping_db' => [
             'driver' => 'sqlsrv',
@@ -106,8 +112,9 @@ return [
             'prefix' => '',
             'prefix_indexes' => true,
         ],
+
         //=====================================
-        //shipping db
+        // DB_DATABASE_SIAM_EPSDB  (CONFIG AT .ENV)
         //=====================================
         'sqlsrv_eps_db' => [
             'driver' => 'sqlsrv',
