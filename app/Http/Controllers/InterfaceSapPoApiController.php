@@ -21,7 +21,8 @@ class InterfaceSapPoApiController extends Controller
 // ==========================================================================
 // DECLARE END POINT
 // ==========================================================================
-    private $ENDPOINT = 'http://10.100.1.94:8080/wissdemo01/public/api/interface_sap_po';
+
+    private $ENDPOINT = 'http://10.100.1.94:8080/wissdemo01/public/api/interface_sap_po_obj';
 
 // ==========================================================================
 // GET DATA
@@ -42,7 +43,18 @@ class InterfaceSapPoApiController extends Controller
         // ==========================================================================
         // CHECK INPUT IF NOT EMPTY
         // ==========================================================================
-             $docNum = $req->input('docNum')??'';
+            // ======================================================================
+            // GET DATA
+            // ======================================================================
+            $dateStart = str_replace('-','',$req->input('dateStart')??'20220101');
+            $dateEnd = str_replace('-','',$req->input('dateEnd')??'20220101');
+            $maxRecord = $req->input('maxRecord')??'10';
+            //record
+            //$maxRecord = 100;
+            $docNum = $req->input('docNum')??'';
+             //$docNum = $req->input('docNum')??'';
+             $queryStr = "doc_num=$docNum&start_date=$dateStart&end_date=$dateEnd&max_record=$maxRecord";
+             //$docNum="doc_num=PO19007289&start_date=20190101&end_date=20220225&max_record=100";
             // ======================================================================
             // GET DATA
             // ======================================================================
@@ -51,8 +63,9 @@ class InterfaceSapPoApiController extends Controller
             // ======================================================================
             // CALL API
             // ======================================================================
-            $url = $this->ENDPOINT . $api ."/". $docNum;
+            $url = $this->ENDPOINT . $api ."/". $queryStr;
             $response = Http::get($url);
+
             // ======================================================================
             // IF CALL SUCCCESS
             // ======================================================================
