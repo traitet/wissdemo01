@@ -44,9 +44,9 @@
                         <a class="collapse-item" href="main">Main - Pare</a>
                      <a class="collapse-item" href="basic-report">Basic Report</a>
                      <a class="collapse-item" href="basic-report-api">Basic Report API</a>
-                     <a class="collapse-item" href="event-log">Event Log</a>
-                     <a class="collapse-item" href="buttons.html">SAP Invoice Interface</a>
-                     <a class="collapse-item" href="cards.html">SAP PO Interface</a>
+                     <a class="collapse-item" href="interface-sap-po">PO Interface</a>
+                     <a class="collapse-item" href="interface-sap-rec">Receive Interface</a>
+                     <a class="collapse-item" href="interface-sap-inv">Invoice Interface</a>
                 </div>
             </div>
         </li>
@@ -55,17 +55,16 @@
            <li class="nav-item">
                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                    <i class="fas fa-fw fa-cog"></i>
-                   <span>EPS and Interface</span>
+                   <span>SAP</span>
                </a>
                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="interface-sap-po">PO Interface</a>
+                        <a class="collapse-item" href="api/interface-sap-po.blade.php">PO Interface</a>
                         <a class="collapse-item" href="interface-sap-rec">Receive Interface</a>
                         <a class="collapse-item" href="interface-sap-inv">Invoice Interface</a>
                    </div>
                </div>
            </li>
-
            <!-- Nav Item - Utilities Collapse Menu -->
            <li class="nav-item">
                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
@@ -74,13 +73,27 @@
                </a>
                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="buttons.html"></a>
-                        <a class="collapse-item" href="buttons.html">PDS Interface</a>
-                        <a class="collapse-item" href="cards.html">ATAC - E-mfg Log</a>
-                        <a class="collapse-item" href="buttons.html">SA - E-mfg Log</a>
+                        <a class="collapse-item" href="buttons.html">Oder Status</a>
+                        <a class="collapse-item" href="cards.html">OK Log</a>
+                        <a class="collapse-item" href="buttons.html">NG Log</a>
+                        <a class="collapse-item" href="buttons.html">Event Log</a>
                    </div>
                </div>
            </li>
+           <!-- Nav Item - Utilities Collapse Menu -->
+           <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                <i class="fas fa-fw fa-wrench"></i>
+                <span>EPS</span>
+            </a>
+            <div id="collapseUtilities" class="collapse" aria-labelledby="collapseThree" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                     <a class="collapse-item" href="buttons.html">PR/PR Planner</a>
+                     <a class="collapse-item" href="cards.html">PR Outstanding</a>
+                     <a class="collapse-item" href="buttons.html">BG Checking</a>
+                </div>
+            </div>
+        </li>
 
            <!-- Divider -->
            <hr class="sidebar-divider">

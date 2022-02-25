@@ -86,7 +86,7 @@ Route::get('sp3', function () {
 
 
 //============================================================
-// E-MFG DB connection name: default connection
+// SAP DB connection name: default connection
 //============================================================
 
 // http://127.0.0.1:8000/api/interface_sap_po
@@ -116,7 +116,7 @@ Route::get('interface_sap_rec/{doc_num}', function ($doc_num) {
 // http://127.0.0.1:8000/api/interface_sap_inv
 Route::get('interface_sap_inv', function () {
     $doc_num = 'PO19000483';
-    $result = DB::select("EXEC interface_sap_inv '20190101','20220101', '$doc_num' ,100");
+    $result = DB::select("EXEC interface_sap_inv '20190101','20220101', '' ,100");
     return json_encode($result);
 });
 
