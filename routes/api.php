@@ -196,4 +196,17 @@ Route::get('emfg_shipping_log_ok_obj/{obj}', function ($obj) {
     return json_encode($result);
 });
 
+// http://127.0.0.1:8000/api/interface_sap_po_obj/doc_num=PO19007289&start_date=20190101&end_date=20220225&max_record=100
+Route::get('interface_sap_po_obj/{obj}', function ($obj) {
+    parse_str($obj,$myArray);
+    $doc_num = $myArray['doc_num'];
+    $start_date = $myArray['start_date'];
+    $end_date = $myArray['end_date'];
+    $max_record = $myArray['max_record'];
+    $result = DB::select("EXEC interface_sap_po '$start_date','$end_date','$doc_num',$max_record");
+    // print($obj);
+    // error_log($obj);
+    return json_encode($result);
+});
+
 
