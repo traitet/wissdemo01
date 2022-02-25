@@ -44,9 +44,7 @@
                         <a class="collapse-item" href="main">Main - Pare</a>
                      <a class="collapse-item" href="basic-report">Basic Report</a>
                      <a class="collapse-item" href="basic-report-api">Basic Report API</a>
-                     <a class="collapse-item" href="interface-sap-po">PO Interface</a>
-                     <a class="collapse-item" href="interface-sap-rec">Receive Interface</a>
-                     <a class="collapse-item" href="interface-sap-inv">Invoice Interface</a>
+                     <a class="collapse-item" href="emfg-shipping-log-ok">Shipping Log OK (Test)</a>
                 </div>
             </div>
         </li>
@@ -59,7 +57,7 @@
                </a>
                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="api/interface-sap-po.blade.php">PO Interface</a>
+                        <a class="collapse-item" href="interface-sap-po">PO Interface</a>
                         <a class="collapse-item" href="interface-sap-rec">Receive Interface</a>
                         <a class="collapse-item" href="interface-sap-inv">Invoice Interface</a>
                    </div>
@@ -73,10 +71,10 @@
                </a>
                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="buttons.html">Oder Status</a>
-                        <a class="collapse-item" href="cards.html">OK Log</a>
-                        <a class="collapse-item" href="buttons.html">NG Log</a>
-                        <a class="collapse-item" href="buttons.html">Event Log</a>
+                        <a class="collapse-item" href="emfg-shipping-status">Oder Status</a>
+                        <a class="collapse-item" href="emfg-shipping-log-ok">OK Log</a>
+                        <a class="collapse-item" href="emfg-shipping-log-ng">NG Log</a>
+                        <a class="collapse-item" href="emfg-shipping-log-event">Event Log</a>
                    </div>
                </div>
            </li>
@@ -86,11 +84,11 @@
                 <i class="fas fa-fw fa-wrench"></i>
                 <span>EPS</span>
             </a>
-            <div id="collapseUtilities" class="collapse" aria-labelledby="collapseThree" data-parent="#accordionSidebar">
+            <div id="collapseThree" class="collapse" aria-labelledby="collapseThree" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                     <a class="collapse-item" href="buttons.html">PR/PR Planner</a>
-                     <a class="collapse-item" href="cards.html">PR Outstanding</a>
-                     <a class="collapse-item" href="buttons.html">BG Checking</a>
+                     <a class="collapse-item" href="eps-pr-po-planner">PR/PO Planner</a>
+                     <a class="collapse-item" href="eps-pr-outstanding">PR Outstanding</a>
+                     <a class="collapse-item" href="eps-bg-checking">BG Checking</a>
                 </div>
             </div>
         </li>
@@ -113,34 +111,27 @@
                </a>
                <div id="collapseInfra" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                    <a class="collapse-item" href="buttons.html">SA</a>
-                    <a class="collapse-item" href="cards.html">ATAC</a>
-                    <a class="collapse-item" href="buttons.html">AIAP</a>
-                    <a class="collapse-item" href="cards.html">AISIN Group</a>
+                    <a class="collapse-item" href="https://zabbix.atgn-monitor.net/zabbix/index.php?request=charts.php%3Fpage%3D1%26groupid%3D541%26hostid%3D12956%26graphid%3D1595%26action%3Dshowgraph">SA</a>
+                    <a class="collapse-item" href="https://zabbix.atgn-monitor.net/zabbix/index.php?request=charts.php%3Fpage%3D1%26groupid%3D541%26hostid%3D12956%26graphid%3D1595%26action%3Dshowgraph">ATAC</a>
+                    <a class="collapse-item" href="https://zabbix.atgn-monitor.net/zabbix/index.php?request=charts.php%3Fpage%3D1%26groupid%3D541%26hostid%3D12956%26graphid%3D1595%26action%3Dshowgraph">AIAP</a>
+                    <a class="collapse-item" href="https://zabbix.atgn-monitor.net/zabbix/index.php?request=charts.php%3Fpage%3D1%26groupid%3D541%26hostid%3D12956%26graphid%3D1595%26action%3Dshowgraph">AISIN Group</a>
                </div>
                </div>
-           </li>
-
-           <!-- Nav Item - Charts -->
-           <li class="nav-item">
-               <a class="nav-link" href="charts.html">
-                   <i class="fas fa-fw fa-chart-area"></i>
-                   <span>Zabbix</span></a>
            </li>
 
            <!-- Nav Item - Tables -->
            <li class="nav-item">
-               <a class="nav-link" href="tables.html">
-                   <i class="fas fa-fw fa-table"></i>
-                   <span>O365</span></a>
+            <a class="nav-link" href="http://10.123.126.12/zabbix/zabbix.php?action=dashboard.list">
+                <i class="fas fa-fw fa-chart-area"></i>
+                <span>Zabbix</span></a>
            </li>
 
 
            <!-- Nav Item - Tables -->
            <li class="nav-item">
-            <a class="nav-link" href="tables.html">
-                <i class="fas fa-fw fa-table"></i>
-                <span>Network Monitoring</span></a>
+            <a class="nav-link" href=" https://10.122.242.248/Orion/Login.aspx?sessionTimeout=yes">
+                <i class="fas fa-fw fa-chart-area"></i>
+                <span>Solarwinds</span></a>
         </li>
 
            <!-- Divider -->

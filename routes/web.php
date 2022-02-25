@@ -9,6 +9,14 @@ use App\Http\Controllers\BasicReportApiController;
 use App\Http\Controllers\InterfaceSapPoApiController;
 use App\Http\Controllers\InterfaceSapRecApiController;
 use App\Http\Controllers\InterfaceSapInvApiController;
+use App\Http\Controllers\EmfgShippingLogOkApiController;
+use App\Http\Controllers\EmfgShippingLogNgApiController;
+use App\Http\Controllers\EmfgShippingLogEventApiController;
+use App\Http\Controllers\EmfgShippingLogStatusApiController;
+use App\Http\Controllers\EpsBgCheckingApiController;
+use App\Http\Controllers\EpsPrOutstandingApiController;
+use App\Http\Controllers\EpsPrPoToPlannerApiController;
+
 
 // ==========================================================================
 // ROUTE GET/POST "BASIC-REPORT-API"
@@ -16,6 +24,7 @@ use App\Http\Controllers\InterfaceSapInvApiController;
 Route::view('basic-report-api','basic-report-api');
 Route::post('basic-report-api',[BasicReportApiController::class,'getData']);
 
+//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< SAP >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 // ==========================================================================
 // ROUTE GET/POST "BASIC-REPORT-API"
 // ==========================================================================
@@ -33,6 +42,40 @@ Route::post('interface-sap-rec',[InterfaceSapRecApiController::class,'getData'])
 // ==========================================================================
 Route::view('interface-sap-inv','interface-sap-inv');
 Route::post('interface-sap-inv',[InterfaceSapInvApiController::class,'getData']);
+
+//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< E-MFG >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// ==========================================================================
+// ROUTE GET/POST "BASIC-REPORT-API"
+// ==========================================================================
+Route::view('emfg-shipping-log-ok','emfg-shipping-log-ok');
+Route::post('emfg-shipping-log-ok',[EmfgShippingLogOkApiController::class,'getData']);
+
+Route::view('emfg-shipping-log-ng','emfg-shipping-log-ng');
+Route::post('emfg-shipping-log-ng',[EmfgShippingLogNgApiController::class,'getData']);
+
+Route::view('emfg-shipping-log-event','emfg-shipping-log-event');
+Route::post('emfg-shipping-log-event',[EmfgShippingLogEventApiController::class,'getData']);
+
+Route::view('emfg-shipping-status','emfg-shipping-status');
+Route::post('emfg-shipping-status',[EmfgShippingLogStatusApiController::class,'getData']);
+
+//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< EPS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// ==========================================================================
+// ROUTE GET/POST "BASIC-REPORT-API"
+// ==========================================================================
+Route::view('eps-pr-outstanding','eps-pr-outstanding');
+Route::post('eps-pr-outstanding',[EpsPrOutstandingApiController::class,'getData']);
+
+Route::view('eps-pr-po-planner','eps-pr-po-planner');
+Route::post('eps-pr-po-planner',[EpsPrPoToPlannerApiController::class,'getData']);
+
+Route::view('eps-bg-checking','eps-bg-checking');
+Route::post('eps-bg-checking',[EpsBgCheckingApiController::class,'getData']);
+
+
+
+
+
 
 
 // ==========================================================================
