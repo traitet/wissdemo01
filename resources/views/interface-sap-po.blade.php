@@ -40,6 +40,7 @@
         tr:nth-child(even) {
             background-color: #dddddd;
         }
+
     </style>
     <script>
 
@@ -127,7 +128,7 @@
                                                 <label for="docNum">Doc Num: </label>
                                                 <input class="form-control" type="text" class="" id="docNum" name="docNum">&nbsp;&nbsp;
                                                 <label for="dateStart">Date Start: </label>
-                                                <input class="form-control" type="date" class="" id="dateStart" name="dateStart" onchange="dateStartHandler();">
+                                                <input class="form-control" type="date" class="" id="datePicker" name="dateStart" onchange="dateStartHandler();">
                                                 &nbsp;&nbsp;
                                                 <label for="dateEnd">Date End: </label>
                                                 <input class="form-control" type="date" class="" id="dateEnd" name="dateEnd" onchange="dateEndHandler();">
@@ -256,3 +257,16 @@
         @include('theme.footer')
 </body>
 </html>
+<script>
+    $(document).ready( function() {
+    var now = new Date();
+    var month = (now.getMonth() + 1);
+    var day = now.getDate();
+    if (month < 10)
+    month = "0" + month;
+    if (day < 10)
+    day = "0" + day;
+    var today = now.getFullYear() + '-' + month + '-' + day;
+    $('#datePicker').val(today);
+    });
+</script>

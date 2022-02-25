@@ -45,6 +45,7 @@
                      <a class="collapse-item" href="basic-report">Basic Report</a>
                      <a class="collapse-item" href="basic-report-api">Basic Report API</a>
                      <a class="collapse-item" href="emfg-shipping-log-ok">Shipping Log OK (Test)</a>
+                     <a class="collapse-item" href="emfg-shipping-log-ok-BK">Shipping OBJ</a>
                 </div>
             </div>
         </li>

@@ -17,6 +17,8 @@ use App\Http\Controllers\EpsBgCheckingApiController;
 use App\Http\Controllers\EpsPrOutstandingApiController;
 use App\Http\Controllers\EpsPrPoToPlannerApiController;
 
+use App\Http\Controllers\EmfgShippingLogOkApiControllerObj;
+
 
 // ==========================================================================
 // ROUTE GET/POST "BASIC-REPORT-API"
@@ -74,8 +76,11 @@ Route::post('eps-bg-checking',[EpsBgCheckingApiController::class,'getData']);
 
 
 
-
-
+// ==========================================================================
+// ROUTE GET/POST "Shipping Log OK OBJ"
+// ==========================================================================
+Route::view('emfg-shipping-log-ok-BK','emfg-shipping-log-ok-BK');
+Route::post('emfg-shipping-log-ok-BK',[EmfgShippingLogOkApiControllerObj::class,'getData']);
 
 
 // ==========================================================================

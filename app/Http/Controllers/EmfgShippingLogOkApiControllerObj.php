@@ -15,14 +15,14 @@ use Illuminate\Validation\Rule;
 // ==========================================================================
 // CLASS DECLARATION
 // ==========================================================================
-class EmfgShippingLogOkApiController extends Controller
+class EmfgShippingLogOkApiControllerObj extends Controller
 {
 
 // ==========================================================================
 // DECLARE END POINT
 // ==========================================================================
     // private $ENDPOINT = 'http://10.100.1.94:8080/wissdemo01/public/api/shipping_log_ok_obj';
-    private $ENDPOINT =      'http://127.0.0.1:8000/wissdemo01/public/api/emfg_shipping_log_ok_obj';
+    private $ENDPOINT =      'http://127.0.0.1:8000/api/emfg_shipping_log_ok';
 
 // ==========================================================================
 // GET DATA
@@ -54,13 +54,21 @@ class EmfgShippingLogOkApiController extends Controller
             // ======================================================================
             // CALL API
             // ======================================================================
-            $queryStr = "doc_num=$docNum&start_date=$dateStart&end_date=$dateEnd&max_record=$maxRecord";
-            error_log("*************************************************************".$dateStart.$dateEnd.$docNum);
-            error_log($queryStr);
-            $url = $this->ENDPOINT . $api ."/". $queryStr;
-            error_log($url);
-             // $url = $this->ENDPOINT . $api ."/". $docNum;
+            $url = $this->ENDPOINT . $api."/".$docNum;
             $response = Http::get($url);
+
+            // ======================================================================
+            // CALL API
+            // ======================================================================
+            // $queryStr = "doc_num=$docNum&start_date=$dateStart&end_date=$dateEnd&max_record=$maxRecord";
+            // error_log("*************************************************************".$dateStart.$dateEnd.$docNum);
+            // error_log($queryStr);
+            // $url = $this->ENDPOINT . $api ."/". $queryStr;
+            // error_log($url);
+            //  // $url = $this->ENDPOINT . $api ."/". $docNum;
+            // $response = Http::get($url);
+
+            error_log(json_decode($response));
             // ======================================================================
             // IF CALL SUCCCESS
             // ======================================================================

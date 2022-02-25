@@ -102,7 +102,7 @@
                 {{-- =============================================================== --}}
                 {{-- FORM  ACTION = VIEW --}}
                 {{-- =============================================================== --}}
-                <form method="POST" action="emfg-shipping-log-ok" id="myForm">
+                <form method="POST" action="emfg-shipping-log-ok-BK" id="myForm">
                     @csrf
                     <div class="container-fluid">
                         {{-- ========================================================= --}}

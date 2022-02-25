@@ -183,6 +183,7 @@ Route::get('report_budget_checking/{doc_num}', function ($doc_num) {
 // SAMPLE CALLING WITH QUERY STRING
 //========================================================================================================================
 // http://127.0.0.1:8000/api/emfg_shipping_log_ok_obj/doc_num=D30BA017510&start_date=20190101&end_date=20220401&max_record=100
+// http://127.0.0.1:8000/api/emfg_shipping_log_ok_obj/doc_num=PO19007289&start_date=20210101&end_date=20220225&max_record=100
 Route::get('emfg_shipping_log_ok_obj/{obj}', function ($obj) {
     parse_str($obj,$myArray);
     $doc_num = $myArray['doc_num'];
