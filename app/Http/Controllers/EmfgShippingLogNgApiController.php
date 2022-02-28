@@ -21,7 +21,7 @@ class EmfgShippingLogNgApiController extends Controller
 // ==========================================================================
 // DECLARE END POINT
 // ==========================================================================
-    private $ENDPOINT = 'http://10.100.1.94:8080/wissdemo01/public/api/emfg_shipping_log_ng';
+    private $ENDPOINT = 'http://10.100.1.94:8080/wissdemo01/public/api/emfg_shipping_log_ng_obj';
 
 // ==========================================================================
 // GET DATA
@@ -42,16 +42,19 @@ class EmfgShippingLogNgApiController extends Controller
         // ==========================================================================
         // CHECK INPUT IF NOT EMPTY
         // ==========================================================================
-             $docNum = $req->input('docNum')??'';
             // ======================================================================
             // GET DATA
             // ======================================================================
-            // $dateStart = $req->input('dateStart');
-            // $dateEnd = $req->input('dateEnd');
+            $dateStart = str_replace('-','',$req->input('dateStart')??'20220101');
+            $dateEnd = str_replace('-','',$req->input('dateEnd')??'20220101');
+            $maxRecord = $req->input('maxRecord')??'10';
+            $docNum = $req->input('docNum')??'';
+            $queryStr = "doc_num=$docNum&start_date=$dateStart&end_date=$dateEnd&max_record=$maxRecord";
+
             // ======================================================================
             // CALL API
             // ======================================================================
-            $url = $this->ENDPOINT . $api ."/". $docNum;
+            $url = $this->ENDPOINT . $api ."/". $queryStr;
             $response = Http::get($url);
             // ======================================================================
             // IF CALL SUCCCESS

@@ -132,9 +132,8 @@
                                                 <label for="dateEnd">Date End: </label>
                                                 <input class="form-control" type="date" class="" id="dateEnd" name="dateEnd" onchange="dateEndHandler();">
                                                 &nbsp;&nbsp;
-
                                                 <label for="docNum">Record: </label>
-                                                <select id="record" name="record">
+                                                <select class="form-control" id="maxRecord" name="maxRecord">
                                                     <option value="10">10</option>
                                                     <option value="100">100</option>
                                                     <option value="1000">1000</option>
@@ -256,3 +255,28 @@
         @include('theme.footer')
 </body>
 </html>
+<script>
+    $(document).ready( function() {
+    var now = new Date();
+    var month = (now.getMonth() + 1);
+    var day = now.getDate();
+    if (month < 10)
+    month = "0" + month;
+    if (day < 10)
+    day = "0" + day;
+    var today = now.getFullYear() + '-' + month + '-' + day;
+    $('#dateStart').val(today);
+    });
+
+    $(document).ready( function() {
+    var now = new Date();
+    var month = (now.getMonth() + 1);
+    var day = now.getDate();
+    if (month < 10)
+    month = "0" + month;
+    if (day < 10)
+    day = "0" + day;
+    var today = now.getFullYear() + '-' + month + '-' + day;
+    $('#dateEnd').val(today);
+    });
+</script>

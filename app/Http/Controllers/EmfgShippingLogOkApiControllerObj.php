@@ -22,7 +22,7 @@ class EmfgShippingLogOkApiControllerObj extends Controller
 // DECLARE END POINT
 // ==========================================================================
     // private $ENDPOINT = 'http://10.100.1.94:8080/wissdemo01/public/api/shipping_log_ok_obj';
-    private $ENDPOINT =      'http://127.0.0.1:8000/api/emfg_shipping_log_ok';
+    private $ENDPOINT =      'http://127.0.0.1:8000/api/emfg_shipping_log_ok_obj';
 
 // ==========================================================================
 // GET DATA
@@ -43,32 +43,20 @@ class EmfgShippingLogOkApiControllerObj extends Controller
         // ==========================================================================
         // CHECK INPUT IF NOT EMPTY
         // ==========================================================================
-             $docNum = $req->input('docNum')??'';
             // ======================================================================
             // GET DATA
             // ======================================================================
-            $dateStart = $req->input('dateStart')??'19000101';
-            $dateEnd = $req->input('dateEnd')??'20300101';
-            $maxRecord = 100;
+            $dateStart = str_replace('-','',$req->input('dateStart')??'20220101');
+            $dateEnd = str_replace('-','',$req->input('dateEnd')??'20220101');
+            $maxRecord = $req->input('maxRecord')??'10';
+            $docNum = $req->input('docNum')??'';
+            $queryStr = "doc_num=$docNum&start_date=$dateStart&end_date=$dateEnd&max_record=$maxRecord";
 
             // ======================================================================
             // CALL API
             // ======================================================================
-            $url = $this->ENDPOINT . $api."/".$docNum;
+            $url = $this->ENDPOINT . $api ."/". $queryStr;
             $response = Http::get($url);
-
-            // ======================================================================
-            // CALL API
-            // ======================================================================
-            // $queryStr = "doc_num=$docNum&start_date=$dateStart&end_date=$dateEnd&max_record=$maxRecord";
-            // error_log("*************************************************************".$dateStart.$dateEnd.$docNum);
-            // error_log($queryStr);
-            // $url = $this->ENDPOINT . $api ."/". $queryStr;
-            // error_log($url);
-            //  // $url = $this->ENDPOINT . $api ."/". $docNum;
-            // $response = Http::get($url);
-
-            error_log(json_decode($response));
             // ======================================================================
             // IF CALL SUCCCESS
             // ======================================================================

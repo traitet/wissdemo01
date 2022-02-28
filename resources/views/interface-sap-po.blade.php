@@ -133,9 +133,8 @@
                                                 <label for="dateEnd">Date End: </label>
                                                 <input class="form-control" type="date" class="" id="dateEnd" name="dateEnd" onchange="dateEndHandler();">
                                                 &nbsp;&nbsp;
-
                                                 <label for="docNum">Record: </label>
-                                                <select id="maxRecord" name="maxRecord">
+                                                <select class="form-control" id="maxRecord" name="maxRecord">
                                                     <option value="10">10</option>
                                                     <option value="100">100</option>
                                                     <option value="1000">1000</option>

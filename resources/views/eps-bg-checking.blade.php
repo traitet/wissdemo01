@@ -134,11 +134,28 @@
                                                 &nbsp;&nbsp;
 
                                                 <label for="docNum">Record: </label>
-                                                <select id="record" name="record">
+                                                <select class="form-control" id="record" name="record">
                                                     <option value="10">10</option>
                                                     <option value="100">100</option>
                                                     <option value="1000">1000</option>
                                                 </select>
+                                                &nbsp;&nbsp;
+                                                <label for="docType">Doc Type: </label>
+                                                <select class="form-control" id="docType" name="docType">
+                                                    <option value="1">EXPENSE</option>
+                                                    <option value="2">INVESTMENT</option>
+                                                </select>
+
+                                                {{-- <div class="dropdown">
+                                                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        Dropdown
+                                                    </button>
+                                                    <div class="dropdown-menu animated--fade-in" aria-labelledby="dropdownMenuButton" style="">
+                                                        <a class="dropdown-item" href="#">EXPENSE</a>
+                                                        <a class="dropdown-item" href="#">INVESTMENT</a>
+                                                    </div>
+                                                </div> --}}
+
 
                                             </div>
                                         </div>
@@ -256,3 +273,28 @@
         @include('theme.footer')
 </body>
 </html>
+<script>
+    $(document).ready( function() {
+    var now = new Date();
+    var month = (now.getMonth() + 1);
+    var day = now.getDate();
+    if (month < 10)
+    month = "0" + month;
+    if (day < 10)
+    day = "0" + day;
+    var today = now.getFullYear() + '-' + month + '-' + day;
+    $('#dateStart').val(today);
+    });
+
+    $(document).ready( function() {
+    var now = new Date();
+    var month = (now.getMonth() + 1);
+    var day = now.getDate();
+    if (month < 10)
+    month = "0" + month;
+    if (day < 10)
+    day = "0" + day;
+    var today = now.getFullYear() + '-' + month + '-' + day;
+    $('#dateEnd').val(today);
+    });
+</script>

@@ -15,13 +15,13 @@ use Illuminate\Validation\Rule;
 // ==========================================================================
 // CLASS DECLARATION
 // ==========================================================================
-class EpsBgCheckingApiController extends Controller
+class EpsPrOutstandingApiController extends Controller
 {
 
 // ==========================================================================
 // DECLARE END POINT
 // ==========================================================================
-    private $ENDPOINT = 'http://10.100.1.94:8080/wissdemo01/public/api/report_budget_checking';
+    private $ENDPOINT = 'http://10.100.1.94:8080/wissdemo01/public/api/eps_interface_sap_pr_outstanding_obj';
 
 // ==========================================================================
 // GET DATA
@@ -42,16 +42,19 @@ class EpsBgCheckingApiController extends Controller
         // ==========================================================================
         // CHECK INPUT IF NOT EMPTY
         // ==========================================================================
-             $docNum = $req->input('docNum')??'';
-            // ======================================================================
+             // ======================================================================
             // GET DATA
             // ======================================================================
-            // $dateStart = $req->input('dateStart');
-            // $dateEnd = $req->input('dateEnd');
+            $dateStart = str_replace('-','',$req->input('dateStart')??'20220101');
+            $dateEnd = str_replace('-','',$req->input('dateEnd')??'20220101');
+            $maxRecord = $req->input('maxRecord')??'10';
+            $docNum = $req->input('docNum')??'';
+            $queryStr = "doc_num=$docNum&start_date=$dateStart&end_date=$dateEnd&max_record=$maxRecord";
+
             // ======================================================================
             // CALL API
             // ======================================================================
-            $url = $this->ENDPOINT . $api ."/". $docNum;
+            $url = $this->ENDPOINT . $api ."/". $queryStr;
             $response = Http::get($url);
             // ======================================================================
             // IF CALL SUCCCESS
@@ -60,12 +63,12 @@ class EpsBgCheckingApiController extends Controller
                 $result = json_decode($response->body(), true);
                 if(!empty($result)){
                     $keyArray = array_keys($result[0]);
-                    return view('eps-bg-checking', compact('result', 'keyArray'));
+                    return view('eps-pr-outstanding', compact('result', 'keyArray'));
                 }else{
                     //need to return no data msg
                     $keyArray = [];
                 }
             }
-            return view('eps-bg-checking');
+            return view('eps-pr-outstanding');
     }
 }
