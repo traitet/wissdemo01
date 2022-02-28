@@ -246,9 +246,7 @@ Route::get('emfg_shipping_order_status_obj/{obj}', function ($obj) {
     $start_date = $myArray['start_date'];
     $end_date = $myArray['end_date'];
     $max_record = $myArray['max_record'];
-    $result = DB::select("EXEC sqlsrv_shipping_db '$start_date','$end_date','$doc_num',$max_record");
-    // print($obj);
-    // error_log($obj);
+    $result = DB::connection('sqlsrv_shipping_db')->select("EXEC emfg_shipping_order_status '$start_date','$end_date','$doc_num',$max_record");
     return json_encode($result);
 });
 
@@ -259,9 +257,7 @@ Route::get('emfg_shipping_log_ok_obj/{obj}', function ($obj) {
     $start_date = $myArray['start_date'];
     $end_date = $myArray['end_date'];
     $max_record = $myArray['max_record'];
-    $result = DB::select("EXEC sqlsrv_shipping_db '$start_date','$end_date','$doc_num',$max_record");
-    // print($obj);
-    // error_log($obj);
+    $result = DB::connection('sqlsrv_shipping_db')->select("EXEC emfg_shipping_log_ok '$start_date','$end_date','$doc_num',$max_record");
     return json_encode($result);
 });
 
@@ -272,9 +268,7 @@ Route::get('emfg_shipping_log_ng_obj/{obj}', function ($obj) {
     $start_date = $myArray['start_date'];
     $end_date = $myArray['end_date'];
     $max_record = $myArray['max_record'];
-    $result = DB::select("EXEC sqlsrv_shipping_db '$start_date','$end_date','$doc_num',$max_record");
-    // print($obj);
-    // error_log($obj);
+    $result = DB::connection('sqlsrv_shipping_db')->select("EXEC emfg_shipping_log_ng '$start_date','$end_date','$doc_num',$max_record");
     return json_encode($result);
 });
 
@@ -285,9 +279,7 @@ Route::get('emfg_shipping_log_event_obj/{obj}', function ($obj) {
     $start_date = $myArray['start_date'];
     $end_date = $myArray['end_date'];
     $max_record = $myArray['max_record'];
-    $result = DB::select("EXEC sqlsrv_shipping_db '$start_date','$end_date','$doc_num',$max_record");
-    // print($obj);
-    // error_log($obj);
+    $result = DB::connection('sqlsrv_shipping_db')->select("EXEC emfg_shipping_log_event '$start_date','$end_date','$doc_num',$max_record");
     return json_encode($result);
 });
 
@@ -301,7 +293,7 @@ Route::get('eps_interface_pr_po_to_planner_obj/{obj}', function ($obj) {
     $start_date = $myArray['start_date'];
     $end_date = $myArray['end_date'];
     $max_record = $myArray['max_record'];
-    $result = DB::select("EXEC sqlsrv_eps_db '$start_date','$end_date','$doc_num',$max_record");
+    $result = DB::connection('sqlsrv_eps_db')->select("EXEC eps_interface_pr_po_to_planner '$start_date','$end_date','$doc_num',$max_record");
     return json_encode($result);
 });
 
@@ -312,7 +304,7 @@ Route::get('eps_interface_sap_pr_outstanding_obj/{obj}', function ($obj) {
     $start_date = $myArray['start_date'];
     $end_date = $myArray['end_date'];
     $max_record = $myArray['max_record'];
-    $result = DB::select("EXEC sqlsrv_eps_db '$start_date','$end_date','$doc_num',$max_record");
+    $result = DB::connection('sqlsrv_eps_db')->select("EXEC eps_interface_sap_pr_outstanding '$start_date','$end_date','$doc_num',$max_record");
     return json_encode($result);
 });
 
@@ -323,7 +315,7 @@ Route::get('report_budget_checking_obj/{obj}', function ($obj) {
     $start_date = $myArray['start_date'];
     $end_date = $myArray['end_date'];
     $max_record = $myArray['max_record'];
-    $result = DB::select("EXEC sqlsrv_eps_db '$start_date','$end_date','$doc_num',$max_record");
+    $result = DB::connection('sqlsrv_eps_db')->select("EXEC report_budget_checking '$start_date','$end_date','$doc_num',$max_record");
     return json_encode($result);
 });
 
