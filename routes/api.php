@@ -308,14 +308,18 @@ Route::get('eps_interface_sap_pr_outstanding_obj/{obj}', function ($obj) {
     return json_encode($result);
 });
 
-// http://10.100.1.94:8080/wissdemo01/public/api/report_budget_checking_obj/doc_num=PO19007289&start_date=20190101&end_date=20220225&max_record=100/1
+// http://10.100.1.94:8080/wissdemo01/public/api/report_budget_checking_obj/doc_num=PO19007289&start_date=20190101&end_date=20220225&max_record=100/doc_type=1
 Route::get('report_budget_checking_obj/{obj}/{search}', function ($obj,$search) {
     parse_str($obj,$myArray);
     $doc_num = $myArray['doc_num'];
     $start_date = $myArray['start_date'];
     $end_date = $myArray['end_date'];
     $max_record = $myArray['max_record'];
-    $result = DB::connection('sqlsrv_eps_db')->select("EXEC report_budget_checking '$start_date','$end_date','$doc_num',$max_record,'$search'");
+
+    parse_str($search,$myArraySearch);
+    $doc_type = $myArraySearch['doc_type'];
+
+    $result = DB::connection('sqlsrv_eps_db')->select("EXEC report_budget_checking '$start_date','$end_date','$doc_num',$max_record,'$doc_type'");
     return json_encode($result);
 });
 
