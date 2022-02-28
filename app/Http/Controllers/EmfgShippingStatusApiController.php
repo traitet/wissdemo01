@@ -21,7 +21,7 @@ class EmfgShippingStatusApiController extends Controller
 // ==========================================================================
 // DECLARE END POINT
 // ==========================================================================
-    private $ENDPOINT = 'http://10.100.1.94:8080/wissdemo01/public/api/emfg_shipping_status_obj';
+    private $ENDPOINT = 'http://10.100.1.94:8080/wissdemo01/public/api/emfg_shipping_order_status_obj';
 
 // ==========================================================================
 // GET DATA
