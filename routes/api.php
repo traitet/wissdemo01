@@ -195,8 +195,9 @@ Route::get('emfg_shipping_log_ok_obj/{obj}', function ($obj) {
     // error_log($obj);
     return json_encode($result);
 });
-
-// http://127.0.0.1:8000/api/interface_sap_po_obj/doc_num=PO19007289&start_date=20190101&end_date=20220225&max_record=100
+//========================================================================
+// SAP interface Object
+//========================================================================
 // http://10.100.1.94:8080/wissdemo01/public/api/interface_sap_po_obj/doc_num=PO19007289&start_date=20190101&end_date=20220225&max_record=100
 Route::get('interface_sap_po_obj/{obj}', function ($obj) {
     parse_str($obj,$myArray);
@@ -210,4 +211,119 @@ Route::get('interface_sap_po_obj/{obj}', function ($obj) {
     return json_encode($result);
 });
 
+// http://10.100.1.94:8080/wissdemo01/public/api/interface_sap_rec_obj/doc_num=PO19007289&start_date=20190101&end_date=20220225&max_record=100
+Route::get('interface_sap_rec_obj/{obj}', function ($obj) {
+    parse_str($obj,$myArray);
+    $doc_num = $myArray['doc_num'];
+    $start_date = $myArray['start_date'];
+    $end_date = $myArray['end_date'];
+    $max_record = $myArray['max_record'];
+    $result = DB::select("EXEC interface_sap_rec '$start_date','$end_date','$doc_num',$max_record");
+    // print($obj);
+    // error_log($obj);
+    return json_encode($result);
+});
+
+// http://10.100.1.94:8080/wissdemo01/public/api/interface_sap_inv_obj/doc_num=PO19007289&start_date=20190101&end_date=20220225&max_record=100
+Route::get('interface_sap_inv_obj/{obj}', function ($obj) {
+    parse_str($obj,$myArray);
+    $doc_num = $myArray['doc_num'];
+    $start_date = $myArray['start_date'];
+    $end_date = $myArray['end_date'];
+    $max_record = $myArray['max_record'];
+    $result = DB::select("EXEC interface_sap_inv '$start_date','$end_date','$doc_num',$max_record");
+    // print($obj);
+    // error_log($obj);
+    return json_encode($result);
+});
+//========================================================================
+// E-MFG Object
+//========================================================================
+// http://10.100.1.94:8080/wissdemo01/public/api/emfg_shipping_order_status_obj/doc_num=PO19007289&start_date=20190101&end_date=20220225&max_record=100
+Route::get('emfg_shipping_order_status_obj/{obj}', function ($obj) {
+    parse_str($obj,$myArray);
+    $doc_num = $myArray['doc_num'];
+    $start_date = $myArray['start_date'];
+    $end_date = $myArray['end_date'];
+    $max_record = $myArray['max_record'];
+    $result = DB::select("EXEC sqlsrv_shipping_db '$start_date','$end_date','$doc_num',$max_record");
+    // print($obj);
+    // error_log($obj);
+    return json_encode($result);
+});
+
+// http://10.100.1.94:8080/wissdemo01/public/api/emfg_shipping_log_ok_obj/doc_num=PO19007289&start_date=20190101&end_date=20220225&max_record=100
+Route::get('emfg_shipping_log_ok_obj/{obj}', function ($obj) {
+    parse_str($obj,$myArray);
+    $doc_num = $myArray['doc_num'];
+    $start_date = $myArray['start_date'];
+    $end_date = $myArray['end_date'];
+    $max_record = $myArray['max_record'];
+    $result = DB::select("EXEC sqlsrv_shipping_db '$start_date','$end_date','$doc_num',$max_record");
+    // print($obj);
+    // error_log($obj);
+    return json_encode($result);
+});
+
+// http://10.100.1.94:8080/wissdemo01/public/api/emfg_shipping_log_ng_obj/doc_num=PO19007289&start_date=20190101&end_date=20220225&max_record=100
+Route::get('emfg_shipping_log_ng_obj/{obj}', function ($obj) {
+    parse_str($obj,$myArray);
+    $doc_num = $myArray['doc_num'];
+    $start_date = $myArray['start_date'];
+    $end_date = $myArray['end_date'];
+    $max_record = $myArray['max_record'];
+    $result = DB::select("EXEC sqlsrv_shipping_db '$start_date','$end_date','$doc_num',$max_record");
+    // print($obj);
+    // error_log($obj);
+    return json_encode($result);
+});
+
+// http://10.100.1.94:8080/wissdemo01/public/api/emfg_shipping_log_event_obj/doc_num=PO19007289&start_date=20190101&end_date=20220225&max_record=100
+Route::get('emfg_shipping_log_event_obj/{obj}', function ($obj) {
+    parse_str($obj,$myArray);
+    $doc_num = $myArray['doc_num'];
+    $start_date = $myArray['start_date'];
+    $end_date = $myArray['end_date'];
+    $max_record = $myArray['max_record'];
+    $result = DB::select("EXEC sqlsrv_shipping_db '$start_date','$end_date','$doc_num',$max_record");
+    // print($obj);
+    // error_log($obj);
+    return json_encode($result);
+});
+
+//========================================================================
+// EPS Object
+//========================================================================
+// http://10.100.1.94:8080/wissdemo01/public/api/eps_interface_pr_po_to_planner_obj/doc_num=PO19007289&start_date=20190101&end_date=20220225&max_record=100
+Route::get('eps_interface_pr_po_to_planner_obj/{obj}', function ($obj) {
+    parse_str($obj,$myArray);
+    $doc_num = $myArray['doc_num'];
+    $start_date = $myArray['start_date'];
+    $end_date = $myArray['end_date'];
+    $max_record = $myArray['max_record'];
+    $result = DB::select("EXEC sqlsrv_eps_db '$start_date','$end_date','$doc_num',$max_record");
+    return json_encode($result);
+});
+
+// http://10.100.1.94:8080/wissdemo01/public/api/eps_interface_sap_pr_outstanding_obj/doc_num=PO19007289&start_date=20190101&end_date=20220225&max_record=100
+Route::get('eps_interface_sap_pr_outstanding_obj/{obj}', function ($obj) {
+    parse_str($obj,$myArray);
+    $doc_num = $myArray['doc_num'];
+    $start_date = $myArray['start_date'];
+    $end_date = $myArray['end_date'];
+    $max_record = $myArray['max_record'];
+    $result = DB::select("EXEC sqlsrv_eps_db '$start_date','$end_date','$doc_num',$max_record");
+    return json_encode($result);
+});
+
+// http://10.100.1.94:8080/wissdemo01/public/api/report_budget_checking_obj/doc_num=PO19007289&start_date=20190101&end_date=20220225&max_record=100
+Route::get('report_budget_checking_obj/{obj}', function ($obj) {
+    parse_str($obj,$myArray);
+    $doc_num = $myArray['doc_num'];
+    $start_date = $myArray['start_date'];
+    $end_date = $myArray['end_date'];
+    $max_record = $myArray['max_record'];
+    $result = DB::select("EXEC sqlsrv_eps_db '$start_date','$end_date','$doc_num',$max_record");
+    return json_encode($result);
+});
 
