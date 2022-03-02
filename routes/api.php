@@ -241,6 +241,7 @@ Route::get('interface_sap_inv_obj/{obj}', function ($obj) {
 // E-MFG Object
 //========================================================================
 // http://10.100.1.94:8080/wissdemo01/public/api/emfg_shipping_order_status_obj/doc_num=PO19007289&start_date=20190101&end_date=20220225&max_record=100
+// http://10.100.1.94:8080/wissdemo01/public/api/emfg_shipping_order_status_obj/doc_num=&start_date=20220201&end_date=20220302&max_record=10
 Route::get('emfg_shipping_order_status_obj/{obj}', function ($obj) {
     parse_str($obj,$myArray);
     $doc_num = $myArray['doc_num'];
@@ -324,3 +325,23 @@ Route::get('report_budget_checking_obj/{obj}/{search}', function ($obj,$search) 
     return json_encode($result);
 });
 
+// http://10.100.1.94:8080/wissdemo01/public/api/eps_interface_sap_pr_outstanding_obj/doc_num=PO19007289&start_date=20190101&end_date=20220225&max_record=100
+Route::get('eps_pr_issue_error_report_obj/{obj}', function ($obj) {
+    parse_str($obj,$myArray);
+    $doc_num = $myArray['doc_num'];
+    $start_date = $myArray['start_date'];
+    $end_date = $myArray['end_date'];
+    $max_record = $myArray['max_record'];
+    $result = DB::connection('sqlsrv_eps_db')->select("EXEC eps_pr_issue_error_report '$start_date','$end_date','$doc_num',$max_record");
+    return json_encode($result);
+});
+//eps_pr_productionid_error_report
+Route::get('eps_pr_productionid_error_report_obj/{obj}', function ($obj) {
+    parse_str($obj,$myArray);
+    $doc_num = $myArray['doc_num'];
+    $start_date = $myArray['start_date'];
+    $end_date = $myArray['end_date'];
+    $max_record = $myArray['max_record'];
+    $result = DB::connection('sqlsrv_eps_db')->select("EXEC eps_pr_productionid_error_report '$start_date','$end_date','$doc_num',$max_record");
+    return json_encode($result);
+});

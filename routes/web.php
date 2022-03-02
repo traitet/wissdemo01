@@ -16,6 +16,8 @@ use App\Http\Controllers\EmfgShippingStatusApiController;
 use App\Http\Controllers\EpsBgCheckingApiController;
 use App\Http\Controllers\EpsPrOutstandingApiController;
 use App\Http\Controllers\EpsPrPoToPlannerApiController;
+use App\Http\Controllers\EpsPrErrorApiController;
+use App\Http\Controllers\EpsPrProductionErrorApiController;
 
 // ==========================================================================
 // ROUTE GET/POST "BASIC-REPORT-API"
@@ -70,6 +72,12 @@ Route::post('eps-pr-po-planner',[EpsPrPoToPlannerApiController::class,'getData']
 
 Route::view('eps-bg-checking','eps-bg-checking');
 Route::post('eps-bg-checking',[EpsBgCheckingApiController::class,'getData']);
+
+Route::view('eps-pr-error','eps-pr-error');
+Route::post('eps-pr-error',[EpsPrErrorApiController::class,'getData']);
+
+Route::view('eps-pr-production-error','eps-pr-production-error');
+Route::post('eps-pr-production-error',[EpsPrProductionErrorApiController::class,'getData']);
 
 
 
