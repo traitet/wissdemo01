@@ -56,6 +56,7 @@ class EmfgShippingStatusApiController extends Controller
             // ======================================================================
             $url = $this->ENDPOINT . $api ."/". $queryStr;
             $response = Http::get($url);
+            error_log($url);
             // ======================================================================
             // IF CALL SUCCCESS
             // ======================================================================

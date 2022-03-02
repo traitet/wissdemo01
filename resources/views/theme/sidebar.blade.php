@@ -113,13 +113,54 @@
 
            <!-- Nav Item - Tables -->
            <li class="nav-item">
-            <a class="nav-link" href=" https://10.122.242.248/Orion/Login.aspx?sessionTimeout=yes">
+            <a class="nav-link" href="https://10.122.242.248/Orion/Login.aspx?sessionTimeout=yes">
                 <i class="fas fa-fw fa-chart-area"></i>
                 <span>Solarwinds</span></a>
-        </li>
+            </li>
+
+            <!-- Nav Item - Tables -->
+           <li class="nav-item">
+            <a class="nav-link" href="https://bnmonitor.leapsolutions.co.th/nagiosxi/login.php">
+                <i class="fas fa-fw fa-chart-bar"></i>
+                <span>Nagios</span></a>
+            </li>
 
            <!-- Divider -->
            <hr class="sidebar-divider d-none d-md-block">
+{{-- ========================================================================== --}}
+{{-- Administrator Manual  --}}
+{{-- ========================================================================== --}}
+        <!-- Heading -->
+        <div class="sidebar-heading">
+            Administrator Manual
+        </div>
+
+        <!-- Nav Item - Pages Collapse Menu -->
+        <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseInfraTemplate" aria-expanded="true" aria-controls="collapseInfraTemplate">
+            <i class="fas fa-fw fa-book"></i>
+            <span>Infra Admin Manual</span>
+        </a>
+        <div id="collapseInfraTemplate" class="collapse" aria-labelledby="collapseInfraTemplate" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="theme/infra-admin-manual.pdf" target="_blank">Infra Report Manual</a>
+            </div>
+        </div>
+        </li>
+
+        <!-- Nav Item - Pages Collapse Menu -->
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBusinessTemplate" aria-expanded="true" aria-controls="collapseBusinessTemplate">
+                <i class="fas fa-fw fa-book"></i>
+                <span>Business Admin Manual</span>
+            </a>
+            <div id="collapseBusinessTemplate" class="collapse" aria-labelledby="collapseBusinessTemplate" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <a class="collapse-item" href="main">Business Report Manual</a>
+                </div>
+            </div>
+            </li>
+
 {{-- ========================================================================== --}}
 {{-- Administrator  --}}
 {{-- ========================================================================== --}}

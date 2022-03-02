@@ -199,6 +199,7 @@ Route::get('emfg_shipping_log_ok_obj/{obj}', function ($obj) {
 // SAP interface Object
 //========================================================================
 // http://10.100.1.94:8080/wissdemo01/public/api/interface_sap_po_obj/doc_num=PO19007289&start_date=20190101&end_date=20220225&max_record=100
+// http://10.100.1.94:8080/wissdemo01/public/api/interface_sap_po_obj_obj/doc_num=&start_date=20220101&end_date=20220302&max_record=10
 Route::get('interface_sap_po_obj/{obj}', function ($obj) {
     parse_str($obj,$myArray);
     $doc_num = $myArray['doc_num'];
