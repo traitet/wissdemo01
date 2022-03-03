@@ -325,7 +325,7 @@ Route::get('report_budget_checking_obj/{obj}/{search}', function ($obj,$search) 
     return json_encode($result);
 });
 
-// http://10.100.1.94:8080/wissdemo01/public/api/eps_interface_sap_pr_outstanding_obj/doc_num=PO19007289&start_date=20190101&end_date=20220225&max_record=100
+// http://10.100.1.94:8080/wissdemo01/public/api/eps_pr_issue_error_report_obj/doc_num=PO19007289&start_date=20190101&end_date=20220225&max_record=100
 Route::get('eps_pr_issue_error_report_obj/{obj}', function ($obj) {
     parse_str($obj,$myArray);
     $doc_num = $myArray['doc_num'];

@@ -56,7 +56,6 @@ class InterfaceSapPoApiController extends Controller
             // CALL API
             // ======================================================================
             $url = $this->ENDPOINT . $api ."/". $queryStr;
-            error_log($url);
             $response = Http::get($url);
 
             // ======================================================================
