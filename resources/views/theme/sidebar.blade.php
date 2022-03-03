@@ -71,6 +71,7 @@
             <div id="collapseThree" class="collapse" aria-labelledby="collapseThree" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                      <a class="collapse-item" href="eps-pr-error">PR Issue Error</a>
+                     <a class="collapse-item" href="eps-pr-production-error">PR Production Error</a>
                      <a class="collapse-item" href="eps-pr-po-planner">PR/PO Planner</a>
                      <a class="collapse-item" href="eps-pr-outstanding">PR Outstanding</a>
                      <a class="collapse-item" href="eps-bg-checking">BG Checking</a>
