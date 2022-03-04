@@ -356,8 +356,8 @@ Route::get('eps_pr_productionid_error_report_obj/{obj}', function ($obj) {
     $result = DB::connection('sqlsrv_eps_db')->select("EXEC eps_pr_productionid_error_report '$start_date','$end_date','$doc_num',$max_record");
     return json_encode($result);
 });
-//eps_pr_productionid_error_report
-Route::get('eps_pr_for_cp_report/{obj}', function ($obj) {
+// http://10.100.1.94:8080/wissdemo01/public/api/eps_interface_pr_po_to_planner_obj/doc_num=PO19007289&start_date=20190101&end_date=20220225&max_record=100
+Route::get('eps_pr_for_cp_report_obj/{obj}', function ($obj) {
     parse_str($obj,$myArray);
     $doc_num = $myArray['doc_num'];
     $start_date = $myArray['start_date'];
