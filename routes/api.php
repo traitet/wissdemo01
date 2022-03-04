@@ -285,6 +285,17 @@ Route::get('emfg_shipping_log_event_obj/{obj}', function ($obj) {
     return json_encode($result);
 });
 
+// http://10.100.1.94:8080/wissdemo01/public/api/emfg_shipping_log_event_obj/doc_num=PO19007289&start_date=20190101&end_date=20220225&max_record=100
+Route::get('emfg_inventory_stock_out_error_obj/{obj}', function ($obj) {
+    parse_str($obj,$myArray);
+    $doc_num = $myArray['doc_num'];
+    $start_date = $myArray['start_date'];
+    $end_date = $myArray['end_date'];
+    $max_record = $myArray['max_record'];
+    $result = DB::connection('sqlsrv_shipping_db')->select("EXEC emfg_inventory_stock_out_error '$start_date','$end_date','$doc_num',$max_record");
+    return json_encode($result);
+});
+
 //========================================================================
 // EPS Object
 //========================================================================
@@ -343,5 +354,29 @@ Route::get('eps_pr_productionid_error_report_obj/{obj}', function ($obj) {
     $end_date = $myArray['end_date'];
     $max_record = $myArray['max_record'];
     $result = DB::connection('sqlsrv_eps_db')->select("EXEC eps_pr_productionid_error_report '$start_date','$end_date','$doc_num',$max_record");
+    return json_encode($result);
+});
+//eps_pr_productionid_error_report
+Route::get('eps_pr_for_cp_report/{obj}', function ($obj) {
+    parse_str($obj,$myArray);
+    $doc_num = $myArray['doc_num'];
+    $start_date = $myArray['start_date'];
+    $end_date = $myArray['end_date'];
+    $max_record = $myArray['max_record'];
+    $result = DB::connection('sqlsrv_eps_db')->select("EXEC eps_pr_for_cp_report '$start_date','$end_date','$doc_num',$max_record");
+    return json_encode($result);
+});
+
+//========================================================================
+// AGS J614 Object
+//========================================================================
+// http://10.100.1.94:8080/wissdemo01/public/api/eps_interface_pr_po_to_planner_obj/doc_num=PO19007289&start_date=20190101&end_date=20220225&max_record=100
+Route::get('edrawing_check_password_obj/{obj}', function ($obj) {
+    parse_str($obj,$myArray);
+    $doc_num = $myArray['doc_num'];
+    $start_date = $myArray['start_date'];
+    $end_date = $myArray['end_date'];
+    $max_record = $myArray['max_record'];
+    $result = DB::connection('sqlsrv_ags_j614_db')->select("EXEC edrawing_check_password '$start_date','$end_date','$doc_num',$max_record");
     return json_encode($result);
 });

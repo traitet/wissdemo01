@@ -129,6 +129,22 @@ return [
             'prefix_indexes' => true,
         ],
 
+        //=====================================
+        // DB_DATABASE_AGS_J614  (CONFIG AT .ENV)
+        //=====================================
+        'sqlsrv_ags_j614_db' => [
+            'driver' => 'sqlsrv',
+            'url' => env('DATABASE_URL'),
+            'host' => env('DB_HOST', 'localhost'),
+            'port' => env('DB_PORT', '1433'),
+            'database' => env('DB_DATABASE_AGS_J614', 'forge'),
+            'username' => env('DB_USERNAME', 'forge'),
+            'password' => env('DB_PASSWORD', ''),
+            'charset' => 'utf8',
+            'prefix' => '',
+            'prefix_indexes' => true,
+        ],
+
     ],
 
     /*

@@ -75,6 +75,7 @@
                      <a class="collapse-item" href="eps-pr-po-planner">PR/PO Planner</a>
                      <a class="collapse-item" href="eps-pr-outstanding">PR Outstanding</a>
                      <a class="collapse-item" href="eps-bg-checking">BG Checking</a>
+                     <a class="collapse-item" href="eps-cp-approve-pr">CP Approve PR</a>
                 </div>
             </div>
         </li>

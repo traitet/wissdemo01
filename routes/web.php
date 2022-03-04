@@ -18,6 +18,7 @@ use App\Http\Controllers\EpsPrOutstandingApiController;
 use App\Http\Controllers\EpsPrPoToPlannerApiController;
 use App\Http\Controllers\EpsPrErrorApiController;
 use App\Http\Controllers\EpsPrProductionErrorApiController;
+use App\Http\Controllers\EpsCpApprovePrApiController;
 
 // ==========================================================================
 // ROUTE GET/POST "BASIC-REPORT-API"
@@ -79,7 +80,8 @@ Route::post('eps-pr-error',[EpsPrErrorApiController::class,'getData']);
 Route::view('eps-pr-production-error','eps-pr-production-error');
 Route::post('eps-pr-production-error',[EpsPrProductionErrorApiController::class,'getData']);
 
-
+Route::view('eps-cp-approve-pr','eps-cp-approve-pr');
+Route::post('eps-cp-approve-pr',[EpsCpApprovePrApiController::class,'getData']);
 
 // ==========================================================================
 // ROUTE GET/POST "MAIN"
