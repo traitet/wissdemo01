@@ -146,7 +146,7 @@
         </a>
         <div id="collapseInfraTemplate" class="collapse" aria-labelledby="collapseInfraTemplate" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="theme/infra-admin-manual.pdf" target="_blank">Infra Report Manual</a>
+                <a class="collapse-item" href="assets/infra-admin-manual.pdf" target="_blank">Infra Report Manual</a>
             </div>
         </div>
         </li>
@@ -182,6 +182,8 @@
              <div class="bg-white py-2 collapse-inner rounded">
                     <a class="collapse-item" href="deploycode">Deploy Git Main</a>
                     <a class="collapse-item" href="https://github.com/traitet/wissdemo01.git">Github wissdev01</a>
+                    <a class="collapse-item" href="assets/wissdemo01.postman_collection.json">Postman Json Collection to test API</a>
+                    <a class="collapse-item" href="assets/WISSDEMO01_Manual.pdf">Developing Manual</a>
                     <a class="collapse-item" href="https://aisingroupap01.sharepoint.com/:x:/s/ITM/EdGCycUJhoVJvGWKfUm5Y-EBog7ZRNksxqD2dvF-bVD6Ow?e=huZZMY">Develop Spec Excel Online</a>
                     <a class="collapse-item" href="dashboard">Dashboard</a>
                     <a class="collapse-item" href="login">Login</a>
