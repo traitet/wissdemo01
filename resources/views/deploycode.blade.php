@@ -94,18 +94,19 @@
                                         <div class="form-group">
                                             <input type="text" name="keyword" id="keyword" class="form-control" placeholder="Keyword" aria-label="Keyword"><br>
                                             <button type="submit" class="btn btn-primary">Deploy to Web Server </button><br>
+
+
+{{-- =============================================================== --}}
+{{-- PHP: DEPLOY AFTER C LICK  --}}
+{{-- =============================================================== --}}
 <?php
 if ($_GET){
-
-
-
     $k = $_GET['keyword'];
     echo "<h4>ผลการ Deploy เป็นดังนี้ : <span>$k</span></h4>  ";
-    $runCmd1 = "cd C:\xampp\htdocs\wissdemo01";
-    $runCmd2 = "git pull";
-    // $runCMD = "c:\DeployWissdemo01.bat";
-    $output = shell_exec($runCMD1);
-    $output = shell_exec($runCMD2);
+    // $runCmd1 = "cd C:\xampp\htdocs\wissdemo01";
+    // $runCmd2 = "git pull";
+    $runCMD = "c:\DeployWissdemo01.bat";
+    $output = shell_exec($runCMD);
     echo '<pre>' . $output . '</pre>';
 }
 ?>
