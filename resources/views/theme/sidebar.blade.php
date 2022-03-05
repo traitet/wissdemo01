@@ -192,12 +192,10 @@
 {{-- ========================================================================== --}}
 {{-- SAMPLE  --}}
 {{-- ========================================================================== --}}
-           {{-- <!-- Heading -->
-           <div class="sidebar-heading">
+           <!-- Heading -->
+        <div class="sidebar-heading">
                Sample Template
-           </div>
-
-
+        </div>
         <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
@@ -218,19 +216,12 @@
             </div>
         </li>
 
-        <!-- Nav Item - Charts -->
-        <li class="nav-item">
-            <a class="nav-link" href="theme/charts.html">
-                <i class="fas fa-fw fa-chart-area"></i>
-                <span>Charts</span></a>
-        </li>
-
         <!-- Nav Item - Tables -->
         <li class="nav-item active">
             <a class="nav-link" href="theme/tables.html">
                 <i class="fas fa-fw fa-table"></i>
                 <span>Tables</span></a>
-        </li> --}}
+        </li>
 
 {{-- ========================================================================== --}}
 {{-- TOGGER --}}
