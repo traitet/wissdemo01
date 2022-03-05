@@ -3,6 +3,8 @@ How to install
 2. rename .env.example to .env
 3. npm install
 4. composer install
+5. php artisan serve
+6. http://127.0.0.1/8000
 
 
 
