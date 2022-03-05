@@ -73,7 +73,7 @@
 {{-- =============================================================== --}}
 {{-- CALL MAIN CONTROLLER  --}}
 {{-- =============================================================== --}}
-                <form method="POST" action="main" id="myForm">
+                <form method="POST" action="" id="deploycode">
 
 {{-- =============================================================== --}}
 {{-- PARAMTER  --}}
@@ -87,11 +87,11 @@
                             <div class="col-xl-12 col-lg-12">
                                 <div class="card shadow mb-4">
                                     <div class="card-header py-3">
-                                        <h6 class="m-0 font-weight-bold text-primary">Criteria</h6>
+                                        <h6 class="m-0 font-weight-bold text-primary">Functions</h6>
                                     </div>
                                     <div class="card-body">
                                         <div class="form-group">
-                                            <button type="submit" class="btn btn-primary">Deploy</button>
+                                            <button type="submit" class="btn btn-primary">Deploy to Web Server</button>
                                         </div>
                                     </div>
                                 </div>
@@ -112,10 +112,8 @@
                     </div>
                 </footer>
                 <!-- End of Footer -->
-
             </div>
             <!-- End of Content Wrapper -->
-
         </div>
         <!-- End of Page Wrapper -->
 
