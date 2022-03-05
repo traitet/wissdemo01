@@ -20,7 +20,7 @@
            <li class="nav-item active">
                <a class="nav-link" href="index.html">
                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                   <span>Dashboard</span></a>
+                   <span>theme/index.html</span></a>
            </li>
 
            <!-- Divider -->
@@ -164,30 +164,7 @@
             </div>
             </li>
 
-{{-- ========================================================================== --}}
-{{-- Administrator  --}}
-{{-- ========================================================================== --}}
-        <!-- Heading -->
-        <div class="sidebar-heading">
-            Business App Reports
-        </div>
 
-        <!-- Nav Item - Pages Collapse Menu -->
-        <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAdminTemplate" aria-expanded="true" aria-controls="collapseAdminTemplate">
-            <i class="fas fa-fw fa-cog"></i>
-            <span>Admin Template</span>
-        </a>
-        <div id="collapseAdminTemplate" class="collapse" aria-labelledby="collapseAdminTemplate" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                    <a class="collapse-item" href="main">Main - Pare</a>
-                <a class="collapse-item" href="basic-report">Basic Report</a>
-                <a class="collapse-item" href="basic-report-api">Basic Report API</a>
-                <a class="collapse-item" href="emfg-shipping-log-ok">Shipping Log OK (Test)</a>
-                <a class="collapse-item" href="emfg-shipping-log-ok-BK">Shipping OBJ</a>
-            </div>
-        </div>
-        </li>
 
 {{-- ========================================================================== --}}
 {{-- SAMPLE  --}}
@@ -196,6 +173,21 @@
         <div class="sidebar-heading">
                Sample Template
         </div>
+        <!-- Nav Item - Pages Collapse Menu -->
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAdminTemplate" aria-expanded="true" aria-controls="collapseAdminTemplate">
+                <i class="fas fa-fw fa-cog"></i>
+                <span>Sample View</span>
+            </a>
+            <div id="collapseAdminTemplate" class="collapse" aria-labelledby="collapseAdminTemplate" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="main">Main - Pare</a>
+                    <a class="collapse-item" href="basic-report">Basic Report</a>
+                    <a class="collapse-item" href="basic-report-api">Basic Report API</a>
+                    <a class="collapse-item" href="emfg-shipping-log-ok">Shipping Log OK (Test)</a>
+                </div>
+            </div>
+            </li>
         <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
