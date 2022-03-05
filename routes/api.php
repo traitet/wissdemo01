@@ -72,7 +72,7 @@ Route::get('interface_sap_rec_obj/{obj}', function ($obj) {
 //========================================================================
 // 3.interface_sap_inv (DEFAULT, SIAM_EPSINFDB)
 //========================================================================
-// http://10.100.1.94:8080/wissdemo01/public/api/interface_sap_inv_obj/doc_num=PO19007289&start_date=20190101&end_date=20220225&max_record=100
+// http://10.100.1.94:8080/wissdemo01/public/api/interface_sap_inv_obj/doc_num=PO19&start_date=20190101&end_date=20220225&max_record=100
 Route::get('interface_sap_inv_obj/{obj}', function ($obj) {
     parse_str($obj,$myArray);
     $doc_num = $myArray['doc_num'];
@@ -86,7 +86,7 @@ Route::get('interface_sap_inv_obj/{obj}', function ($obj) {
 //========================================================================
 // 4.emfg_shipping_log_ok (sqlsrv_shipping_db,SIAM_EPSINFDB)
 //========================================================================
-// http://10.100.1.94:8080/wissdemo01/public/api/emfg_shipping_log_ok_obj/doc_num=PO19007289&start_date=20190101&end_date=20220225&max_record=100
+// http://10.100.1.94:8080/wissdemo01/public/api/emfg_shipping_log_ok_obj/doc_num=SA11AD1C5079&start_date=20190101&end_date=20220225&max_record=100
 Route::get('emfg_shipping_log_ok_obj/{obj}', function ($obj) {
     parse_str($obj,$myArray);
     $doc_num = $myArray['doc_num'];
@@ -100,7 +100,7 @@ Route::get('emfg_shipping_log_ok_obj/{obj}', function ($obj) {
 //========================================================================
 // 5) E-MFG emfg_shipping_log_ng (sqlsrv_shipping_db, SIAM_SHIPPINGDB )
 //========================================================================
-// http://10.100.1.94:8080/wissdemo01/public/api/emfg_shipping_log_ng_obj/doc_num=PO19007289&start_date=20190101&end_date=20220225&max_record=100
+// http://10.100.1.94:8080/wissdemo01/public/api/emfg_shipping_log_ng_obj/doc_num=SA11AYHA4660&start_date=20190101&end_date=20220225&max_record=100
 Route::get('emfg_shipping_log_ng_obj/{obj}', function ($obj) {
     parse_str($obj,$myArray);
     $doc_num = $myArray['doc_num'];
@@ -115,7 +115,7 @@ Route::get('emfg_shipping_log_ng_obj/{obj}', function ($obj) {
 //========================================================================
 // 6.emfg_shipping_log_event (sqlsrv_shipping_db, SIAM_SHIPPINGDB)
 //========================================================================
-// http://10.100.1.94:8080/wissdemo01/public/api/emfg_shipping_log_event_obj/doc_num=PO19007289&start_date=20190101&end_date=20220225&max_record=100
+// http://10.100.1.94:8080/wissdemo01/public/api/emfg_shipping_log_event_obj/doc_num=&start_date=20190101&end_date=20220225&max_record=100
 Route::get('emfg_shipping_log_event_obj/{obj}', function ($obj) {
     parse_str($obj,$myArray);
     $doc_num = $myArray['doc_num'];
@@ -141,9 +141,10 @@ Route::get('eps_interface_pr_po_to_planner_obj/{obj}', function ($obj) {
 });
 
 //========================================================================
-// 8.eps_interface_pr_po_to_planner (sqlsrv_eps_db, SIAM_EPSDB)
+// 8.eps_interface_sap_pr_outstanding (sqlsrv_eps_db, SIAM_EPSDB)
+// Maybe need to add EXPENSE_ID
 //========================================================================
-// http://10.100.1.94:8080/wissdemo01/public/api/eps_interface_sap_pr_outstanding_obj/doc_num=PO19007289&start_date=20190101&end_date=20220225&max_record=100
+// http://10.100.1.94:8080/wissdemo01/public/api/eps_interface_sap_pr_outstanding_obj/doc_num=PR21&start_date=20190101&end_date=20220225&max_record=100
 Route::get('eps_interface_sap_pr_outstanding_obj/{obj}', function ($obj) {
     parse_str($obj,$myArray);
     $doc_num = $myArray['doc_num'];
@@ -155,9 +156,12 @@ Route::get('eps_interface_sap_pr_outstanding_obj/{obj}', function ($obj) {
 });
 
 //========================================================================
-// 9.report_budget_checking_obj (sqlsrv_eps_db,SIAM_EPSDB)
+// 9.report_budget_checking (sqlsrv_eps_db,SIAM_EPSDB)
+// doc_type : 1=PR, 2=PO, 0 or else =BOTH
 //========================================================================
-// http://10.100.1.94:8080/wissdemo01/public/api/report_budget_checking_obj/doc_num=PO19007289&start_date=20190101&end_date=20220225&max_record=100/doc_type=1
+// http://10.100.1.94:8080/wissdemo01/public/api/report_budget_checking_obj/doc_num=F400&start_date=20190101&end_date=20220225&max_record=100/doc_type=0
+// http://10.100.1.94:8080/wissdemo01/public/api/report_budget_checking_obj/doc_num=F400PE&start_date=20190101&end_date=20220225&max_record=100/doc_type=1
+// http://10.100.1.94:8080/wissdemo01/public/api/report_budget_checking_obj/doc_num=Y21PE&start_date=20190101&end_date=20220225&max_record=100/doc_type=2
 Route::get('report_budget_checking_obj/{obj}/{search}', function ($obj,$search) {
     parse_str($obj,$myArray);
     $doc_num = $myArray['doc_num'];
@@ -173,8 +177,7 @@ Route::get('report_budget_checking_obj/{obj}/{search}', function ($obj,$search) 
 //========================================================================
 // 10.emfg_shipping_order_status_obj (sqlsrv_shipping_db,SIAM_SHIPPINGDB)
 //========================================================================
-// http://10.100.1.94:8080/wissdemo01/public/api/emfg_shipping_order_status_obj/doc_num=PO19007289&start_date=20190101&end_date=20220225&max_record=100
-// http://10.100.1.94:8080/wissdemo01/public/api/emfg_shipping_order_status_obj/doc_num=&start_date=20220201&end_date=20220302&max_record=10
+// http://10.100.1.94:8080/wissdemo01/public/api/emfg_shipping_order_status_obj/doc_num=SA11AP1M0147&start_date=20210101&end_date=20220225&max_record=100
 Route::get('emfg_shipping_order_status_obj/{obj}', function ($obj) {
     parse_str($obj,$myArray);
     $doc_num = $myArray['doc_num'];
@@ -232,7 +235,7 @@ Route::get('eps_pr_productionid_error_report_obj/{obj}', function ($obj) {
 //========================================================================
 // 14. emfg_inventory_stock_out_error_obj (sqlsrv_siam_arisa_p01_db,SIAM_ARISA_P01)
 //========================================================================
-// http://10.100.1.94:8080/wissdemo01/public/api/emfg_shipping_log_event_obj/doc_num=T412&start_date=20190101&end_date=20220225&max_record=100
+// http://10.100.1.94:8080/wissdemo01/public/api/emfg_inventory_stock_out_error_obj/doc_num=T344&start_date=20220101&end_date=20990101&max_record=100
 // doc_num is PARTCODE
 Route::get('emfg_inventory_stock_out_error_obj/{obj}', function ($obj) {
     parse_str($obj,$myArray);
