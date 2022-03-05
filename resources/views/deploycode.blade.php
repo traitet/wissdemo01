@@ -73,7 +73,7 @@
 {{-- =============================================================== --}}
 {{-- CALL MAIN CONTROLLER  --}}
 {{-- =============================================================== --}}
-                <form method="POST" action="" id="deploycode">
+                <form method="GET" action="" id="deploycode">
 
 {{-- =============================================================== --}}
 {{-- PARAMTER  --}}
@@ -81,6 +81,7 @@
                     @csrf
                     <div class="container-fluid">
                         <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                            <input type="text" name="keyword" id="keyword" class="form-control" placeholder="Keyword" aria-label="Keyword">
                             <h1 class="h3 mb-0 text-gray-800">Deploy Wissdemo01 from Git to Web Server</h1>
                         </div>
                         <div class="row">
@@ -154,6 +155,10 @@
 
 </body>
 
-
-
+<?php
+if ($_GET){
+    $k = $_GET['keyword'];
+    echo "<h4>ผลการค้นหา : <span>$k</span></h4>  ";
+}
+?>
 </html>
