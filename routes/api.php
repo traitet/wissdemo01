@@ -196,7 +196,7 @@ Route::get('emfg_shipping_log_ok_obj/{obj}', function ($obj) {
     return json_encode($result);
 });
 //========================================================================
-// SAP interface Object
+// 1) interface_sap_po_obj
 //========================================================================
 // http://10.100.1.94:8080/wissdemo01/public/api/interface_sap_po_obj/doc_num=PO19007289&start_date=20190101&end_date=20220225&max_record=100
 // http://10.100.1.94:8080/wissdemo01/public/api/interface_sap_po_obj_obj/doc_num=&start_date=20220101&end_date=20220302&max_record=10
@@ -212,6 +212,9 @@ Route::get('interface_sap_po_obj/{obj}', function ($obj) {
     return json_encode($result);
 });
 
+//========================================================================
+// 2) interface_sap_rec_obj
+//========================================================================
 // http://10.100.1.94:8080/wissdemo01/public/api/interface_sap_rec_obj/doc_num=PO19007289&start_date=20190101&end_date=20220225&max_record=100
 Route::get('interface_sap_rec_obj/{obj}', function ($obj) {
     parse_str($obj,$myArray);
@@ -225,6 +228,9 @@ Route::get('interface_sap_rec_obj/{obj}', function ($obj) {
     return json_encode($result);
 });
 
+//========================================================================
+// 3) interface_sap_inv_obj
+//========================================================================
 // http://10.100.1.94:8080/wissdemo01/public/api/interface_sap_inv_obj/doc_num=PO19007289&start_date=20190101&end_date=20220225&max_record=100
 Route::get('interface_sap_inv_obj/{obj}', function ($obj) {
     parse_str($obj,$myArray);
@@ -238,7 +244,7 @@ Route::get('interface_sap_inv_obj/{obj}', function ($obj) {
     return json_encode($result);
 });
 //========================================================================
-// E-MFG Object
+// 10) E-MFG emfg_shipping_order_status_obj
 //========================================================================
 // http://10.100.1.94:8080/wissdemo01/public/api/emfg_shipping_order_status_obj/doc_num=PO19007289&start_date=20190101&end_date=20220225&max_record=100
 // http://10.100.1.94:8080/wissdemo01/public/api/emfg_shipping_order_status_obj/doc_num=&start_date=20220201&end_date=20220302&max_record=10
@@ -252,6 +258,9 @@ Route::get('emfg_shipping_order_status_obj/{obj}', function ($obj) {
     return json_encode($result);
 });
 
+//========================================================================
+// 4) E-MFG emfg_shipping_log_ok_obj
+//========================================================================
 // http://10.100.1.94:8080/wissdemo01/public/api/emfg_shipping_log_ok_obj/doc_num=PO19007289&start_date=20190101&end_date=20220225&max_record=100
 Route::get('emfg_shipping_log_ok_obj/{obj}', function ($obj) {
     parse_str($obj,$myArray);
@@ -263,6 +272,9 @@ Route::get('emfg_shipping_log_ok_obj/{obj}', function ($obj) {
     return json_encode($result);
 });
 
+//========================================================================
+// 5) E-MFG emfg_shipping_log_ng_obj
+//========================================================================
 // http://10.100.1.94:8080/wissdemo01/public/api/emfg_shipping_log_ng_obj/doc_num=PO19007289&start_date=20190101&end_date=20220225&max_record=100
 Route::get('emfg_shipping_log_ng_obj/{obj}', function ($obj) {
     parse_str($obj,$myArray);
@@ -274,6 +286,9 @@ Route::get('emfg_shipping_log_ng_obj/{obj}', function ($obj) {
     return json_encode($result);
 });
 
+//========================================================================
+// 6) E-MFG emfg_shipping_log_event_obj
+//========================================================================
 // http://10.100.1.94:8080/wissdemo01/public/api/emfg_shipping_log_event_obj/doc_num=PO19007289&start_date=20190101&end_date=20220225&max_record=100
 Route::get('emfg_shipping_log_event_obj/{obj}', function ($obj) {
     parse_str($obj,$myArray);
@@ -285,6 +300,9 @@ Route::get('emfg_shipping_log_event_obj/{obj}', function ($obj) {
     return json_encode($result);
 });
 
+//========================================================================
+// ???
+//========================================================================
 // http://10.100.1.94:8080/wissdemo01/public/api/emfg_shipping_log_event_obj/doc_num=PO19007289&start_date=20190101&end_date=20220225&max_record=100
 Route::get('emfg_inventory_stock_out_error_obj/{obj}', function ($obj) {
     parse_str($obj,$myArray);
@@ -297,7 +315,7 @@ Route::get('emfg_inventory_stock_out_error_obj/{obj}', function ($obj) {
 });
 
 //========================================================================
-// EPS Object
+// 7) EPS eps_interface_pr_po_to_planner_obj
 //========================================================================
 // http://10.100.1.94:8080/wissdemo01/public/api/eps_interface_pr_po_to_planner_obj/doc_num=PO19007289&start_date=20190101&end_date=20220225&max_record=100
 Route::get('eps_interface_pr_po_to_planner_obj/{obj}', function ($obj) {
@@ -310,6 +328,9 @@ Route::get('eps_interface_pr_po_to_planner_obj/{obj}', function ($obj) {
     return json_encode($result);
 });
 
+//========================================================================
+// 8) SA SAP INTERFACE: eps_interface_pr_po_to_planner_obj
+//========================================================================
 // http://10.100.1.94:8080/wissdemo01/public/api/eps_interface_sap_pr_outstanding_obj/doc_num=PO19007289&start_date=20190101&end_date=20220225&max_record=100
 Route::get('eps_interface_sap_pr_outstanding_obj/{obj}', function ($obj) {
     parse_str($obj,$myArray);
@@ -321,6 +342,9 @@ Route::get('eps_interface_sap_pr_outstanding_obj/{obj}', function ($obj) {
     return json_encode($result);
 });
 
+//========================================================================
+// 9) SA SAP : report_budget_checking_obj
+//========================================================================
 // http://10.100.1.94:8080/wissdemo01/public/api/report_budget_checking_obj/doc_num=PO19007289&start_date=20190101&end_date=20220225&max_record=100/doc_type=1
 Route::get('report_budget_checking_obj/{obj}/{search}', function ($obj,$search) {
     parse_str($obj,$myArray);
@@ -336,6 +360,9 @@ Route::get('report_budget_checking_obj/{obj}/{search}', function ($obj,$search) 
     return json_encode($result);
 });
 
+//========================================================================
+// ??? SA SAP : eps_pr_issue_error_report_obj
+//========================================================================
 // http://10.100.1.94:8080/wissdemo01/public/api/eps_pr_issue_error_report_obj/doc_num=PO19007289&start_date=20190101&end_date=20220225&max_record=100
 Route::get('eps_pr_issue_error_report_obj/{obj}', function ($obj) {
     parse_str($obj,$myArray);
@@ -346,6 +373,10 @@ Route::get('eps_pr_issue_error_report_obj/{obj}', function ($obj) {
     $result = DB::connection('sqlsrv_eps_db')->select("EXEC eps_pr_issue_error_report '$start_date','$end_date','$doc_num',$max_record");
     return json_encode($result);
 });
+
+//========================================================================
+// ??? SA EPS : eps_pr_productionid_error_report_obj
+//========================================================================
 //eps_pr_productionid_error_report
 Route::get('eps_pr_productionid_error_report_obj/{obj}', function ($obj) {
     parse_str($obj,$myArray);
@@ -356,6 +387,10 @@ Route::get('eps_pr_productionid_error_report_obj/{obj}', function ($obj) {
     $result = DB::connection('sqlsrv_eps_db')->select("EXEC eps_pr_productionid_error_report '$start_date','$end_date','$doc_num',$max_record");
     return json_encode($result);
 });
+
+//========================================================================
+// ??? SA EPS : eps_pr_for_cp_report_obj
+//========================================================================
 // http://10.100.1.94:8080/wissdemo01/public/api/eps_interface_pr_po_to_planner_obj/doc_num=PO19007289&start_date=20190101&end_date=20220225&max_record=100
 Route::get('eps_pr_for_cp_report_obj/{obj}', function ($obj) {
     parse_str($obj,$myArray);
@@ -368,7 +403,7 @@ Route::get('eps_pr_for_cp_report_obj/{obj}', function ($obj) {
 });
 
 //========================================================================
-// AGS J614 Object
+// ??? AGS J614 Object: edrawing_check_password_obj
 //========================================================================
 // http://10.100.1.94:8080/wissdemo01/public/api/eps_interface_pr_po_to_planner_obj/doc_num=PO19007289&start_date=20190101&end_date=20220225&max_record=100
 Route::get('edrawing_check_password_obj/{obj}', function ($obj) {
