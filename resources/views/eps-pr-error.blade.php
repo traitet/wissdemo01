@@ -109,7 +109,7 @@
                         {{-- SUBJECT --}}
                         {{-- ========================================================= --}}
                         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                            <h1 class="h5 mb-0 text-gray-800">【 EPS PR Error 】</h1>
+                            <h1 class="h5 mb-0 text-gray-800">【 EPS PR Issue Error 】</h1>
                         </div>
 
                         {{-- ========================================================= --}}
