@@ -18,7 +18,6 @@
     <!-- Styles -->
     <style>
         @import url(//fonts.googleapis.com/css?family=Lato:700);
-
         body {
             margin: 0;
             font-family: 'Lato', sans-serif;
@@ -29,11 +28,6 @@
         .container {
             width: 100%;
             height: 20%;
-            /* position: absolute;
-            left: 50%;
-            top: 50%;
-            margin-left: -150px;
-            margin-top: -100px; */
         }
 
         table {
@@ -58,43 +52,6 @@
 {{-- JAVA SCRIPT  --}}
 {{-- =============================================================== --}}
     <script>
-        $(document).ready(function() {
-            // console.log('test')
-            $('#table_id').DataTable({
-            //    dom: '<"top"fB>t<"bottom"lip>r',
-                dom:  '<lf<t>ip>'
-                //dom: 'lBfrtip',
-                // buttons: [
-                //     'copy', 'csv', 'excel'
-                // ]
-                // responsive: true,
-            });
-        });
-
-        // ================================================================
-        // DATE HANDLE
-        // ================================================================
-        function dateEndHandler() {
-            const dateStart = $('#dateStart').val();
-            console.log(dateStart);
-            $('#dateEnd').val(dateStart);
-        }
-
-        // ================================================================
-        // CLEAR FORM
-        // ================================================================
-        const clearForm = () => {
-            $('#myForm')[0].reset();
-        }
-
-        // ================================================================
-        // TAGGLE OF SLIDE BAR
-        // ================================================================
-        function toggle() {
-            $('#sidebarToggle').toggle(
-                console.log('toggle')
-            );
-        }
     </script>
 
 </head>
@@ -127,8 +84,6 @@
                             <h1 class="h3 mb-0 text-gray-800">Deploy Wissdemo01 from Git to Web Server</h1>
                         </div>
                         <div class="row">
-
-
                             <div class="col-xl-12 col-lg-12">
                                 <div class="card shadow mb-4">
                                     <div class="card-header py-3">

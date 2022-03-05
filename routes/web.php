@@ -45,6 +45,7 @@ Route::post('interface-sap-rec',[InterfaceSapRecApiController::class,'getData'])
 Route::view('interface-sap-inv','interface-sap-inv');
 Route::post('interface-sap-inv',[InterfaceSapInvApiController::class,'getData']);
 
+
 //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< E-MFG >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 // ==========================================================================
 // ROUTE GET/POST "BASIC-REPORT-API"
@@ -60,6 +61,7 @@ Route::post('emfg-shipping-log-event',[EmfgShippingLogEventApiController::class,
 
 Route::view('emfg-shipping-status','emfg-shipping-status');
 Route::post('emfg-shipping-status',[EmfgShippingStatusApiController::class,'getData']);
+
 
 //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< EPS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 // ==========================================================================
@@ -122,4 +124,7 @@ Route::get('/test', function () {
     return view('test');
 });
 
+Route::get('/deploycode', function () {
+    return view('deploycode');
+});
 
