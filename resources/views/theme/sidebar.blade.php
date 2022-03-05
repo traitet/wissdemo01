@@ -18,9 +18,9 @@
 
            <!-- Nav Item - Dashboard -->
            <li class="nav-item active">
-               <a class="nav-link" href="index.html">
+               <a class="nav-link" href="theme/index.html">
                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                   <span>theme/index.html</span></a>
+                   <span>Dashboard</span></a>
            </li>
 
            <!-- Divider -->
