@@ -94,6 +94,12 @@
                                         <div class="form-group">
                                             <input type="text" name="keyword" id="keyword" class="form-control" placeholder="Keyword" aria-label="Keyword">
                                             <button type="submit" class="btn btn-primary">Deploy to Web Server</button>
+<?php
+if ($_GET){
+    $k = $_GET['keyword'];
+    echo "<h4>ผลการค้นหา : <span>$k</span></h4>  ";
+}
+?>
                                         </div>
                                     </div>
                                 </div>
@@ -156,10 +162,5 @@
 
 </body>
 
-<?php
-if ($_GET){
-    $k = $_GET['keyword'];
-    echo "<h4>ผลการค้นหา : <span>$k</span></h4>  ";
-}
-?>
+
 </html>
