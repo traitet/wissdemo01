@@ -93,7 +93,7 @@
                                     <div class="card-body">
                                         <div class="form-group">
                                             <input type="text" name="keyword" id="keyword" class="form-control" placeholder="Keyword" aria-label="Keyword"><br>
-                                            <button type="submit" class="btn btn-primary">Deploy to Web Server</button>
+                                            <button type="submit" class="btn btn-primary">Deploy to Web Server 2022</button>
 <?php
 if ($_GET){
 
