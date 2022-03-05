@@ -82,7 +82,7 @@
                     <div class="container-fluid">
                         <div class="d-sm-flex align-items-center justify-content-between mb-4">
 
-                            <h1 class="h3 mb-0 text-gray-800">Deploy Wissdemo01 from Git to Web Server</h1>
+                            <h1 class="h3 mb-0 text-gray-800">Deploy Wissdemo01 from Git to Web Server 2022</h1>
                         </div>
                         <div class="row">
                             <div class="col-xl-12 col-lg-12">
@@ -93,7 +93,7 @@
                                     <div class="card-body">
                                         <div class="form-group">
                                             <input type="text" name="keyword" id="keyword" class="form-control" placeholder="Keyword" aria-label="Keyword"><br>
-                                            <button type="submit" class="btn btn-primary">Deploy to Web Server 2022</button>
+                                            <button type="submit" class="btn btn-primary">Deploy to Web Server </button>
 <?php
 if ($_GET){
 
