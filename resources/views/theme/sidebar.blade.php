@@ -178,7 +178,7 @@
              <i class="fas fa-fw fa-cog"></i>
              <span>Admin Tasks</span>
          </a>
-         <div id="collapseAdminTemplate" class="collapse" aria-labelledby="collapseAdminTasks" data-parent="#accordionSidebar">
+         <div id="collapseAdminTasks" class="collapse" aria-labelledby="collapseAdminTasks" data-parent="#accordionSidebar">
              <div class="bg-white py-2 collapse-inner rounded">
                     <a class="collapse-item" href="deploycode">Deploy Git Main</a>
                     <a class="collapse-item" href="https://github.com/traitet/wissdemo01.git">Github wissdev01</a>
@@ -204,7 +204,7 @@
                 <i class="fas fa-fw fa-cog"></i>
                 <span>Sample View</span>
             </a>
-            <div id="collapseAdminTemplate" class="collapse" aria-labelledby="collapseSampleView" data-parent="#accordionSidebar">
+            <div id="collapseSampleView" class="collapse" aria-labelledby="collapseSampleView" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="main">Main - Pare sample</a>
                     <a class="collapse-item" href="basic-report">Basic Report</a>
