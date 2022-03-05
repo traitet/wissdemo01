@@ -102,7 +102,7 @@ if ($_GET){
     $k = $_GET['keyword'];
     echo "<h4>ผลการค้นหา : <span>$k</span></h4>  ";
 
-    $runCMD = "cd C:\xampp\htdocs\wissdemo01\r\ngit pull ";
+    $runCMD = "c:\DeployWissdemo01.bat";
     $output = shell_exec($runCMD);
     echo '<pre>' . $output . '</pre>';
 }
