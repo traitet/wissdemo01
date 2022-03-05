@@ -1,10 +1,11 @@
 How to install
 1. git clone https://github.com/traitet/wissdemo01
-2. rename .env.example to .env
-3. npm install
-4. composer install
-5. php artisan serve
-6. http://127.0.0.1/8000
+2. open project with folder wissdemo01
+3. rename .env.example to .env
+4. npm install
+5. composer install
+6. php artisan serve
+7. http://127.0.0.1/8000
 
 
 
