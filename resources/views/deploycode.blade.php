@@ -92,12 +92,19 @@
                                     </div>
                                     <div class="card-body">
                                         <div class="form-group">
-                                            <input type="text" name="keyword" id="keyword" class="form-control" placeholder="Keyword" aria-label="Keyword">
+                                            <input type="text" name="keyword" id="keyword" class="form-control" placeholder="Keyword" aria-label="Keyword"><br>
                                             <button type="submit" class="btn btn-primary">Deploy to Web Server</button>
 <?php
 if ($_GET){
+
+
+
     $k = $_GET['keyword'];
     echo "<h4>ผลการค้นหา : <span>$k</span></h4>  ";
+
+    $runCMD = "cd C:\xampp\htdocs\wissdemo01\r\ngit pull "
+    $output = shell_exec($runCMD);
+    echo '<pre>' . $output . '</pre>';
 }
 ?>
                                         </div>
