@@ -218,7 +218,7 @@ Route::get('eps_pr_issue_error_report_obj/{obj}', function ($obj) {
 //========================================================================
 // 13.wiss_sa_eps_pr_productionid_error (sqlsrv_eps_db,SIAM_EPSDB)
 //========================================================================
-// http://10.100.1.94:8080/wissdemo01/public/api/eps_pr_productionid_error_report_obj/doc_num=PO22&start_date=20190101&end_date=20220225&max_record=100
+// http://10.100.1.94:8080/wissdemo01/public/api/eps_pr_productionid_error_report_obj/doc_num=PR22&start_date=20190101&end_date=20220225&max_record=100
 Route::get('eps_pr_productionid_error_report_obj/{obj}', function ($obj) {
     parse_str($obj,$myArray);
     $doc_num = $myArray['doc_num'];
