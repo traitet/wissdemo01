@@ -25,7 +25,7 @@ AS
         TT_PRITEM_LINE
     WHERE
         LEN(PRODUCTLINEID) > 10 AND
-        PONUM LIKE '%' + @doc_num + '%' AND
+        PRNUM LIKE '%' + @doc_num + '%' AND
         REQUIREDDATE >= @start_date AND
         REQUIREDDATE <= @end_date
     ORDER BY PRNUM
