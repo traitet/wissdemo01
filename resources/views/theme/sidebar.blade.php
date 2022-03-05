@@ -174,15 +174,15 @@
      </div>
      <!-- Nav Item - Pages Collapse Menu -->
      <li class="nav-item">
-         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAdminTemplate" aria-expanded="true" aria-controls="collapseAdminTemplate">
+         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAdminTasks" aria-expanded="true" aria-controls="collapseAdminTasks">
              <i class="fas fa-fw fa-cog"></i>
              <span>Admin Tasks</span>
          </a>
-         <div id="collapseAdminTemplate" class="collapse" aria-labelledby="collapseAdminTemplate" data-parent="#accordionSidebar">
+         <div id="collapseAdminTemplate" class="collapse" aria-labelledby="collapseAdminTasks" data-parent="#accordionSidebar">
              <div class="bg-white py-2 collapse-inner rounded">
                     <a class="collapse-item" href="deploycode">Deploy Git Main</a>
                     <a class="collapse-item" href="https://github.com/traitet/wissdemo01.git">Github wissdev01</a>
-                    <a class="collapse-item" href="assets/wissdemo01.postman_collection.json">Postman Json Collection to test API</a>
+                    <a class="collapse-item" href="assets/wissdemo01.postman_collection.json">Postman Json Collection</a>
                     <a class="collapse-item" href="assets/WISSDEMO01_Manual.pdf">Developing Manual</a>
                     <a class="collapse-item" href="https://aisingroupap01.sharepoint.com/:x:/s/ITM/EdGCycUJhoVJvGWKfUm5Y-EBog7ZRNksxqD2dvF-bVD6Ow?e=huZZMY">Develop Spec Excel Online</a>
                     <a class="collapse-item" href="dashboard">Dashboard</a>
@@ -200,11 +200,11 @@
         </div>
         <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAdminTemplate" aria-expanded="true" aria-controls="collapseAdminTemplate">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSampleView" aria-expanded="true" aria-controls="collapseSampleView">
                 <i class="fas fa-fw fa-cog"></i>
                 <span>Sample View</span>
             </a>
-            <div id="collapseAdminTemplate" class="collapse" aria-labelledby="collapseAdminTemplate" data-parent="#accordionSidebar">
+            <div id="collapseAdminTemplate" class="collapse" aria-labelledby="collapseSampleView" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="main">Main - Pare sample</a>
                     <a class="collapse-item" href="basic-report">Basic Report</a>
