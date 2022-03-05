@@ -230,7 +230,7 @@ Route::get('eps_pr_productionid_error_report_obj/{obj}', function ($obj) {
 });
 
 //========================================================================
-// 14. emfg_inventory_stock_out_error_obj (sqlsrv_shipping_db,SIAM_SHIPPINGDB)
+// 14. emfg_inventory_stock_out_error_obj (sqlsrv_siam_arisa_p01_db,SIAM_ARISA_P01)
 //========================================================================
 // http://10.100.1.94:8080/wissdemo01/public/api/emfg_shipping_log_event_obj/doc_num=T412&start_date=20190101&end_date=20220225&max_record=100
 // doc_num is PARTCODE
@@ -240,7 +240,7 @@ Route::get('emfg_inventory_stock_out_error_obj/{obj}', function ($obj) {
     $start_date = $myArray['start_date'];
     $end_date = $myArray['end_date'];
     $max_record = $myArray['max_record'];
-    $result = DB::connection('sqlsrv_shipping_db')->select("EXEC wiss_sa_emfg_inventory_stock_out_error '$start_date','$end_date','$doc_num',$max_record");
+    $result = DB::connection('sqlsrv_siam_arisa_p01_db')->select("EXEC wiss_sa_emfg_inventory_stock_out_error '$start_date','$end_date','$doc_num',$max_record");
     return json_encode($result);
 });
 
