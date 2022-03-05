@@ -183,6 +183,7 @@
                     <a class="collapse-item" href="deploycode">Deploy Git Main</a>
                     <a class="collapse-item" href="https://github.com/traitet/wissdemo01.git">Github wissdev01</a>
                     <a class="collapse-item" href="assets/wissdemo01.postman_collection.json">Postman Json Collection</a>
+                    <a class="collapse-item" href="https://www.getpostman.com/collections/e5134b877a3c293f0103">Open Postman to test api</a>
                     <a class="collapse-item" href="assets/WISSDEMO01_Manual.pdf">Developing Manual</a>
                     <a class="collapse-item" href="https://aisingroupap01.sharepoint.com/:x:/s/ITM/EdGCycUJhoVJvGWKfUm5Y-EBog7ZRNksxqD2dvF-bVD6Ow?e=huZZMY">Develop Spec Excel Online</a>
                     <a class="collapse-item" href="dashboard">Dashboard</a>
