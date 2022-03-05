@@ -181,7 +181,7 @@
             </a>
             <div id="collapseAdminTemplate" class="collapse" aria-labelledby="collapseAdminTemplate" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="main">Main - Pare</a>
+                        <a class="collapse-item" href="main">Main - Pare sample</a>
                     <a class="collapse-item" href="basic-report">Basic Report</a>
                     <a class="collapse-item" href="basic-report-api">Basic Report API</a>
                     <a class="collapse-item" href="emfg-shipping-log-ok">Shipping Log OK (Test)</a>
