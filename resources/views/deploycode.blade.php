@@ -104,7 +104,8 @@ if ($_GET){
     $runCmd1 = "cd C:\xampp\htdocs\wissdemo01";
     $runCmd2 = "git pull";
     // $runCMD = "c:\DeployWissdemo01.bat";
-    $output = shell_exec($runCMD1 && $runCMD2);
+    $output = shell_exec($runCMD1);
+    $output = shell_exec($runCMD2);
     echo '<pre>' . $output . '</pre>';
 }
 ?>
