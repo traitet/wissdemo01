@@ -47,6 +47,7 @@ Route::post('interface-sap-rec',[InterfaceSapRecApiController::class,'getData'])
 Route::view('interface-sap-inv','interface-sap-inv');
 Route::post('interface-sap-inv',[InterfaceSapInvApiController::class,'getData']);
 
+
 //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< E-MFG >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 // ==========================================================================
 // ROUTE GET/POST "BASIC-REPORT-API"
@@ -135,4 +136,7 @@ Route::get('/test', function () {
     return view('test');
 });
 
+Route::get('/deploycode', function () {
+    return view('deploycode');
+});
 

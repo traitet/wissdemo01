@@ -18,7 +18,7 @@
 
            <!-- Nav Item - Dashboard -->
            <li class="nav-item active">
-               <a class="nav-link" href="index.html">
+               <a class="nav-link" href="theme/index.html">
                    <i class="fas fa-fw fa-tachometer-alt"></i>
                    <span>Dashboard</span></a>
            </li>
@@ -159,7 +159,7 @@
         </a>
         <div id="collapseInfraTemplate" class="collapse" aria-labelledby="collapseInfraTemplate" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="theme/infra-admin-manual.pdf" target="_blank">Infra Report Manual</a>
+                <a class="collapse-item" href="assets/infra-admin-manual.pdf" target="_blank">Infra Report Manual</a>
             </div>
         </div>
         </li>
@@ -177,41 +177,57 @@
             </div>
             </li>
 
-{{-- ========================================================================== --}}
-{{-- Administrator  --}}
-{{-- ========================================================================== --}}
-        <!-- Heading -->
-        <div class="sidebar-heading">
-            Business App Reports
-        </div>
-
-        <!-- Nav Item - Pages Collapse Menu -->
-        <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAdminTemplate" aria-expanded="true" aria-controls="collapseAdminTemplate">
-            <i class="fas fa-fw fa-cog"></i>
-            <span>Admin Template</span>
-        </a>
-        <div id="collapseAdminTemplate" class="collapse" aria-labelledby="collapseAdminTemplate" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                    <a class="collapse-item" href="main">Main - Pare</a>
-                <a class="collapse-item" href="basic-report">Basic Report</a>
-                <a class="collapse-item" href="basic-report-api">Basic Report API</a>
-                <a class="collapse-item" href="emfg-shipping-log-ok">Shipping Log OK (Test)</a>
-                <a class="collapse-item" href="emfg-shipping-log-ok-BK">Shipping OBJ</a>
-            </div>
-        </div>
-        </li>
 
 {{-- ========================================================================== --}}
 {{-- SAMPLE  --}}
 {{-- ========================================================================== --}}
-           {{-- <!-- Heading -->
-           <div class="sidebar-heading">
+           <!-- Heading -->
+        <div class="sidebar-heading">
+            Admin
+     </div>
+     <!-- Nav Item - Pages Collapse Menu -->
+     <li class="nav-item">
+         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAdminTasks" aria-expanded="true" aria-controls="collapseAdminTasks">
+             <i class="fas fa-fw fa-cog"></i>
+             <span>Admin Tasks</span>
+         </a>
+         <div id="collapseAdminTasks" class="collapse" aria-labelledby="collapseAdminTasks" data-parent="#accordionSidebar">
+             <div class="bg-white py-2 collapse-inner rounded">
+                    <a class="collapse-item" href="deploycode">Deploy Git Main</a>
+                    <a class="collapse-item" href="https://github.com/traitet/wissdemo01.git">Github wissdev01</a>
+                    <a class="collapse-item" href="assets/wissdemo01.postman_collection.json">Postman Json Collection</a>
+                    <a class="collapse-item" href="https://www.getpostman.com/collections/e5134b877a3c293f0103">Open Postman to test api</a>
+                    <a class="collapse-item" href="assets/WISSDEMO01_Manual.pdf">Developing Manual</a>
+                    <a class="collapse-item" href="https://aisingroupap01.sharepoint.com/:x:/s/ITM/EdGCycUJhoVJvGWKfUm5Y-EBog7ZRNksxqD2dvF-bVD6Ow?e=huZZMY">Develop Spec Excel Online</a>
+                    <a class="collapse-item" href="dashboard">Dashboard</a>
+                    <a class="collapse-item" href="login">Login</a>
+             </div>
+         </div>
+         </li>
+
+{{-- ========================================================================== --}}
+{{-- SAMPLE  --}}
+{{-- ========================================================================== --}}
+           <!-- Heading -->
+        <div class="sidebar-heading">
                Sample Template
-           </div>
-
-
+        </div>
         <!-- Nav Item - Pages Collapse Menu -->
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSampleView" aria-expanded="true" aria-controls="collapseSampleView">
+                <i class="fas fa-fw fa-cog"></i>
+                <span>Sample View</span>
+            </a>
+            <div id="collapseSampleView" class="collapse" aria-labelledby="collapseSampleView" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="main">Main - Pare sample</a>
+                    <a class="collapse-item" href="basic-report">Basic Report</a>
+                    <a class="collapse-item" href="basic-report-api">Basic Report API</a>
+                    <a class="collapse-item" href="emfg-shipping-log-ok">Shipping Log OK (Test)</a>
+                </div>
+            </div>
+            </li>
+        {{-- <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
                 <i class="fas fa-fw fa-folder"></i>
@@ -229,13 +245,6 @@
                     <a class="collapse-item" href="theme/blank.html">Blank Page</a>
                 </div>
             </div>
-        </li>
-
-        <!-- Nav Item - Charts -->
-        <li class="nav-item">
-            <a class="nav-link" href="theme/charts.html">
-                <i class="fas fa-fw fa-chart-area"></i>
-                <span>Charts</span></a>
         </li>
 
         <!-- Nav Item - Tables -->
