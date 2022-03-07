@@ -370,7 +370,7 @@ Route::get('eps_pr_for_cp_report_obj/{obj}', function ($obj) {
 //========================================================================
 // AGS J614 Object
 //========================================================================
-// http://10.100.1.94:8080/wissdemo01/public/api/eps_interface_pr_po_to_planner_obj/doc_num=PO19007289&start_date=20190101&end_date=20220225&max_record=100
+// http://10.100.1.94:8080/wissdemo01/public/api/edrawing_check_password_obj/doc_num=&start_date=20190101&end_date=20220225&max_record=100
 Route::get('edrawing_check_password_obj/{obj}', function ($obj) {
     parse_str($obj,$myArray);
     $doc_num = $myArray['doc_num'];

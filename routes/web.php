@@ -19,6 +19,8 @@ use App\Http\Controllers\EpsPrPoToPlannerApiController;
 use App\Http\Controllers\EpsPrErrorApiController;
 use App\Http\Controllers\EpsPrProductionErrorApiController;
 use App\Http\Controllers\EpsCpApprovePrApiController;
+use App\Http\Controllers\EmfgInventoryStockOutErrorApiController;
+use App\Http\Controllers\EdrawingCheckPasswordApiController;
 
 // ==========================================================================
 // ROUTE GET/POST "BASIC-REPORT-API"
@@ -61,6 +63,9 @@ Route::post('emfg-shipping-log-event',[EmfgShippingLogEventApiController::class,
 Route::view('emfg-shipping-status','emfg-shipping-status');
 Route::post('emfg-shipping-status',[EmfgShippingStatusApiController::class,'getData']);
 
+Route::view('emfg-inventory-stock-out-error','emfg-inventory-stock-out-error');
+Route::post('emfg-inventory-stock-out-error',[EmfgInventoryStockOutErrorApiController::class,'getData']);
+
 //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< EPS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 // ==========================================================================
 // ROUTE GET/POST "BASIC-REPORT-API"
@@ -82,6 +87,14 @@ Route::post('eps-pr-production-error',[EpsPrProductionErrorApiController::class,
 
 Route::view('eps-cp-approve-pr','eps-cp-approve-pr');
 Route::post('eps-cp-approve-pr',[EpsCpApprovePrApiController::class,'getData']);
+
+//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< E-Drawing >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// ==========================================================================
+// ROUTE GET/POST "BASIC-REPORT-API"
+// ==========================================================================
+Route::view('edrawing-check-password','edrawing-check-password');
+Route::post('edrawing-check-password',[EdrawingCheckPasswordApiController::class,'getData']);
+
 
 // ==========================================================================
 // ROUTE GET/POST "MAIN"

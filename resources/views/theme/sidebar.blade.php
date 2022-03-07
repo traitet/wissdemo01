@@ -59,6 +59,7 @@
                         <a class="collapse-item" href="emfg-shipping-log-ok">OK Log</a>
                         <a class="collapse-item" href="emfg-shipping-log-ng">NG Log</a>
                         <a class="collapse-item" href="emfg-shipping-log-event">Event Log</a>
+                        <a class="collapse-item" href="emfg-inventory-stock-out-error">Stock Error</a>
                    </div>
                </div>
            </li>
@@ -78,7 +79,19 @@
                      <a class="collapse-item" href="eps-cp-approve-pr">CP Approve PR</a>
                 </div>
             </div>
-        </li>
+            </li>
+            <!-- Nav Item - Utilities Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseEdrawing" aria-expanded="true" aria-controls="collapseEdrawing">
+                    <i class="fas fa-fw fa-map"></i>
+                    <span>Edrawing</span>
+                </a>
+                <div id="collapseEdrawing" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="edrawing-check-password">Password</a>
+                    </div>
+                </div>
+            </li>
 
            <!-- Divider -->
            <hr class="sidebar-divider">
