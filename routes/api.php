@@ -302,7 +302,7 @@ Route::get('wiss_sa_add_ibg_dept/{obj}', function ($obj) {
 //========================================================================
 // 2.wiss_sa_add_ibg_user (sqlsrv_siam_arisa_p01_db,SIAM_ARISA_P01)
 //========================================================================
-// http://10.100.1.94:8080/wissdemo01/public/api/wiss_sa_add_ibg_dept/emp_id=9999&username=satit_po&name=satit&surname=pongpimol&level=LV0040&sect_id=A100&email=satit_po@aisin-ap.com&role=1
+// http://10.100.1.94:8080/wissdemo01/public/api/wiss_sa_add_ibg_user/emp_id=9999&username=satit_po&name=satit&surname=pongpimol&level=LV0040&sect_id=A100&email=satit_po@aisin-ap.com&role=1
 // --level LV0040: <Section, LV0050:Section Mgr, LV0060:Dept Mgr, LV0070:Div Mgr, LV0080:DMD, LV0090:MD
 // --role: 1) Normal user read only 2) Nomal user can edit 3) CP user read only 4) CP user can edit
 Route::get('wiss_sa_add_ibg_user/{obj}', function ($obj) {
