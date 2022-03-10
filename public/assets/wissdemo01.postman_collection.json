@@ -8,7 +8,7 @@
 	},
 	"item": [
 		{
-			"name": "1.wiss-reports",
+			"name": "1.wiss reports",
 			"description": "",
 			"item": [
 				{
@@ -179,9 +179,32 @@
 			]
 		},
 		{
-			"name": "2. wiss fix program",
-			"description": "",
-			"item": []
+			"name": "2. wiss fix programs",
+			"description": "1. fixed programs\n2. Additional features",
+			"item": [
+				{
+					"name": "1.wiss_sa_add_ibg_dept",
+					"request": {
+						"url": "http://10.100.1.94:8080/wissdemo01/public/api/wiss_sa_add_ibg_dept/emp_id=999&dept_code=A100&is_readonly=N",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": "    @emp_id varchar(8),\r\n    @dept_code varchar(30),\r\n    @is_readonly varchar(2)"
+					},
+					"response": []
+				},
+				{
+					"name": "2. wiss_sa_add_ibg_user",
+					"request": {
+						"url": "http://10.100.1.94:8080/wissdemo01/public/api/wiss_sa_add_ibg_user/emp_id=9999&username=satit_po&name=satit&surname=pongpimol&level=LV0040&sect_id=A100&email=satit_po@aisin-ap.com&role=1",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": "    @emp_id varchar(8),\r\n    @username varchar(30),\r\n    @name varchar(30),\r\n    @surname varchar(30),\r\n    @level varchar(30),\r\n    @sect_id varchar(30),\r\n    @email varchar(30),\r\n    @role int"
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
