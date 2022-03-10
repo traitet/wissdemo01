@@ -36,7 +36,9 @@ Route::resource('wiss-apis', 'App\Http\Controllers\WissApiController');
 //     return json_encode($result);
 // });
 
-
+// **********************************************************************************************************************************************
+// PART 1 : REPORT
+// **********************************************************************************************************************************************
 
 //========================================================================
 // 1) interface_sap_po_obj  (DEFAULT, SIAM_EPSINFDB)
@@ -281,17 +283,39 @@ Route::get('eps_pr_for_cp_report_obj/{obj}', function ($obj) {
     return json_encode($result);
 });
 
-
+// **********************************************************************************************************************************************
+// PART 2 : FIX PROGRAM
+// **********************************************************************************************************************************************
 //========================================================================
-// 14. [wiss_sa_add_ibg_dept] ([wiss_sa_add_ibg_dept],SIAM_ARISA_P01)
+// 1.wiss_sa_add_ibg_dept (sqlsrv_siam_arisa_p01_db,SIAM_ARISA_P01)
 //========================================================================
-// http://10.100.1.94:8080/wissdemo01/public/api/wiss_sa_add_ibg_dept_obj/emp_id=999&dept_code=A100&is_readonly=N
-Route::get('wiss_sa_add_ibg_dept_obj/{obj}', function ($obj) {
+// http://10.100.1.94:8080/wissdemo01/public/api/wiss_sa_add_ibg_dept/emp_id=999&dept_code=A100&is_readonly=N
+Route::get('wiss_sa_add_ibg_dept/{obj}', function ($obj) {
     parse_str($obj,$myArray);
     $emp_id = $myArray['emp_id'];
     $dept_code = $myArray['dept_code'];
     $is_readonly = $myArray['is_readonly'];
     $result = DB::connection('sqlsrv_siam_arisa_p01_db')->select("EXEC wiss_sa_add_ibg_dept '$emp_id','$dept_code','$is_readonly'");
+    return json_encode($result);
+});
+
+//========================================================================
+// 2.wiss_sa_add_ibg_user (sqlsrv_siam_arisa_p01_db,SIAM_ARISA_P01)
+//========================================================================
+// http://10.100.1.94:8080/wissdemo01/public/api/wiss_sa_add_ibg_dept/emp_id=9999&username=satit_po&name=satit&surname=pongpimol&level=LV0040&sect_id=A100&email=satit_po@aisin-ap.com&role=1
+// --level LV0040: <Section, LV0050:Section Mgr, LV0060:Dept Mgr, LV0070:Div Mgr, LV0080:DMD, LV0090:MD
+// --role: 1) Normal user read only 2) Nomal user can edit 3) CP user read only 4) CP user can edit
+Route::get('wiss_sa_add_ibg_user/{obj}', function ($obj) {
+    parse_str($obj,$myArray);
+    $emp_id = $myArray['emp_id'];
+    $username = $myArray['username'];
+    $name = $myArray['name'];
+    $surname = $myArray['surname'];
+    $level = $myArray['level'];
+    $sect_id = $myArray['sect_id'];
+    $email = $myArray['email'];
+    $role = $myArray['role'];
+    $result = DB::connection('sqlsrv_siam_arisa_p01_db')->select("EXEC wiss_sa_add_ibg_user '$emp_id','$username','$name','$surname','$level','$sect_id','$email','$role'");
     return json_encode($result);
 });
 
