@@ -92,7 +92,7 @@
                                     </div>
                                     <div class="card-body">
                                         <div class="form-group">
-                                            <input type="text" name="keyword" id="keyword" class="form-control" placeholder="Keyword" aria-label="Keyword"><br>
+                                            <input type="text" name="comment" id="comment" class="form-control" placeholder="Fill deploy comment" aria-label="Comment"><br>
                                             <button type="submit" class="btn btn-primary">Deploy code | git pull</button><br>
 
 
