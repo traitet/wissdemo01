@@ -281,3 +281,17 @@ Route::get('eps_pr_for_cp_report_obj/{obj}', function ($obj) {
     return json_encode($result);
 });
 
+
+//========================================================================
+// 14. [wiss_sa_add_ibg_dept] ([wiss_sa_add_ibg_dept],SIAM_ARISA_P01)
+//========================================================================
+// http://10.100.1.94:8080/wissdemo01/public/api/wiss_sa_add_ibg_dept_obj/emp_id=999&dept_code=A100&is_readonly=N
+Route::get('wiss_sa_add_ibg_dept_obj/{obj}', function ($obj) {
+    parse_str($obj,$myArray);
+    $emp_id = $myArray['emp_id'];
+    $dept_code = $myArray['dept_code'];
+    $is_readonly = $myArray['is_readonly'];
+    $result = DB::connection('sqlsrv_siam_arisa_p01_db')->select("EXEC wiss_sa_add_ibg_dept '$emp_id','$dept_code','$is_readonly'");
+    return json_encode($result);
+});
+
