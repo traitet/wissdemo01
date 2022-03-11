@@ -715,7 +715,7 @@
             </div>
         </div>
 
-        <!-- @include('theme.footer') -->
+        @include('theme.footer')
 
 </body>
 
