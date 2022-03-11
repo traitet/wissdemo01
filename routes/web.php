@@ -136,7 +136,7 @@ Route::get('/test', function () {
     return view('test');
 });
 
-Route::get('/deploycode', function () {
-    return view('deploycode');
+Route::get('/deploy-code', function () {
+    return view('deploy-code');
 });
 

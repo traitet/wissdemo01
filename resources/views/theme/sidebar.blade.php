@@ -193,7 +193,7 @@
          </a>
          <div id="collapseAdminTasks" class="collapse" aria-labelledby="collapseAdminTasks" data-parent="#accordionSidebar">
              <div class="bg-white py-2 collapse-inner rounded">
-                    <a class="collapse-item" href="deploycode">Deploy Git Main</a>
+                    <a class="collapse-item" href="deploy-code">Deploy Git Main</a>
                     <a class="collapse-item" href="https://github.com/traitet/wissdemo01.git">Github wissdev01</a>
                     <a class="collapse-item" href="assets/wissdemo01.postman_collection.json">Postman Json Collection</a>
                     <a class="collapse-item" href="https://www.getpostman.com/collections/e5134b877a3c293f0103">Open Postman to test api</a>

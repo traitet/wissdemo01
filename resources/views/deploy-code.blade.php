@@ -101,7 +101,7 @@
 {{-- =============================================================== --}}
 <?php
 if ($_GET){
-    $k = $_GET['keyword'];
+    $k = $_GET['comment'];
     echo "<h4>ผลการ Deploy Code เป็นดังนี้ <span>$k</span></h4>  ";
     // $runCmd1 = "cd C:\xampp\htdocs\wissdemo01";
     // $runCmd2 = "git pull";
