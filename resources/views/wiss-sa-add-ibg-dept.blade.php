@@ -200,6 +200,35 @@
                     </div>
                 </form>
 
+{{-- ========================================================= --}}
+{{-- TEST OUTPUT CHART--}}
+{{-- ========================================================= --}}
+{{-- <div class="container-fluid">
+
+    <div class="row">
+        <div class="col-xl-12 col-lg-12">
+            <div class="card shadow mb-4">
+
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <?php if (isset($result)) {
+                            foreach ($result as $keyResult => $row) {
+                                ?>
+                                {{$row['status']}}
+                                {{$row['message']}}
+                        <?php
+                            }
+                        }
+                        ?>
+                        <i class="fas fa-fw fa-check-square"></i></br>
+                        <i class="fas fa-fw fa-square"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> --}}
+
                 <footer class="sticky-footer bg-white">
                     <div class="container my-auto">
                         <div class="copyright text-center my-auto">
