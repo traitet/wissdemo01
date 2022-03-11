@@ -21,8 +21,9 @@ use App\Http\Controllers\EpsPrProductionErrorApiController;
 use App\Http\Controllers\EpsCpApprovePrApiController;
 use App\Http\Controllers\EmfgInventoryStockOutErrorApiController;
 use App\Http\Controllers\EdrawingCheckPasswordApiController;
-
-//################################################### Report #######################################################
+//##################################################################################################################
+//#                                                    Report                                                      #
+//##################################################################################################################
 // ==========================================================================
 // ROUTE GET/POST "BASIC-REPORT-API"
 // ==========================================================================
@@ -99,13 +100,22 @@ Route::post('edrawing-check-password',[EdrawingCheckPasswordApiController::class
 
 
 
-//################################################### Maintain Program #######################################################
+//##################################################################################################################
+//#                                           Maintain Program                                                     #
+//##################################################################################################################
 // ==========================================================================
 // ROUTE GET/POST "FIX-POROGRAM-API"
 // ==========================================================================
-//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< I-BG >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-Route::view('sa_add_ibg_dept','edrawing-check-password');
-Route::post('edrawing-check-password',[EdrawingCheckPasswordApiController::class,'getData']);
+//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< I-BG >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Route::view('wiss-sa-add-ibg-dept','wiss-sa-add-ibg-dept');
+Route::post('wiss-sa-add-ibg-dept',[IbgAdddeptApiController::class,'getData']);
+
+Route::view('wiss_sa_add_ibg_user','wiss_sa_add_ibg_user');
+Route::post('wiss_sa_add_ibg_user',[IbgAddUserApiController::class,'getData']);
+
+//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< EPS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Route::view('wiss_sa_add_eps_investment','wiss_sa_add_eps_investment');
+Route::post('wiss_sa_add_eps_investment',[EpsAddInvestmentApiController::class,'getData']);
 
 
 // ==========================================================================
