@@ -22,6 +22,7 @@ use App\Http\Controllers\EpsCpApprovePrApiController;
 use App\Http\Controllers\EmfgInventoryStockOutErrorApiController;
 use App\Http\Controllers\EdrawingCheckPasswordApiController;
 
+//################################################### Report #######################################################
 // ==========================================================================
 // ROUTE GET/POST "BASIC-REPORT-API"
 // ==========================================================================
@@ -94,6 +95,16 @@ Route::post('eps-cp-approve-pr',[EpsCpApprovePrApiController::class,'getData']);
 // ROUTE GET/POST "BASIC-REPORT-API"
 // ==========================================================================
 Route::view('edrawing-check-password','edrawing-check-password');
+Route::post('edrawing-check-password',[EdrawingCheckPasswordApiController::class,'getData']);
+
+
+
+//################################################### Maintain Program #######################################################
+// ==========================================================================
+// ROUTE GET/POST "FIX-POROGRAM-API"
+// ==========================================================================
+//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< I-BG >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Route::view('sa_add_ibg_dept','edrawing-check-password');
 Route::post('edrawing-check-password',[EdrawingCheckPasswordApiController::class,'getData']);
 
 
