@@ -15,6 +15,7 @@ ALTER PROCEDURE [dbo].[wiss_sa_add_eps_investment]
 WITH EXEC AS CALLER
 AS
 BEGIN
+    SET NOCOUNT ON;
 -- =========================================================
 -- DECARE VARAIBLE
 -- =========================================================
@@ -94,7 +95,7 @@ IF @@ROWCOUNT = 0
 -- =========================================================
     IF @isinsert = 1 BEGIN
         SET @message = 'Insert success. Investment ID: '  + @investment_id
-        SET @status = 'true'        
+        SET @status = 'true'
     END
     ELSE
     BEGIN
