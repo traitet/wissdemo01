@@ -319,3 +319,13 @@ Route::get('wiss_sa_add_ibg_user/{obj}', function ($obj) {
     return json_encode($result);
 });
 
+//========================================================================
+// 3.wiss_sa_add_eps_insertment (sqlsrv_eps_db, SIAM_EPSDB)
+//========================================================================
+// http://10.100.1.94:8080/wissdemo01/public/api/wiss_sa_add_eps_insertment/investment-id=S21PE064AS01
+Route::get('wiss_sa_add_eps_insertment/{obj}', function ($obj) {
+    parse_str($obj,$myArray);
+    $investment_id = $myArray['investment_id'];
+    $result = DB::connection('sqlsrv_eps_db')->select("EXEC wiss_sa_add_eps_insertment '$investment_id'");
+    return json_encode($result);
+});
