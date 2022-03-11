@@ -257,7 +257,8 @@
             </a>
             <div id="collapseSampleView" class="collapse" aria-labelledby="collapseSampleView" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="main">Main - Pare sample</a>
+                    <a class="collapse-item" href="main">Main - Pare sample</a>
+                    <a class="collapse-item" href="nick-main">Main - Nick sample</a>
                     <a class="collapse-item" href="basic-report">Basic Report</a>
                     <a class="collapse-item" href="basic-report-api">Basic Report API</a>
                     <a class="collapse-item" href="emfg-shipping-log-ok">Shipping Log OK (Test)</a>

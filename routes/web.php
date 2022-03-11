@@ -129,6 +129,8 @@ Route::post('wiss-sa-add-eps-investment',[EpsAddInvestmentApiController::class,'
 Route::view('main','main');
 Route::post('main',[MainController::class,'getData']);
 
+
+
 // ==========================================================================
 // ROUTE VIEW
 // ==========================================================================
@@ -147,6 +149,10 @@ Route::get('/', function () {
 
 Route::get('/demo', function () {
     return view('demo');
+});
+
+Route::get('/nick-main', function () {
+    return view('nick-main');
 });
 
 
