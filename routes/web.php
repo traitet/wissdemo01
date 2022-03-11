@@ -1,8 +1,9 @@
 <?php
 
-// ==========================================================================
-// IMPORT
-// ==========================================================================
+//##################################################################################################################
+//#                                            Import Controller                                                   #
+//##################################################################################################################
+//=================================================== Reports ======================================================
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\BasicReportApiController;
@@ -21,6 +22,10 @@ use App\Http\Controllers\EpsPrProductionErrorApiController;
 use App\Http\Controllers\EpsCpApprovePrApiController;
 use App\Http\Controllers\EmfgInventoryStockOutErrorApiController;
 use App\Http\Controllers\EdrawingCheckPasswordApiController;
+//================================================== Maintain ======================================================
+use App\Http\Controllers\IbgAddDeptApiController;
+use App\Http\Controllers\IbgAddUserApiController;
+use App\Http\Controllers\EpsAddInvestmentApiController;
 //##################################################################################################################
 //#                                                    Report                                                      #
 //##################################################################################################################
@@ -108,14 +113,14 @@ Route::post('edrawing-check-password',[EdrawingCheckPasswordApiController::class
 // ==========================================================================
 //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< I-BG >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 Route::view('wiss-sa-add-ibg-dept','wiss-sa-add-ibg-dept');
-Route::post('wiss-sa-add-ibg-dept',[IbgAdddeptApiController::class,'getData']);
+Route::post('wiss-sa-add-ibg-dept',[IbgAddDeptApiController::class,'getData']);
 
-Route::view('wiss_sa_add_ibg_user','wiss_sa_add_ibg_user');
-Route::post('wiss_sa_add_ibg_user',[IbgAddUserApiController::class,'getData']);
+Route::view('wiss-sa-add-ibg-user','wiss-sa-add-ibg-user');
+Route::post('wiss-sa-add-ibg-user',[IbgAddUserApiController::class,'getData']);
 
 //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< EPS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-Route::view('wiss_sa_add_eps_investment','wiss_sa_add_eps_investment');
-Route::post('wiss_sa_add_eps_investment',[EpsAddInvestmentApiController::class,'getData']);
+Route::view('wiss-sa-add-eps-investment','wiss-sa-add-eps-investment');
+Route::post('wiss-sa-add-eps-investment',[EpsAddInvestmentApiController::class,'getData']);
 
 
 // ==========================================================================

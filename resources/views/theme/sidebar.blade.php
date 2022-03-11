@@ -96,6 +96,43 @@
            <!-- Divider -->
            <hr class="sidebar-divider">
 {{-- ========================================================================== --}}
+{{-- MAINTAIN APP --}}
+{{-- ========================================================================== --}}
+           <!-- Heading -->
+           <div class="sidebar-heading">
+            Maintain Application
+        </div>
+
+        <!-- Nav Item - Utilities Collapse Menu -->
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseMaintainIBG" aria-expanded="true" aria-controls="collapseMaintainIBG">
+                <i class="fas fa-fw fa-wrench"></i>
+                <span>I-BG</span>
+            </a>
+            <div id="collapseMaintainIBG" class="collapse" aria-labelledby="collapseMaintainIBG" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                     <a class="collapse-item" href="wiss-sa-add-ibg-dept">Add Dept</a>
+                     <a class="collapse-item" href="wiss-sa-add-ibg-user">Add User</a>
+                </div>
+            </div>
+        </li>
+        <!-- Nav Item - Utilities Collapse Menu -->
+        <li class="nav-item">
+         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseMaintainEPS" aria-expanded="true" aria-controls="collapseMaintainEPS">
+             <i class="fas fa-fw fa-shopping-cart"></i>
+             <span>EPS</span>
+         </a>
+         <div id="collapseMaintainEPS" class="collapse" aria-labelledby="collapseMaintainEPS" data-parent="#accordionSidebar">
+             <div class="bg-white py-2 collapse-inner rounded">
+                  <a class="collapse-item" href="wiss-sa-add-eps-investment">Add Investment</a>
+             </div>
+         </div>
+         </li>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider">
+
+{{-- ========================================================================== --}}
 {{-- INFRA --}}
 {{-- ========================================================================== --}}
            <!-- Heading -->
