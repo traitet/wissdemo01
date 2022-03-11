@@ -23,10 +23,12 @@ BEGIN
   	DECLARE	@createtime		VARCHAR(6)			= REPLACE(CONVERT(VARCHAR(8),GETDATE(),108), ':','')
     DECLARE @message        VARCHAR(255)		= ''
     DECLARE @status         VARCHAR(5)		    = 'false'
+	DECLARE @rowid          int                 = 0
+
 -- =========================================================
 -- GET INVESTMENT
 -- =========================================================
-SELECT INVESTMENTID FROM TT_PRFORM_LINE where INVESTMENTID = @investment_id AND PRNUM = 'PR00000002'
+SELECT @rowid = PRFORM_LINE_ROWID FROM TT_PRFORM_LINE where INVESTMENTID = @investment_id AND PRNUM = 'PR00000002'
 
 -- =========================================================
 -- FOUND INVESTMENT ID
@@ -92,7 +94,7 @@ IF @@ROWCOUNT = 0
 -- =========================================================
     IF @isinsert = 1 BEGIN
         SET @message = 'Insert success. Investment ID: '  + @investment_id
-        SET @status = 'true'
+        SET @status = 'true'        
     END
     ELSE
     BEGIN
