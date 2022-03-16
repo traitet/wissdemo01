@@ -361,9 +361,9 @@ Route::get('wiss_atac_emfg_add_shelf/{obj}', function ($obj) {
 // 6.wiss_sa_ifin_revert_doc (sqlsrv_siam_laser_p01_db, SIAM_LASER_P01)
 //========================================================================
 // http://10.100.1.94:8080/wissdemo01/public/api/wiss_sa_ifin_revert_doc/doc_num=AV20000001
-Route::get('wiss_atac_emfg_add_shelf/{obj}', function ($obj) {
+Route::get('wiss_sa_ifin_revert_doc/{obj}', function ($obj) {
     parse_str($obj,$myArray);
     $doc_num  = $myArray['doc_num'];
-    $result = DB::connection('sqlsrv_siam_laser_p01_db')->select("EXEC wiss_atac_emfg_add_shelf @doc_num  = '$doc_num'");
+    $result = DB::connection('sqlsrv_siam_laser_p01_db')->select("EXEC wiss_sa_ifin_revert_doc @doc_num  = '$doc_num'");
     return json_encode($result);
 });
