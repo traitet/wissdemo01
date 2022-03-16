@@ -179,7 +179,7 @@
 			]
 		},
 		{
-			"name": "2. wiss maintain masters",
+			"name": "2. wiss fix programs",
 			"description": "1. fixed programs\n2. Additional features",
 			"item": [
 				{
@@ -201,17 +201,6 @@
 						"header": [],
 						"body": {},
 						"description": "    @emp_id varchar(8),\r\n    @username varchar(30),\r\n    @name varchar(30),\r\n    @surname varchar(30),\r\n    @level varchar(30),\r\n    @sect_id varchar(30),\r\n    @email varchar(30),\r\n    @role int"
-					},
-					"response": []
-				},
-				{
-					"name": "3.wiss_sa_add_eps_investment",
-					"request": {
-						"url": "http://10.100.1.94:8080/wissdemo01/public/api/wiss_sa_add_eps_investment/investment_id=S21PE064AS01",
-						"method": "GET",
-						"header": [],
-						"body": {},
-						"description": "@investment_id varchar(20)"
 					},
 					"response": []
 				}

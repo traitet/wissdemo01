@@ -33,37 +33,45 @@ SET @DATEUPDATE                     =FORMAT(GETDATE(),'yyyyMMdd')
 SET @TIMEUPDATE                     =FORMAT(GETDATE(),'HHmmss')
 
 BEGIN TRY
+    -- ===========================================================
+    -- NO COUNT FOR UPDATE, INSERT, DELETE
+    -- ===========================================================
+    SET NOCOUNT ON;
+    -- ===========================================================
+    -- SELECT
+    -- ===========================================================
+    SELECT TOP(1) @RID = B.WFTTWFXXXXLRID  , @CURRENTSTEP = B.STAGENAME FROM WFTTWFXXXXH AS A
+    JOIN
+    WFTTWFXXXXL AS B
+    ON A.WFTTWFXXXXHRID = B.WFTTWFXXXXHRID
+    WHERE A.DOCNUM = @DOC_NUM
+    ORDER BY  B.WFTTWFXXXXLRID DESC
+    -- ===========================================================
+    -- DELETE
+    -- ===========================================================
+    DELETE WFTTWFXXXXL  WHERE WFTTWFXXXXLRID  = @RID
+    -- ===========================================================
+    -- SELECT
+    -- ===========================================================
+    SELECT
+        TOP(1) @RID = B.WFTTWFXXXXLRID,
+        @NEWSTEP = B.STAGENAME
+    FROM
+        WFTTWFXXXXH AS A JOIN
+        WFTTWFXXXXL AS B ON A.WFTTWFXXXXHRID = B.WFTTWFXXXXHRID
+    WHERE
+        A.DOCNUM = @DOC_NUM
+    ORDER BY
+        B.WFTTWFXXXXLRID DESC
+    -- ===========================================================
+    --  UPDATE
+    -- ===========================================================
+    UPDATE WFTTWFXXXXL SET ACTION =''  WHERE WFTTWFXXXXLRID  = @RID
 
-
-
-SELECT TOP(1) @RID = B.WFTTWFXXXXLRID  , @CURRENTSTEP = B.STAGENAME FROM WFTTWFXXXXH AS A
-JOIN
-WFTTWFXXXXL AS B
-ON A.WFTTWFXXXXHRID = B.WFTTWFXXXXHRID
-WHERE A.DOCNUM = @DOC_NUM
-ORDER BY  B.WFTTWFXXXXLRID DESC
-
-
-delete WFTTWFXXXXL  WHERE WFTTWFXXXXLRID  = @RID
-
-
-SELECT
-    TOP(1) @RID = B.WFTTWFXXXXLRID,
-    @NEWSTEP = B.STAGENAME
-FROM
-    WFTTWFXXXXH AS A JOIN
-    WFTTWFXXXXL AS B ON A.WFTTWFXXXXHRID = B.WFTTWFXXXXHRID
-WHERE
-    A.DOCNUM = @DOC_NUM
-ORDER BY
-    B.WFTTWFXXXXLRID DESC
-
-UPDATE WFTTWFXXXXL SET ACTION =''  WHERE WFTTWFXXXXLRID  = @RID
-
-
-SET @MESSAGE ='REVERSE DOCUMENT NUMBER : '+  @doc_num  +' FORM '+ @CURRENTSTEP +'  TO '+@NEWSTEP +'  COMPLETED.'
-SET @SPSTATUS ='true'
-  SELECT @SPSTATUS AS status,@MESSAGE AS message
+    --  RETURN
+    SET @MESSAGE ='REVERSE DOCUMENT NUMBER : '+  @doc_num  +' FORM '+ @CURRENTSTEP +'  TO '+@NEWSTEP +'  COMPLETED.'
+    SET @SPSTATUS ='true'
+    SELECT @SPSTATUS AS status,@MESSAGE AS message
 
 END TRY
 BEGIN CATCH
