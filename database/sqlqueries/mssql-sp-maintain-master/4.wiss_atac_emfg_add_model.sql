@@ -34,6 +34,7 @@ SET @TIMEUPDATE =FORMAT(GETDATE(),'HHmmss')
 
 BEGIN TRY
 	BEGIN
+    SET NOCOUNT ON;
 			INSERT INTO [ATAC_ARISA_P02].[DBO].[GBTMMODELXX]
 			([MODELCODE]
 			      ,[MODELNAME]
@@ -102,4 +103,5 @@ BEGIN CATCH
 	SELECT @SPSTATUS AS status, ERROR_MESSAGE() AS message
 END CATCH
 
--- EXEC	wiss_atac_emfg_add_model @model_code = 'MD00000170', @model_name ='TCC [D41E]', @pdt_grp_code = 'PG00000001'
+-- USE ATAC_ARISA_P02
+-- EXEC wiss_atac_emfg_add_model @model_code = 'MD00000170', @model_name ='TCC [D41E]', @pdt_grp_code = 'PG00000001'

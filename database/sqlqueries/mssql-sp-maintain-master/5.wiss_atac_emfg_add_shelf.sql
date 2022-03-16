@@ -32,68 +32,69 @@ DECLARE @SPSTATUS VARCHAR(10)       ='false'
 
 BEGIN TRY
 BEGIN
-INSERT INTO   [ATAC_ARISA_P02].[dbo].[GBTMSHELFCD]
-([SHELFCODE]
-      ,[SHELFNAME]
-      ,[SLOCCODE]
-      ,[BOXBALANCE]
-      ,[BOXMAX]
-      ,[BOXMIN]
-      ,[BOXTOTAL]
-      ,[PCSBALANCE]
-      ,[PCSMAX]
-      ,[DESCRIPTION]
-      ,[COMPCODE]
-      ,[PLANTCODE]
-      ,[STATUS]
-      ,[ENABLE]
-      ,[CREATEBY]
-      ,[CREATEDATE]
-      ,[CREATETIME]
-      ,[EDITBY]
-      ,[EDITDATE]
-      ,[EDITTIME]
-      ,[COMMENT1]
-      ,[COMMENT2]
-      ,[COMMENT3]
-      ,[COMMENT4]
-      ,[COMMENT5]
-      ,[NUMERIC1]
-      ,[NUMERIC2]
-      ,[TEXT1]
-      ,[TEXT2])
+    SET NOCOUNT ON;
+    INSERT INTO   [ATAC_ARISA_P02].[dbo].[GBTMSHELFCD]
+    ([SHELFCODE]
+        ,[SHELFNAME]
+        ,[SLOCCODE]
+        ,[BOXBALANCE]
+        ,[BOXMAX]
+        ,[BOXMIN]
+        ,[BOXTOTAL]
+        ,[PCSBALANCE]
+        ,[PCSMAX]
+        ,[DESCRIPTION]
+        ,[COMPCODE]
+        ,[PLANTCODE]
+        ,[STATUS]
+        ,[ENABLE]
+        ,[CREATEBY]
+        ,[CREATEDATE]
+        ,[CREATETIME]
+        ,[EDITBY]
+        ,[EDITDATE]
+        ,[EDITTIME]
+        ,[COMMENT1]
+        ,[COMMENT2]
+        ,[COMMENT3]
+        ,[COMMENT4]
+        ,[COMMENT5]
+        ,[NUMERIC1]
+        ,[NUMERIC2]
+        ,[TEXT1]
+        ,[TEXT2])
 
-VALUES(
+    VALUES(
 
-  @sloc_code
-      ,@shelf_name
-      , @sloc_code
-      ,0
-      ,0
-      ,0
-      ,0
-      ,0
-      ,0
-      ,''
-        ,@COMPCODE
-      ,@PLANTCODE
-      ,@STATUS
-      ,@ENABLE
-      ,@USERNAME
-      ,@UPDATEDATE
-      ,@UPDATETIME
-      ,@USERNAME
-      ,@UPDATEDATE
-      ,@UPDATETIME
-      ,''
-      ,''
-      ,''
-      ,''
-      ,''
-      ,0
-      ,0
-      ,''
-      ,'')
+    @sloc_code
+        ,@shelf_name
+        , @sloc_code
+        ,0
+        ,0
+        ,0
+        ,0
+        ,0
+        ,0
+        ,''
+            ,@COMPCODE
+        ,@PLANTCODE
+        ,@STATUS
+        ,@ENABLE
+        ,@USERNAME
+        ,@UPDATEDATE
+        ,@UPDATETIME
+        ,@USERNAME
+        ,@UPDATEDATE
+        ,@UPDATETIME
+        ,''
+        ,''
+        ,''
+        ,''
+        ,''
+        ,0
+        ,0
+        ,''
+        ,'')
 	    SET  @NEWID = @@IDENTITY
 		IF @NEWID >0
 		BEGIN
@@ -120,4 +121,5 @@ END CATCH
 -- SELECT * FROM [ATAC_ARISA_P02].[dbo].[GBTMSHELFCD] ORDER BY  [GBTMSHELFCDRID]  DESC
 -- DELETE [ATAC_ARISA_P02].[dbo].[GBTMSHELFCD] WHERE  [GBTMSHELFCDRID] =2330
 
+-- USE ATAC_ARISA_P02
 -- EXEC	wiss_atac_emfg_add_shelf @sloc_code ='ATA400S01',@shelf_name = 'MA0450', @shelf_code = 'SH-MA450'
