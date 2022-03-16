@@ -333,14 +333,14 @@ Route::get('wiss_sa_add_eps_investment/{obj}', function ($obj) {
 //========================================================================
 // 4.wiss_atac_emfg_add_model (sqlsrv_atac_arisa_p02_db, ATAC_ARISA_P02)
 //========================================================================
-// http://10.100.1.94:8080/wissdemo01/public/api/wiss_sa_add_eps_investment/model_code=MD00000170&model_name=TCC [D41E]&pdt_grp_code=PG00000001
+// http://10.100.1.94:8080/wissdemo01/public/api/wiss_atac_emfg_add_model/model_code=MD00000170&model_name=TCC [D41E]&pdt_grp_code=PG00000001
 
 Route::get('wiss_atac_emfg_add_model/{obj}', function ($obj) {
     parse_str($obj,$myArray);
     $model_code = $myArray['model_code'];
     $model_name = $myArray['model_name'];
     $pdt_grp_code = $myArray['pdt_grp_code'];
-    $result = DB::connection('sqlsrv_atac_arisa_p02_db')->select("EXEC wiss_atac_emfg_add_model @model_code = '$model_code', @model_name ='$model_name' @pdt_grp_code = '$pdt_grp_code'");
+    $result = DB::connection('sqlsrv_atac_arisa_p02_db')->select("EXEC wiss_atac_emfg_add_model @model_code = '$model_code', @model_name ='$model_name', @pdt_grp_code = '$pdt_grp_code'");
     return json_encode($result);
 });
 
