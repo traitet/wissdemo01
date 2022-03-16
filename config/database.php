@@ -161,6 +161,38 @@ return [
             'prefix_indexes' => true,
         ],
 
+        //=====================================
+        // DB_DATABASE_ATAC_ARISA_P02  (CONFIG AT .ENV)
+        //=====================================
+        'sqlsrv_atac_arisa_p02_db' => [
+            'driver' => 'sqlsrv',
+            'url' => env('DATABASE_URL'),
+            'host' => env('DB_HOST', 'localhost'),
+            'port' => env('DB_PORT', '1433'),
+            'database' => env('DB_DATABASE_ATAC_ARISA_P02', 'forge'),
+            'username' => env('DB_USERNAME', 'forge'),
+            'password' => env('DB_PASSWORD', ''),
+            'charset' => 'utf8',
+            'prefix' => '',
+            'prefix_indexes' => true,
+        ],
+
+        //=====================================
+        // DB_DATABASE_SIAM_LASER_P01  (CONFIG AT .ENV)
+        //=====================================
+        'sqlsrv_siam_laser_p01_db' => [
+            'driver' => 'sqlsrv',
+            'url' => env('DATABASE_URL'),
+            'host' => env('DB_HOST', 'localhost'),
+            'port' => env('DB_PORT', '1433'),
+            'database' => env('DB_DATABASE_SIAM_LASER_P01', 'forge'),
+            'username' => env('DB_USERNAME', 'forge'),
+            'password' => env('DB_PASSWORD', ''),
+            'charset' => 'utf8',
+            'prefix' => '',
+            'prefix_indexes' => true,
+        ],
+
     ],
 
     /*
