@@ -329,3 +329,41 @@ Route::get('wiss_sa_add_eps_investment/{obj}', function ($obj) {
     $result = DB::connection('sqlsrv_eps_db')->select("EXEC wiss_sa_add_eps_investment '$investment_id'");
     return json_encode($result);
 });
+
+//========================================================================
+// 4.wiss_atac_emfg_add_model (sqlsrv_atac_arisa_p02_db, ATAC_ARISA_P02)
+//========================================================================
+// http://10.100.1.94:8080/wissdemo01/public/api/wiss_sa_add_eps_investment/model_code=MD00000170&model_name=TCC [D41E]&pdt_grp_code=PG00000001
+
+Route::get('wiss_atac_emfg_add_model/{obj}', function ($obj) {
+    parse_str($obj,$myArray);
+    $model_code = $myArray['model_code'];
+    $model_name = $myArray['model_name'];
+    $pdt_grp_code = $myArray['pdt_grp_code'];
+    $result = DB::connection('sqlsrv_atac_arisa_p02_db')->select("EXEC wiss_atac_emfg_add_model @model_code = '$model_code', @model_name ='$model_name' @pdt_grp_code = '$pdt_grp_code'");
+    return json_encode($result);
+});
+
+//========================================================================
+// 5.wiss_atac_emfg_add_shelf (sqlsrv_atac_arisa_p02_db, ATAC_ARISA_P02)
+//========================================================================
+// http://10.100.1.94:8080/wissdemo01/public/api/wiss_atac_emfg_add_shelf/sloc_code=ATA400S01&shelf_nameMA0450&shelf_code='SH-MA450'
+Route::get('wiss_atac_emfg_add_shelf/{obj}', function ($obj) {
+    parse_str($obj,$myArray);
+    $sloc_code = $myArray['sloc_code'];
+    $shelf_name = $myArray['shelf_name'];
+    $shelf_code = $myArray['shelf_code'];
+    $result = DB::connection('sqlsrv_atac_arisa_p02_db')->select("EXEC wiss_atac_emfg_add_shelf @sloc_code ='$sloc_code',@shelf_name = '$shelf_name', @shelf_code = '$shelf_code'");
+    return json_encode($result);
+});
+
+//========================================================================
+// 6.wiss_sa_ifin_revert_doc (sqlsrv_siam_laser_p01_db, SIAM_LASER_P01)
+//========================================================================
+// http://10.100.1.94:8080/wissdemo01/public/api/wiss_sa_ifin_revert_doc/doc_num=AV20000001
+Route::get('wiss_atac_emfg_add_shelf/{obj}', function ($obj) {
+    parse_str($obj,$myArray);
+    $doc_num  = $myArray['doc_num'];
+    $result = DB::connection('sqlsrv_siam_laser_p01_db')->select("EXEC wiss_atac_emfg_add_shelf @doc_num  = '$doc_num'");
+    return json_encode($result);
+});
