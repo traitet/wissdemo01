@@ -3,7 +3,9 @@
 //##################################################################################################################
 //#                                            Import Controller                                                   #
 //##################################################################################################################
-//=================================================== Reports ======================================================
+//==================================================================================================================
+//                                                    Reports
+//==================================================================================================================
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\BasicReportApiController;
@@ -22,10 +24,17 @@ use App\Http\Controllers\EpsPrProductionErrorApiController;
 use App\Http\Controllers\EpsCpApprovePrApiController;
 use App\Http\Controllers\EmfgInventoryStockOutErrorApiController;
 use App\Http\Controllers\EdrawingCheckPasswordApiController;
-//================================================== Maintain ======================================================
+//==================================================================================================================
+//                                                     Maintain
+//==================================================================================================================
 use App\Http\Controllers\IbgAddDeptApiController;
 use App\Http\Controllers\IbgAddUserApiController;
 use App\Http\Controllers\EpsAddInvestmentApiController;
+use App\Http\Controllers\EmfgAddModelApiController ;
+use App\Http\Controllers\EmfgAddShelfApiController;
+use App\Http\Controllers\EmfgRevertDocApiController;
+
+
 //##################################################################################################################
 //#                                                    Report                                                      #
 //##################################################################################################################
@@ -122,6 +131,16 @@ Route::post('wiss-sa-add-ibg-user',[IbgAddUserApiController::class,'getData']);
 Route::view('wiss-sa-add-eps-investment','wiss-sa-add-eps-investment');
 Route::post('wiss-sa-add-eps-investment',[EpsAddInvestmentApiController::class,'getData']);
 
+//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< ATAC EMFG >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Route::view('wiss-atac-emfg-add-model','wiss-atac-emfg-add-model');
+Route::post('wiss-atac-emfg-add-model',[EmfgAddModelApiController::class,'getData']);
+
+Route::view('wiss-atac-emfg-add-shelf','wiss-atac-emfg-add-shelf');
+Route::post('wiss-atac-emfg-add-shelf',[EmfgAddShelfApiController::class,'getData']);
+
+//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< I-FIN >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Route::view('wiss-sa-ifin-revert-doc','wiss-sa-ifin-revert-doc');
+Route::post('wiss-sa-ifin-revert-doc',[EmfgRevertDocApiController::class,'getData']);
 
 // ==========================================================================
 // ROUTE GET/POST "MAIN"
