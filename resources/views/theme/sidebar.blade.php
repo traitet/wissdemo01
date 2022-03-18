@@ -149,6 +149,7 @@
             </a>
             <div id="collapseMaintainIFIN" class="collapse" aria-labelledby="collapseMaintainIFIN" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
+                     <a class="collapse-item" href="wiss-sa-ifin-register-admin">Register Admin</a>
                      <a class="collapse-item" href="wiss-sa-ifin-revert-doc">Revert Doc</a>
                 </div>
             </div>
