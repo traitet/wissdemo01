@@ -367,3 +367,17 @@ Route::get('wiss_sa_ifin_revert_doc/{obj}', function ($obj) {
     $result = DB::connection('sqlsrv_siam_laser_p01_db')->select("EXEC wiss_sa_ifin_revert_doc @doc_num  = '$doc_num'");
     return json_encode($result);
 });
+
+
+//========================================================================
+// 8.wiss_sa_emfg_add_shelf (sqlsrv_sa_arisa_p01_db, SIAM_ARISA_P01)
+//========================================================================
+// http://10.100.1.94:8080/wissdemo01/public/api/wiss_sa_emfg_add_shelf/sloc_code=SARSE5200&shelf_name=T999&shelf_code=T999
+Route::get('wiss_sa_emfg_add_shelf/{obj}', function ($obj) {
+    parse_str($obj,$myArray);
+    $sloc_code = $myArray['sloc_code'];
+    $shelf_name = $myArray['shelf_name'];
+    $shelf_code = $myArray['shelf_code'];
+    $result = DB::connection('sqlsrv_siam_arisa_p01_db')->select("EXEC wiss_sa_emfg_add_shelf @sloc_code ='$sloc_code',@shelf_code = '$shelf_code', @shelf_name = '$shelf_name'");
+    return json_encode($result);
+});

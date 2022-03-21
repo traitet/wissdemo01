@@ -106,7 +106,7 @@
         <!-- Nav Item - Utilities Collapse Menu -->
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseMaintainIBG" aria-expanded="true" aria-controls="collapseMaintainIBG">
-                <i class="fas fa-fw fa-wrench"></i>
+                <i class="fas fa-fw fa-credit-card"></i>
                 <span>I-BG</span>
             </a>
             <div id="collapseMaintainIBG" class="collapse" aria-labelledby="collapseMaintainIBG" data-parent="#accordionSidebar">
@@ -128,6 +128,33 @@
              </div>
          </div>
          </li>
+         <!-- Nav Item - Utilities Collapse Menu -->
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseMaintainEMFG" aria-expanded="true" aria-controls="collapseMaintainEMFG">
+                <i class="fas fa-fw fa-wrench"></i>
+                <span>E-MFG</span>
+            </a>
+            <div id="collapseMaintainEMFG" class="collapse" aria-labelledby="collapseMaintainEMFG" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                     <a class="collapse-item" href="wiss-atac-emfg-add-model">Add Model</a>
+                     <a class="collapse-item" href="wiss-atac-emfg-add-shelf">Add Shelf ATAC</a>
+                     <a class="collapse-item" href="wiss-sa-emfg-add-shelf">Add Shelf SA</a>
+                </div>
+            </div>
+        </li>
+        <!-- Nav Item - Utilities Collapse Menu -->
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseMaintainIFIN" aria-expanded="true" aria-controls="collapseMaintainIFIN">
+                <i class="fas fa-fw fa-file"></i>
+                <span>I-FIN</span>
+            </a>
+            <div id="collapseMaintainIFIN" class="collapse" aria-labelledby="collapseMaintainIFIN" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                     <a class="collapse-item" href="wiss-sa-ifin-register-admin">Register Admin</a>
+                     <a class="collapse-item" href="wiss-sa-ifin-revert-doc">Revert Doc</a>
+                </div>
+            </div>
+        </li>
 
         <!-- Divider -->
         <hr class="sidebar-divider">
