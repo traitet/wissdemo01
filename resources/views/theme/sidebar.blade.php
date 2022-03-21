@@ -137,7 +137,8 @@
             <div id="collapseMaintainEMFG" class="collapse" aria-labelledby="collapseMaintainEMFG" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                      <a class="collapse-item" href="wiss-atac-emfg-add-model">Add Model</a>
-                     <a class="collapse-item" href="wiss-atac-emfg-add-shelf">Add Shelf</a>
+                     <a class="collapse-item" href="wiss-atac-emfg-add-shelf">Add Shelf ATAC</a>
+                     <a class="collapse-item" href="wiss-sa-emfg-add-shelf">Add Shelf SA</a>
                 </div>
             </div>
         </li>

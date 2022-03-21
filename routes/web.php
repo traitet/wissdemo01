@@ -138,6 +138,10 @@ Route::post('wiss-atac-emfg-add-model',[EmfgAddModelApiController::class,'getDat
 Route::view('wiss-atac-emfg-add-shelf','wiss-atac-emfg-add-shelf');
 Route::post('wiss-atac-emfg-add-shelf',[EmfgAddShelfApiController::class,'getData']);
 
+//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< SA EMFG >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Route::view('wiss-sa-emfg-add-shelf','wiss-sa-emfg-add-shelf');
+Route::post('wiss-sa-emfg-add-shelf',[EmfgSaAddShelfApiController::class,'getData']);
+
 //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< I-FIN >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 Route::view('wiss-sa-ifin-revert-doc','wiss-sa-ifin-revert-doc');
 Route::post('wiss-sa-ifin-revert-doc',[EmfgRevertDocApiController::class,'getData']);
