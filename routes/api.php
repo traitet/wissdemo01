@@ -392,3 +392,17 @@ Route::get('wiss_sa_emfg_add_shelf/{obj}', function ($obj) {
     $result = DB::connection('sqlsrv_siam_arisa_p01_db')->select("EXEC wiss_sa_emfg_add_shelf @sloc_code = '$sloc_code', @shelf_code = '$shelf_code', @shelf_name = '$shelf_name'");
     return json_encode($result);
 });
+
+//========================================================================
+// 9.wiss_sa_ibg_update_inf_schedule (sqlsrv_sa_arisa_p01_db, SIAM_ARISA_P01)
+//========================================================================
+// http://10.100.1.94:8080/wissdemo01/public/api/wiss_sa_ibg_update_inf_schedule/fiscal_year=2022&period=1&inf_date=20220501&inf_time=230000
+Route::get('wiss_sa_ibg_update_inf_schedule/{obj}', function ($obj) {
+    parse_str($obj,$myArray);
+    $fiscal_year = $myArray['fiscal_year'];
+    $period = $myArray['period'];
+    $inf_date = $myArray['inf_date'];
+    $inf_time = $myArray['inf_time'];
+    $result = DB::connection('sqlsrv_siam_arisa_p01_db')->select("EXEC wiss_sa_ibg_update_inf_schedule @fiscal_year = '$fiscal_year', @period = '$period', @inf_date = '$inf_date', @inf_time = '$inf_time'");
+    return json_encode($result);
+});
