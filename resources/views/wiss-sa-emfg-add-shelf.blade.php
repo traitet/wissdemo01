@@ -102,14 +102,14 @@
                 {{-- =============================================================== --}}
                 {{-- FORM  ACTION = VIEW --}}
                 {{-- =============================================================== --}}
-                <form method="POST" action="wiss-atac-emfg-add-shelf" id="myForm">
+                <form method="POST" action="wiss-sa-emfg-add-shelf" id="myForm">
                     @csrf
                     <div class="container-fluid">
                         {{-- ========================================================= --}}
                         {{-- SUBJECT --}}
                         {{-- ========================================================= --}}
                         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                            <h1 class="h5 mb-0 text-gray-800">【 Add New Shelf For ATAC】</h1>
+                            <h1 class="h5 mb-0 text-gray-800">【 Add New Shelf For SA 】</h1>
                         </div>
 
                         {{-- ========================================================= --}}

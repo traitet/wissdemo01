@@ -368,6 +368,17 @@ Route::get('wiss_sa_ifin_revert_doc/{obj}', function ($obj) {
     return json_encode($result);
 });
 
+//========================================================================
+// 7.wiss_sa_ifin_register_admin (sqlsrv_siam_laser_p01_db, SIAM_LASER_P01)
+//========================================================================
+// http://10.100.1.94:8080/wissdemo01/public/api/wiss_sa_ifin_register_admin/group_code=CP03&username=SUCHART_AU
+Route::get('wiss_sa_ifin_register_admin/{obj}', function ($obj) {
+    parse_str($obj,$myArray);
+    $group_code = $myArray['group_code'];
+    $username = $myArray['username'];
+    $result = DB::connection('sqlsrv_siam_laser_p01_db')->select("EXEC wiss_sa_ifin_register_admin @group_code = '$group_code', @username = '$username'");
+    return json_encode($result);
+});
 
 //========================================================================
 // 8.wiss_sa_emfg_add_shelf (sqlsrv_sa_arisa_p01_db, SIAM_ARISA_P01)
@@ -378,6 +389,6 @@ Route::get('wiss_sa_emfg_add_shelf/{obj}', function ($obj) {
     $sloc_code = $myArray['sloc_code'];
     $shelf_name = $myArray['shelf_name'];
     $shelf_code = $myArray['shelf_code'];
-    $result = DB::connection('sqlsrv_siam_arisa_p01_db')->select("EXEC wiss_sa_emfg_add_shelf @sloc_code ='$sloc_code',@shelf_code = '$shelf_code', @shelf_name = '$shelf_name'");
+    $result = DB::connection('sqlsrv_siam_arisa_p01_db')->select("EXEC wiss_sa_emfg_add_shelf @sloc_code = '$sloc_code', @shelf_code = '$shelf_code', @shelf_name = '$shelf_name'");
     return json_encode($result);
 });
