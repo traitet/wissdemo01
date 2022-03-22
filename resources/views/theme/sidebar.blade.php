@@ -113,6 +113,7 @@
                 <div class="bg-white py-2 collapse-inner rounded">
                      <a class="collapse-item" href="wiss-sa-add-ibg-dept">Add Dept</a>
                      <a class="collapse-item" href="wiss-sa-add-ibg-user">Add User</a>
+                     <a class="collapse-item" href="wiss-sa-ibg-update-inf-schedule">Add Schedule</a>
                 </div>
             </div>
         </li>

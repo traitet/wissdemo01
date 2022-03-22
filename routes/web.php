@@ -29,11 +29,13 @@ use App\Http\Controllers\EdrawingCheckPasswordApiController;
 //==================================================================================================================
 use App\Http\Controllers\IbgAddDeptApiController;
 use App\Http\Controllers\IbgAddUserApiController;
+use App\Http\Controllers\IbgUpdateInfScheduleApiController;
 use App\Http\Controllers\EpsAddInvestmentApiController;
 use App\Http\Controllers\EmfgAddModelApiController ;
 use App\Http\Controllers\EmfgAddShelfApiController;
-use App\Http\Controllers\EmfgRevertDocApiController;
 use App\Http\Controllers\EmfgSaAddShelfApiController;
+use App\Http\Controllers\IfinRevertDocApiController;
+use App\Http\Controllers\IfinRegisterAdminApiController;
 
 //##################################################################################################################
 //#                                                    Report                                                      #
@@ -127,6 +129,9 @@ Route::post('wiss-sa-add-ibg-dept',[IbgAddDeptApiController::class,'getData']);
 Route::view('wiss-sa-add-ibg-user','wiss-sa-add-ibg-user');
 Route::post('wiss-sa-add-ibg-user',[IbgAddUserApiController::class,'getData']);
 
+Route::view('wiss-sa-ibg-update-inf-schedule','wiss-sa-ibg-update-inf-schedule');
+Route::post('wiss-sa-ibg-update-inf-schedule',[IbgUpdateInfScheduleApiController::class,'getData']);
+
 //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< EPS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 Route::view('wiss-sa-add-eps-investment','wiss-sa-add-eps-investment');
 Route::post('wiss-sa-add-eps-investment',[EpsAddInvestmentApiController::class,'getData']);
@@ -144,7 +149,10 @@ Route::post('wiss-sa-emfg-add-shelf',[EmfgSaAddShelfApiController::class,'getDat
 
 //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< I-FIN >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 Route::view('wiss-sa-ifin-revert-doc','wiss-sa-ifin-revert-doc');
-Route::post('wiss-sa-ifin-revert-doc',[EmfgRevertDocApiController::class,'getData']);
+Route::post('wiss-sa-ifin-revert-doc',[IfinRevertDocApiController::class,'getData']);
+
+Route::view('wiss-sa-ifin-register-admin','wiss-sa-ifin-register-admin');
+Route::post('wiss-sa-ifin-register-admin',[IfinRegisterAdminApiController::class,'getData']);
 
 // ==========================================================================
 // ROUTE GET/POST "MAIN"
