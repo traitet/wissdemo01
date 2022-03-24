@@ -31,7 +31,8 @@ class EmfgShippingStatusApiController extends Controller
         $this->validate($req, [
             'dateStart' => 'date_format:Y-m-d||nullable',
             'dateEnd' => 'date_format:Y-m-d||nullable',
-            'docNum' => 'string||nullable'
+            'docNum' => 'string||nullable',
+            'maxRecord' => 'string||nullable'
         ]);
         // ==========================================================================
         // API NAME
@@ -49,7 +50,7 @@ class EmfgShippingStatusApiController extends Controller
             $dateEnd = str_replace('-','',$req->input('dateEnd')??'20220101');
             $maxRecord = $req->input('maxRecord')??'10';
             $docNum = $req->input('docNum')??'';
-            $queryStr = "doc_num=$docNum&start_date=$dateStart&end_date=$dateEnd&max_record=$maxRecord";
+            $queryStr = "start_date=$dateStart&end_date=$dateEnd&doc_num=$docNum&max_record=$maxRecord";
 
             // ======================================================================
             // CALL API
