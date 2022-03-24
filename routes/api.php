@@ -186,7 +186,7 @@ Route::get('emfg_shipping_order_status_obj/{obj}', function ($obj) {
     $start_date = $myArray['start_date'];
     $end_date = $myArray['end_date'];
     $max_record = $myArray['max_record'];
-    $result = DB::connection('sqlsrv_eps_db')->select("EXEC emfg_shipping_order_status '$start_date','$end_date','$doc_num',$max_record");
+    $result = DB::connection('sqlsrv_shipping_db')->select("EXEC emfg_shipping_order_status '$start_date','$end_date','$doc_num',$max_record");
     return json_encode($result);
 });
 //eps_pr_productionid_error_report
