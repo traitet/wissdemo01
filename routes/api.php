@@ -411,7 +411,7 @@ Route::get('wiss_sa_ibg_update_inf_schedule/{obj}', function ($obj) {
 // 10.wiss-atac-emfg-revert-shopping-status (sqlsrv_atac_arisa_p02_db, ATAC_ARISA_P02)
 //========================================================================
 // http://10.100.1.94:8080/wissdemo01/public/api/wiss_atac_emfg_revert_shopping_status/picking_list_num=P313A538980&pallet_Number=PAL-01|1048|20200914
-Route::get('wiss-atac-emfg-revert-shopping-status/{obj}', function ($obj) {
+Route::get('wiss_atac_emfg_revert_shopping_status/{obj}', function ($obj) {
     parse_str($obj,$myArray);
     $picking_list_num = $myArray['picking_list_num'];
     $pallet_Number = $myArray['pallet_Number'];
