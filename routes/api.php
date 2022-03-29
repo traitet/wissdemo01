@@ -415,6 +415,6 @@ Route::get('wiss_atac_emfg_revert_shopping_status/{obj}', function ($obj) {
     parse_str($obj,$myArray);
     $picking_list_num = $myArray['picking_list_num'];
     $pallet_Number = $myArray['pallet_Number'];
-    $result = DB::connection('sqlsrv_atac_arisa_p02_db')->select("EXEC wiss-atac-emfg-revert-shopping-status @picking_list_num ='$picking_list_num', @pallet_Number = '$pallet_Number'");
+    $result = DB::connection('sqlsrv_atac_arisa_p02_db')->select("EXEC wiss_atac_emfg_revert_shopping_status @picking_list_num ='$picking_list_num', @pallet_Number = '$pallet_Number'");
     return json_encode($result);
 });
