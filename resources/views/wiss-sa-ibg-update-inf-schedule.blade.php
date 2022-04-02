@@ -131,7 +131,7 @@
                                                 <label for="infDate">Interface Date: </label>
                                                 <input class="form-control" type="date" class="" id="infDate" name="infDate">&nbsp;&nbsp;
                                                 <label for="infTime">Interface Time: </label>
-                                                <input class="form-control" type="time" class="" id="infTime" name="infTime">&nbsp;&nbsp;
+                                                <input class="form-control" type="text" class="" id="infTime" name="infTime">&nbsp;&nbsp;
                                             </div>
                                         </div>
                                         <div class="form-group">
