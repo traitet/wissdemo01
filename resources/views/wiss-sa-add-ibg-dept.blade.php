@@ -128,8 +128,13 @@
                                                 <input class="form-control" type="text" class="" id="empId" name="empId">&nbsp;&nbsp;
                                                 <label for="deptCode">Department Code: </label>
                                                 <input class="form-control" type="text" class="" id="deptCode" name="deptCode">&nbsp;&nbsp;
+
                                                 <label for="readOnly">Read Only: </label>
-                                                <input class="form-control" type="text" class="" id="readOnly" name="readOnly">&nbsp;&nbsp;
+                                                <select class="form-control" id="readOnly" name="readOnly">
+                                                    <option value="Y">Yes</option>
+                                                    <option value="N">No</option>
+                                                </select>&nbsp;&nbsp;
+
                                             </div>
                                         </div>
                                         <div class="form-group">

@@ -132,14 +132,27 @@
                                                 <input class="form-control" type="text" class="" id="firstName" name="firstName">&nbsp;&nbsp;
                                                 <label for="surName">Surname: </label>
                                                 <input class="form-control" type="text" class="" id="surName" name="surName">&nbsp;&nbsp;
+
                                                 <label for="level">Level: </label>
-                                                <input class="form-control" type="text" class="" id="level" name="level">&nbsp;&nbsp;
+                                                <select class="form-control" id="level" name="level">
+                                                    <option value="LV0040">Under Section Level</option>
+                                                    <option value="LV0050">Section Level</option>
+                                                    <option value="LV0060">Department Level</option>
+                                                    <option value="LV0070">Division Level</option>
+                                                </select>&nbsp;&nbsp;
+
                                                 <label for="sectId">Section: </label>
                                                 <input class="form-control" type="text" class="" id="sectId" name="sectId">&nbsp;&nbsp;
                                                 <label for="eMail">E-mail: </label>
                                                 <input class="form-control" type="text" class="" id="eMail" name="eMail">&nbsp;&nbsp;
+
                                                 <label for="userRole">Role: </label>
-                                                <input class="form-control" type="text" class="" id="userRole" name="userRole">&nbsp;&nbsp;
+                                                <select class="form-control" id="userRole" name="userRole">
+                                                    <option value="1">User Read Only</option>
+                                                    <option value="2">User Edit</option>
+                                                    <option value="3">CP Read Only</option>
+                                                    <option value="4">CP Edit</option>
+                                                </select>&nbsp;&nbsp;
                                             </div>
                                         </div>
                                         <div class="form-group">
