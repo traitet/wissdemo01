@@ -208,9 +208,16 @@
                                                     <?php if (isset($result)) {
                                                         foreach ($result as $keyResult => $row) { ?>
                                                             <tr>
-                                                                <?php foreach ($row as $keyRow => $data) { ?>
+                                                                <?php foreach ($row as $keyRow => $data) {
+                                                                    if($keyRow == 'PRNUM'){
+                                                                    ?>
+                                                                    <td><a href="https://www.w3schools.com?suchart=1" target="_blank">{{$row[$keyRow]}}</a></td>
+                                                                <?php }else{ ?>
                                                                     <td>{{$row[$keyRow]}}</td>
-                                                                <?php } ?>
+                                                                    <?php
+                                                                    }
+                                                                }
+                                                                ?>
                                                             </tr>
                                                     <?php }
                                                     } ?>
