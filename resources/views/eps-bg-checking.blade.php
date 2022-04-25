@@ -211,7 +211,7 @@
                                                                 <?php foreach ($row as $keyRow => $data) {
                                                                     if($keyRow == 'PRNUM'){
                                                                     ?>
-                                                                    <td><a href='eps-bg-checking-detail?docNum=<?php echo $row[$keyRow]; ?>' target="_blank">{{$row[$keyRow]}}</a></td>
+                                                                    <td><a href="eps-bg-checking-detail?docNum={{$row[$keyRow]}}" target="_blank">{{$row[$keyRow]}}</a></td>
                                                                 <?php }else{ ?>
                                                                     <td>{{$row[$keyRow]}}</td>
                                                                     <?php
