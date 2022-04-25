@@ -102,78 +102,19 @@
                 {{-- =============================================================== --}}
                 {{-- FORM  ACTION = VIEW --}}
                 {{-- =============================================================== --}}
-                <form method="POST" action="eps-bg-checking" id="myForm">
-                    @csrf
-                    <div class="container-fluid">
-                        {{-- ========================================================= --}}
-                        {{-- SUBJECT --}}
-                        {{-- ========================================================= --}}
-                        <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                            <h1 class="h5 mb-0 text-gray-800">【 EPS BG Checking 】</h1>
-                        </div>
 
-                        {{-- ========================================================= --}}
-                        {{-- SERCH PARAMTER --}}
-                        {{-- ========================================================= --}}
-                        <div class="row">
-                            {{-- ========================================================= --}}
-                            {{-- BASIC SEARCH --}}
-                            {{-- ========================================================= --}}
-                            <div class="col-xl-12 col-lg-12">
-                                <div class="card shadow mb-4">
-                                    <div class="card-body">
-                                        <div class="form-group">
-                                            <div class="form-group form-inline">
-                                                <label for="docNum">Doc Num: </label>
-                                                <input class="form-control" type="text" class="" id="docNum" name="docNum">&nbsp;&nbsp;
-                                                <label for="dateStart">Date Start: </label>
-                                                <input class="form-control" type="date" class="" id="dateStart" name="dateStart" onchange="dateStartHandler();">
-                                                &nbsp;&nbsp;
-                                                <label for="dateEnd">Date End: </label>
-                                                <input class="form-control" type="date" class="" id="dateEnd" name="dateEnd" onchange="dateEndHandler();">
-                                                &nbsp;&nbsp;
-
-                                                <label for="docNum">Record: </label>
-                                                <select class="form-control" id="record" name="record">
-                                                    <option value="10">10</option>
-                                                    <option value="100">100</option>
-                                                    <option value="1000">1000</option>
-                                                </select>
-                                                &nbsp;&nbsp;
-                                                <label for="docType">Doc Type: </label>
-                                                <select class="form-control" id="docType" name="docType">
-                                                    <option value="1">EXPENSE</option>
-                                                    <option value="2">INVESTMENT</option>
-                                                </select>
-
-                                                {{-- <div class="dropdown">
-                                                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                        Dropdown
-                                                    </button>
-                                                    <div class="dropdown-menu animated--fade-in" aria-labelledby="dropdownMenuButton" style="">
-                                                        <a class="dropdown-item" href="#">EXPENSE</a>
-                                                        <a class="dropdown-item" href="#">INVESTMENT</a>
-                                                    </div>
-                                                </div> --}}
-
-
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <button type="submit" class="btn btn-primary">Search</button>
-                                            <button type="button" class="btn btn-secondary" onclick="clearForm()">Clear</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
 
 {{-- ========================================================= --}}
 {{-- SEARCH OUTPUT --}}
 {{-- ========================================================= --}}
                     <div class="container-fluid">
+                        {{-- ========================================================= --}}
+                        {{-- SUBJECT --}}
+                        {{-- ========================================================= --}}
+                        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                            <h1 class="h5 mb-0 text-gray-800">【 EPS BG Checking Detail】</h1>
+                        </div>
                         {{-- ========================================================= --}}
                         {{-- CLASS ROW --}}
                         {{-- ========================================================= --}}
@@ -211,7 +152,7 @@
                                                                 <?php foreach ($row as $keyRow => $data) {
                                                                     if($keyRow == 'PRNUM'){
                                                                     ?>
-                                                                    <td><a href='eps-bg-checking-detail?docNum=<?php echo $row[$keyRow]; ?>' target="_blank">{{$row[$keyRow]}}</a></td>
+                                                                    <td><a href="https://www.w3schools.com?suchart=1" target="_blank">{{$row[$keyRow]}}</a></td>
                                                                 <?php }else{ ?>
                                                                     <td>{{$row[$keyRow]}}</td>
                                                                     <?php
