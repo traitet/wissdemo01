@@ -110,6 +110,19 @@
                         {{-- ========================================================= --}}
                         <div class="d-sm-flex align-items-center justify-content-between mb-4">
                             <h1 class="h5 mb-0 text-gray-800">【 EPS BG Checking 】</h1>
+                            <h1>
+                            <?php
+                                if (!isset($_SESSION['FirstName'])) {
+                                    session_start();
+                                    $_SESSION['FirstName'] = "test";
+                                    echo $_SESSION['FirstName'];
+                                    session_unset();
+                                    session_destroy();
+                                }else {
+                                    echo "Already session";
+                                }
+                            ?>
+                            </h1>
                         </div>
 
                         {{-- ========================================================= --}}
