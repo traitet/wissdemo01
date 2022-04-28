@@ -87,7 +87,7 @@
             var today = now.getFullYear() + '-' + month + '-' + day;
             $('#dateStart').val(today);
             $('#dateEnd').val(today);
-            $('#record').val("10");
+            $('#maxRecord').val("10");
             $('#docType').val("1");
         }
 
@@ -168,7 +168,7 @@
                                                 &nbsp;&nbsp;
 
                                                 <label for="record">Record: </label>
-                                                <select class="form-control" id="record" name="record">
+                                                <select class="form-control" id="maxRecord" name="maxRecord">
                                                     <option <?php if(isset($maxRecordRtv) and $maxRecordRtv == "10") echo "selected"; ?> value="10"  >10</option>
                                                     <option <?php if(isset($maxRecordRtv) and $maxRecordRtv == "100") echo "selected"; ?> value="100" >100</option>
                                                     <option <?php if(isset($maxRecordRtv) and $maxRecordRtv == "1000") echo "selected"; ?> value="1000">1000</option>

@@ -49,14 +49,14 @@ class EpsBgCheckingApiController extends Controller
             $docNumRtv = $req->input('docNum');
             $dateStartRtv = $req->input('dateStart');
             $dateEndRtv = $req->input('dateEnd');
-            $maxRecordRtv = $req->input('record');
+            $maxRecordRtv = $req->input('maxRecord');
             $docTypeRtv = $req->input('docType');
             // ======================================================================
             // GET DATA
             // ======================================================================
             $dateStart = str_replace('-','',$req->input('dateStart')??'20220101');
             $dateEnd = str_replace('-','',$req->input('dateEnd')??'20220101');
-            $maxRecord = $req->input('record')??'10';
+            $maxRecord = $req->input('maxRecord')??'10';
             $docNum = $req->input('docNum')??'';
             $docType = $req->input('docType')??'';
              $queryStr = "doc_num=$docNum&start_date=$dateStart&end_date=$dateEnd&max_record=$maxRecord";

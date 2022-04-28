@@ -44,6 +44,13 @@ class InterfaceSapPoApiController extends Controller
         // CHECK INPUT IF NOT EMPTY
         // ==========================================================================
             // ======================================================================
+            // SET DATA RETURN TO VIEW
+            // ======================================================================
+            $docNumRtv = $req->input('docNum');
+            $dateStartRtv = $req->input('dateStart');
+            $dateEndRtv = $req->input('dateEnd');
+            $maxRecordRtv = $req->input('maxRecord');
+            // ======================================================================
             // GET DATA
             // ======================================================================
             $dateStart = str_replace('-','',$req->input('dateStart')??'20220101');
@@ -57,7 +64,7 @@ class InterfaceSapPoApiController extends Controller
             // ======================================================================
             $url = $this->ENDPOINT . $api ."/". $queryStr;
             $response = Http::get($url);
-
+            error_log($url);
             // ======================================================================
             // IF CALL SUCCCESS
             // ======================================================================
@@ -65,12 +72,12 @@ class InterfaceSapPoApiController extends Controller
                 $result = json_decode($response->body(), true);
                 if(!empty($result)){
                     $keyArray = array_keys($result[0]);
-                    return view('interface-sap-po', compact('result', 'keyArray'));
+                    return view('interface-sap-po', compact('result', 'keyArray','docNumRtv','dateStartRtv','dateEndRtv','maxRecordRtv'));
                 }else{
                     //need to return no data msg
                     $keyArray = [];
                 }
             }
-            return view('interface-sap-po');
+            return view('interface-sap-po', compact('result', 'keyArray','docNumRtv','dateStartRtv','dateEndRtv','maxRecordRtv'));
     }
 }
