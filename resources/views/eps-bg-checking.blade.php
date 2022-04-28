@@ -75,8 +75,20 @@
         // ================================================================
         // CLEAR FORM
         // ================================================================
-        const clearForm = () => {
-            $('#myForm')[0].reset();
+        function clearForm() {
+            $('#docNum').val("");
+            var now = new Date();
+            var month = (now.getMonth() + 1);
+            var day = now.getDate();
+            if (month < 10)
+            month = "0" + month;
+            if (day < 10)
+            day = "0" + day;
+            var today = now.getFullYear() + '-' + month + '-' + day;
+            $('#dateStart').val(today);
+            $('#dateEnd').val(today);
+            $('#record').val("10");
+            $('#docType').val("1");
         }
 
         // ================================================================
@@ -168,22 +180,11 @@
                                                     <option <?php if(isset($docTypeRtv) and $docTypeRtv == "2") echo "selected"; ?> value="2">INVESTMENT</option>
                                                 </select>
 
-                                                {{-- <div class="dropdown">
-                                                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                        Dropdown
-                                                    </button>
-                                                    <div class="dropdown-menu animated--fade-in" aria-labelledby="dropdownMenuButton" style="">
-                                                        <a class="dropdown-item" href="#">EXPENSE</a>
-                                                        <a class="dropdown-item" href="#">INVESTMENT</a>
-                                                    </div>
-                                                </div> --}}
-
-
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <button type="submit" class="btn btn-primary">Search</button>
-                                            <button type="button" class="btn btn-secondary" onclick="clearForm()">Clear</button>
+                                            <button type="button" class="btn btn-secondary" onclick="clearForm();">Clear</button>
                                         </div>
                                     </div>
                                 </div>
