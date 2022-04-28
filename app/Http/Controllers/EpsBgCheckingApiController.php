@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Validation\Validator;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Arr;
 
 // ==========================================================================
 // CLASS DECLARATION
@@ -43,11 +44,19 @@ class EpsBgCheckingApiController extends Controller
         // CHECK INPUT IF NOT EMPTY
         // ==========================================================================
             // ======================================================================
+            // SET DATA RETURN TO VIEW
+            // ======================================================================
+            $docNumRtv = $req->input('docNum');
+            $dateStartRtv = $req->input('dateStart');
+            $dateEndRtv = $req->input('dateEnd');
+            $maxRecordRtv = $req->input('record');
+            $docTypeRtv = $req->input('docType');
+            // ======================================================================
             // GET DATA
             // ======================================================================
             $dateStart = str_replace('-','',$req->input('dateStart')??'20220101');
             $dateEnd = str_replace('-','',$req->input('dateEnd')??'20220101');
-            $maxRecord = $req->input('maxRecord')??'10';
+            $maxRecord = $req->input('record')??'10';
             $docNum = $req->input('docNum')??'';
             $docType = $req->input('docType')??'';
              $queryStr = "doc_num=$docNum&start_date=$dateStart&end_date=$dateEnd&max_record=$maxRecord";
@@ -57,6 +66,7 @@ class EpsBgCheckingApiController extends Controller
             // ======================================================================
             $url = $this->ENDPOINT . $api ."/". $queryStr ."/". $queryStrSearch;
             $response = Http::get($url);
+
             // ======================================================================
             // IF CALL SUCCCESS
             // ======================================================================
@@ -64,12 +74,12 @@ class EpsBgCheckingApiController extends Controller
                 $result = json_decode($response->body(), true);
                 if(!empty($result)){
                     $keyArray = array_keys($result[0]);
-                    return view('eps-bg-checking', compact('result', 'keyArray'));
+                    return view('eps-bg-checking', compact('result', 'keyArray','docNumRtv','dateStartRtv','dateEndRtv','maxRecordRtv','docTypeRtv'));
                 }else{
                     //need to return no data msg
                     $keyArray = [];
                 }
             }
-            return view('eps-bg-checking');
+            return view('eps-bg-checking',compact('result', 'keyArray','docNumRtv','dateStartRtv','dateEndRtv','maxRecordRtv','docTypeRtv'));
     }
 }
