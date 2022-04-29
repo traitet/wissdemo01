@@ -38,7 +38,13 @@ class EmfgShippingLogNgApiController extends Controller
         // ==========================================================================
         $api = '';
 
-
+        // ======================================================================
+            // SET DATA RETURN TO VIEW
+            // ======================================================================
+            $docNumRtv = $req->input('docNum');
+            $dateStartRtv = $req->input('dateStart');
+            $dateEndRtv = $req->input('dateEnd');
+            $maxRecordRtv = $req->input('maxRecord');
         // ==========================================================================
         // CHECK INPUT IF NOT EMPTY
         // ==========================================================================
@@ -63,12 +69,12 @@ class EmfgShippingLogNgApiController extends Controller
                 $result = json_decode($response->body(), true);
                 if(!empty($result)){
                     $keyArray = array_keys($result[0]);
-                    return view('emfg-shipping-log-ng', compact('result', 'keyArray'));
+                    return view('emfg-shipping-log-ng', compact('result', 'keyArray','docNumRtv','dateStartRtv','dateEndRtv','maxRecordRtv'));
                 }else{
                     //need to return no data msg
                     $keyArray = [];
                 }
             }
-            return view('emfg-shipping-log-ng');
+            return view('emfg-shipping-log-ng',compact('result', 'keyArray','docNumRtv','dateStartRtv','dateEndRtv','maxRecordRtv'));
     }
 }

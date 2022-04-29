@@ -52,31 +52,23 @@
                 dom:  '<lf<t>ip>'
             });
         });
-
-        // ================================================================
-        // DATE HANDLE
-        // ================================================================
-        function dateStartHandler() {
-            const dateStart = $('#dateStart').val();
-            // console.log(dateStart);
-            $('#dateStart').val(dateStart);
-        }
-
-
-        // ================================================================
-        // DATE HANDLE
-        // ================================================================
-        function dateEndHandler() {
-            const dateEnd = $('#dateEnd').val();
-            // console.log(dateStart);
-            $('#dateEnd').val(dateEnd);
-        }
-
         // ================================================================
         // CLEAR FORM
         // ================================================================
-        const clearForm = () => {
-            $('#myForm')[0].reset();
+        function clearForm() {
+            $('#docNum').val("");
+            var now = new Date();
+            var month = (now.getMonth() + 1);
+            var day = now.getDate();
+            if (month < 10)
+            month = "0" + month;
+            if (day < 10)
+            day = "0" + day;
+            var today = now.getFullYear() + '-' + month + '-' + day;
+            $('#dateStart').val(today);
+            $('#dateEnd').val(today);
+            $('#maxRecord').val("10");
+            $('#docType').val("1");
         }
 
         // ================================================================
@@ -125,18 +117,41 @@
                                         <div class="form-group">
                                             <div class="form-group form-inline">
                                                 <label for="docNum">Doc Num: </label>
-                                                <input class="form-control" type="text" class="" id="docNum" name="docNum">&nbsp;&nbsp;
+                                                <input class="form-control" type="text" class="" id="docNum" name="docNum"
+                                                value="<?php
+                                                    if (isset($docNumRtv)) {
+                                                        echo $docNumRtv;
+                                                    }
+                                                ?>"
+                                                >&nbsp;&nbsp;
                                                 <label for="dateStart">Date Start: </label>
-                                                <input class="form-control" type="date" class="" id="dateStart" name="dateStart" onchange="dateStartHandler();">
+                                                <input class="form-control" type="date" class="" id="dateStart" name="dateStart"
+                                                value="<?php
+                                                    if (isset($dateStartRtv)) {
+                                                        echo $dateStartRtv;
+                                                    }else{
+                                                        echo date("Y-m-d");
+                                                    }
+                                                    ?>"
+                                                >
                                                 &nbsp;&nbsp;
                                                 <label for="dateEnd">Date End: </label>
-                                                <input class="form-control" type="date" class="" id="dateEnd" name="dateEnd" onchange="dateEndHandler();">
+                                                <input class="form-control" type="date" class="" id="dateEnd" name="dateEnd"
+                                                value="<?php
+                                                    if (isset($dateEndRtv)) {
+                                                        echo $dateEndRtv;
+                                                    }else{
+                                                        echo date("Y-m-d");
+                                                    }
+                                                    ?>"
+                                                >
                                                 &nbsp;&nbsp;
-                                                <label for="docNum">Record: </label>
+
+                                                <label for="record">Record: </label>
                                                 <select class="form-control" id="maxRecord" name="maxRecord">
-                                                    <option value="10">10</option>
-                                                    <option value="100">100</option>
-                                                    <option value="1000">1000</option>
+                                                    <option <?php if(isset($maxRecordRtv) and $maxRecordRtv == "10") echo "selected"; ?> value="10"  >10</option>
+                                                    <option <?php if(isset($maxRecordRtv) and $maxRecordRtv == "100") echo "selected"; ?> value="100" >100</option>
+                                                    <option <?php if(isset($maxRecordRtv) and $maxRecordRtv == "1000") echo "selected"; ?> value="1000">1000</option>
                                                 </select>
 
                                             </div>
@@ -255,28 +270,4 @@
         @include('theme.footer')
 </body>
 </html>
-<script>
-    $(document).ready( function() {
-    var now = new Date();
-    var month = (now.getMonth() + 1);
-    var day = now.getDate();
-    if (month < 10)
-    month = "0" + month;
-    if (day < 10)
-    day = "0" + day;
-    var today = now.getFullYear() + '-' + month + '-' + day;
-    $('#dateStart').val(today);
-    });
 
-    $(document).ready( function() {
-    var now = new Date();
-    var month = (now.getMonth() + 1);
-    var day = now.getDate();
-    if (month < 10)
-    month = "0" + month;
-    if (day < 10)
-    day = "0" + day;
-    var today = now.getFullYear() + '-' + month + '-' + day;
-    $('#dateEnd').val(today);
-    });
-</script>

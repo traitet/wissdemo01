@@ -38,7 +38,13 @@ class EpsCpApprovePrApiController extends Controller
         // ==========================================================================
         $api = '';
 
-
+        // ======================================================================
+            // SET DATA RETURN TO VIEW
+            // ======================================================================
+            $docNumRtv = $req->input('docNum');
+            $dateStartRtv = $req->input('dateStart');
+            $dateEndRtv = $req->input('dateEnd');
+            $maxRecordRtv = $req->input('maxRecord');
         // ==========================================================================
         // CHECK INPUT IF NOT EMPTY
         // ==========================================================================
@@ -63,12 +69,12 @@ class EpsCpApprovePrApiController extends Controller
                 $result = json_decode($response->body(), true);
                 if(!empty($result)){
                     $keyArray = array_keys($result[0]);
-                    return view('eps-cp-approve-pr', compact('result', 'keyArray'));
+                    return view('eps-cp-approve-pr', compact('result', 'keyArray','docNumRtv','dateStartRtv','dateEndRtv','maxRecordRtv'));
                 }else{
                     //need to return no data msg
                     $keyArray = [];
                 }
             }
-            return view('eps-cp-approve-pr');
+            return view('eps-cp-approve-pr',compact('result', 'keyArray','docNumRtv','dateStartRtv','dateEndRtv','maxRecordRtv'));
     }
 }
