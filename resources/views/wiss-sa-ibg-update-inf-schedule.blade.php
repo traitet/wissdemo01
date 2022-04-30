@@ -54,25 +54,6 @@
         });
 
         // ================================================================
-        // DATE HANDLE
-        // ================================================================
-        function dateStartHandler() {
-            const dateStart = $('#dateStart').val();
-            // console.log(dateStart);
-            $('#dateStart').val(dateStart);
-        }
-
-
-        // ================================================================
-        // DATE HANDLE
-        // ================================================================
-        function dateEndHandler() {
-            const dateEnd = $('#dateEnd').val();
-            // console.log(dateStart);
-            $('#dateEnd').val(dateEnd);
-        }
-
-        // ================================================================
         // CLEAR FORM
         // ================================================================
         const clearForm = () => {
@@ -129,14 +110,15 @@
                                                 <label for="period">Period: </label>
                                                 <input class="form-control" type="text" class="" id="period" name="period">&nbsp;&nbsp;
                                                 <label for="infDate">Interface Date: </label>
-                                                <input class="form-control" type="date" class="" id="infDate" name="infDate">&nbsp;&nbsp;
+                                                <input class="form-control" type="date" class="" id="infDate" name="infDate"
+                                                value="<?php echo date("Y-m-d"); ?>" >&nbsp;&nbsp;
                                                 <label for="infTime">Interface Time: </label>
                                                 <input class="form-control" type="text" class="" id="infTime" name="infTime">&nbsp;&nbsp;
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <button type="submit" class="btn btn-primary">Submit</button>
-                                            <button type="button" class="btn btn-secondary" onclick="clearForm()">Clear</button>
+                                            <button type="button" class="btn btn-secondary" onclick="clearForm();">Clear</button>
                                         </div>
                                     </div>
                                 </div>
@@ -277,28 +259,3 @@
         @include('theme.footer')
 </body>
 </html>
-<script>
-    $(document).ready( function() {
-    var now = new Date();
-    var month = (now.getMonth() + 1);
-    var day = now.getDate();
-    if (month < 10)
-    month = "0" + month;
-    if (day < 10)
-    day = "0" + day;
-    var today = now.getFullYear() + '-' + month + '-' + day;
-    $('#dateStart').val(today);
-    });
-
-    $(document).ready( function() {
-    var now = new Date();
-    var month = (now.getMonth() + 1);
-    var day = now.getDate();
-    if (month < 10)
-    month = "0" + month;
-    if (day < 10)
-    day = "0" + day;
-    var today = now.getFullYear() + '-' + month + '-' + day;
-    $('#dateEnd').val(today);
-    });
-</script>

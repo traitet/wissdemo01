@@ -8,7 +8,23 @@
         box-shadow: none;
     }
 </style>
-
+<script>
+function clearForm() {
+            $('#docNum').val("");
+            var now = new Date();
+            var month = (now.getMonth() + 1);
+            var day = now.getDate();
+            if (month < 10)
+            month = "0" + month;
+            if (day < 10)
+            day = "0" + day;
+            var today = now.getFullYear() + '-' + month + '-' + day;
+            $('#dateStart').val(today);
+            $('#dateEnd').val(today);
+            $('#maxRecord').val("10");
+            $('#docType').val("1");
+        }
+</script>
 
 <body id="page-top">
 
@@ -73,10 +89,10 @@
                                             <div class="form-group form-inline">
 
                                                 <label for="dateStart">Date Start: </label>
-                                                <input class="form-control" type="date" class="" id="dateStart" name="dateStart" onchange="dateEndHandler();">
+                                                <input class="form-control" type="date" class="" id="dateStart" name="dateStart" value="<?php echo date("Y-m-d");?>">
                                                 &nbsp;&nbsp;
                                                 <label for="dateStart">Date End: </label>
-                                                <input class="form-control" type="date" class="" id="dateEnd" name="dateEnd">
+                                                <input class="form-control" type="date" class="" id="dateEnd" name="dateEnd" value="<?php echo date("Y-m-d");?>">
                                                 &nbsp;&nbsp;
                                                 <label for="dateStart">PDS no. </label>
                                                 <input class="form-control" type="text" class="" id="pdsNo" name="pdsNo">
@@ -669,11 +685,6 @@
 
         });
 
-        function dateEndHandler() {
-            const dateStart = $('#dateStart').val();
-            console.log(dateStart);
-            $('#dateEnd').val(dateStart);
-        }
 
         const clearForm = () => {
             $('#myForm')[0].reset();

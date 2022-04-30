@@ -65,15 +65,6 @@
     });
 
     // ================================================================
-    // DATE HANDLE
-    // ================================================================
-    function dateEndHandler() {
-        const dateStart = $('#dateStart').val();
-        console.log(dateStart);
-        $('#dateEnd').val(dateStart);
-    }
-
-    // ================================================================
     // CLEAR FORM
     // ================================================================
     const clearForm = () => {
@@ -134,10 +125,10 @@
                                                 <label for="docNum">Doc Num: </label>
                                                 <input class="form-control" type="text" class="" id="pdsNo" name="pdsNo">&nbsp;&nbsp;
                                                 <label for="dateStart">Date Start: </label>
-                                                <input class="form-control" type="date" class="" id="dateStart" name="dateStart" onchange="dateEndHandler();">
+                                                <input class="form-control" type="date" class="" id="dateStart" name="dateStart" value="<?php echo date("Y-m-d");?>">
                                                 &nbsp;&nbsp;
                                                 <label for="dateEnd">Date End: </label>
-                                                <input class="form-control" type="date" class="" id="dateEnd" name="dateEnd" onchange="dateEndHandler();">
+                                                <input class="form-control" type="date" class="" id="dateEnd" name="dateEnd" value="<?php echo date("Y-m-d");?>">
                                                 &nbsp;&nbsp;
                                             </div>
 {{-- ========================================================= --}}
