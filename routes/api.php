@@ -176,6 +176,19 @@ Route::get('report_budget_checking_obj/{obj}/{search}', function ($obj,$search) 
     return json_encode($result);
 });
 
+//=========================================================================
+// 9.1 Drill down from PRNUM
+// wiss_sa_eps_report_budget_checking_pr_detail (sqlsrv_eps_db,SIAM_EPSDB)
+//=========================================================================
+Route::get('wiss_sa_eps_report_budget_checking_pr_detail/{obj}', function ($obj) {
+    parse_str($obj,$myArray);
+    $doc_num = $myArray['doc_num'];
+    $result = DB::connection('sqlsrv_eps_db')->select("EXEC wiss_sa_eps_report_budget_checking_pr_detail '$doc_num'");
+    return json_encode($result);
+});
+
+
+
 //========================================================================
 // 10.emfg_shipping_order_status_obj (sqlsrv_shipping_db,SIAM_SHIPPINGDB)
 //========================================================================
