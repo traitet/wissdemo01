@@ -15,13 +15,13 @@ use Illuminate\Validation\Rule;
 // ==========================================================================
 // CLASS DECLARATION
 // ==========================================================================
-class EpsBgCheckingDetailApiController extends Controller
+class EpsReportBudgetCheckingInvestmentDetailApiController extends Controller
 {
 
 // ==========================================================================
 // DECLARE END POINT
 // ==========================================================================
-    private $ENDPOINT = 'http://10.100.1.94:8080/wissdemo01/public/api/report_budget_checking_obj';
+    private $ENDPOINT = 'http://10.100.1.94:8080/wissdemo01/public/api/wiss_sa_eps_report_budget_checking_investment';
 
 // ==========================================================================
 // GET DATA
@@ -29,8 +29,6 @@ class EpsBgCheckingDetailApiController extends Controller
     function getData(Request $req)
     {
         $this->validate($req, [
-            'dateStart' => 'date_format:Y-m-d||nullable',
-            'dateEnd' => 'date_format:Y-m-d||nullable',
             'docNum' => 'string||nullable'
         ]);
         // ==========================================================================
@@ -45,17 +43,14 @@ class EpsBgCheckingDetailApiController extends Controller
             // ======================================================================
             // GET DATA
             // ======================================================================
-            $dateStart = str_replace('-','',$req->input('dateStart')??'20220101');
-            $dateEnd = str_replace('-','',$req->input('dateEnd')??'20220425');
-            $maxRecord = $req->input('maxRecord')??'10';
+
             $docNum = $req->input('docNum')??'';
-            $docType = $req->input('docType')??'1';
-             $queryStr = "doc_num=$docNum&start_date=$dateStart&end_date=$dateEnd&max_record=$maxRecord";
-             $queryStrSearch = "doc_type=$docType";
+            $period = 'SAP';
+            $queryStr = "doc_num=$docNum&period=$period";
             // ======================================================================
             // CALL API
             // ======================================================================
-            $url = $this->ENDPOINT . $api ."/". $queryStr ."/". $queryStrSearch;
+            $url = $this->ENDPOINT . $api ."/". $queryStr;
             $response = Http::get($url);
             error_log($url);
             // ======================================================================
@@ -65,12 +60,12 @@ class EpsBgCheckingDetailApiController extends Controller
                 $result = json_decode($response->body(), true);
                 if(!empty($result)){
                     $keyArray = array_keys($result[0]);
-                    return view('eps-bg-checking-detail', compact('result', 'keyArray'));
+                    return view('wiss-sa-eps-report-budget-checking-investment', compact('result', 'keyArray'));
                 }else{
                     //need to return no data msg
                     $keyArray = [];
                 }
             }
-            return view('eps-bg-checking-detail');
+            return view('wiss-sa-eps-report-budget-checking-investment');
     }
 }

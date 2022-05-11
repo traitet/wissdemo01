@@ -17,7 +17,9 @@ use App\Http\Controllers\EmfgShippingLogNgApiController;
 use App\Http\Controllers\EmfgShippingLogEventApiController;
 use App\Http\Controllers\EmfgShippingStatusApiController;
 use App\Http\Controllers\EpsBgCheckingApiController;
-use App\Http\Controllers\EpsBgCheckingDetailApiController;
+use App\Http\Controllers\EpsReportBudgetCheckingPrDetailApiController;
+use App\Http\Controllers\EpsReportBudgetCheckingExpenseDetailApiController;
+use App\Http\Controllers\EpsReportBudgetCheckingInvestmentDetailApiController;
 use App\Http\Controllers\EpsPrOutstandingApiController;
 use App\Http\Controllers\EpsPrPoToPlannerApiController;
 use App\Http\Controllers\EpsPrErrorApiController;
@@ -98,8 +100,10 @@ Route::post('eps-pr-po-planner',[EpsPrPoToPlannerApiController::class,'getData']
 
 Route::view('eps-bg-checking','eps-bg-checking');
 Route::post('eps-bg-checking',[EpsBgCheckingApiController::class,'getData']);
-Route::view('eps-bg-checking-detail','eps-bg-checking-detail');
-Route::get('eps-bg-checking-detail',[EpsBgCheckingDetailApiController::class,'getData']);
+
+Route::get('wiss-sa-eps-report-budget-checking-pr-detail',[EpsReportBudgetCheckingPrDetailApiController::class,'getData']);
+Route::get('wiss_sa_eps_report_budget_checking_expense',[EpsReportBudgetCheckingExpenseDetailApiController::class,'getData']);
+Route::get('wiss_sa_eps_report_budget_checking_investment',[EpsReportBudgetCheckingInvestmentDetailApiController::class,'getData']);
 
 Route::view('eps-pr-error','eps-pr-error');
 Route::post('eps-pr-error',[EpsPrErrorApiController::class,'getData']);

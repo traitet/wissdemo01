@@ -113,7 +113,7 @@
                         {{-- SUBJECT --}}
                         {{-- ========================================================= --}}
                         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                            <h1 class="h5 mb-0 text-gray-800">【 EPS BG Checking Detail】</h1>
+                            <h1 class="h5 mb-0 text-gray-800">【 EPS BG Checking Investment Detail】</h1>
                         </div>
                         {{-- ========================================================= --}}
                         {{-- CLASS ROW --}}
@@ -150,13 +150,9 @@
                                                         foreach ($result as $keyResult => $row) { ?>
                                                             <tr>
                                                                 <?php foreach ($row as $keyRow => $data) {
-                                                                    if($keyRow == 'PRNUM'){
-                                                                    ?>
-                                                                    <td><a href="https://www.w3schools.com?suchart=1" target="_blank">{{$row[$keyRow]}}</a></td>
-                                                                <?php }else{ ?>
+                                                                   ?>
                                                                     <td>{{$row[$keyRow]}}</td>
                                                                     <?php
-                                                                    }
                                                                 }
                                                                 ?>
                                                             </tr>

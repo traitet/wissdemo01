@@ -56,39 +56,27 @@
         // ================================================================
         // DATE HANDLE
         // ================================================================
-        // function dateStartHandler() {
-        //     const dateStart = $('#dateStart').val();
-        //     console.log(dateStart);
-        //     $('#dateStart').val(dateStart);
-        // }
+        function dateStartHandler() {
+            const dateStart = $('#dateStart').val();
+            // console.log(dateStart);
+            $('#dateStart').val(dateStart);
+        }
 
 
         // ================================================================
         // DATE HANDLE
         // ================================================================
-        // function dateEndHandler() {
-        //     const dateEnd = $('#dateEnd').val();
-        //     console.log(dateStart);
-        //     $('#dateEnd').val(dateEnd);
-        // }
+        function dateEndHandler() {
+            const dateEnd = $('#dateEnd').val();
+            // console.log(dateStart);
+            $('#dateEnd').val(dateEnd);
+        }
 
         // ================================================================
         // CLEAR FORM
         // ================================================================
-        function clearForm() {
-            $('#docNum').val("");
-            var now = new Date();
-            var month = (now.getMonth() + 1);
-            var day = now.getDate();
-            if (month < 10)
-            month = "0" + month;
-            if (day < 10)
-            day = "0" + day;
-            var today = now.getFullYear() + '-' + month + '-' + day;
-            $('#dateStart').val(today);
-            $('#dateEnd').val(today);
-            $('#maxRecord').val("10");
-            $('#docType').val("1");
+        const clearForm = () => {
+            $('#myForm')[0].reset();
         }
 
         // ================================================================
@@ -114,89 +102,19 @@
                 {{-- =============================================================== --}}
                 {{-- FORM  ACTION = VIEW --}}
                 {{-- =============================================================== --}}
-                <form method="POST" action="eps-bg-checking" id="myForm">
-                    @csrf
-                    <div class="container-fluid">
-                        {{-- ========================================================= --}}
-                        {{-- SUBJECT --}}
-                        {{-- ========================================================= --}}
-                        <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                            <h1 class="h5 mb-0 text-gray-800">【 EPS BG Checking 】</h1>
-                        </div>
 
-                        {{-- ========================================================= --}}
-                        {{-- SERCH PARAMTER --}}
-                        {{-- ========================================================= --}}
-                        <div class="row">
-                            {{-- ========================================================= --}}
-                            {{-- BASIC SEARCH --}}
-                            {{-- ========================================================= --}}
-                            <div class="col-xl-12 col-lg-12">
-                                <div class="card shadow mb-4">
-                                    <div class="card-body">
-                                        <div class="form-group">
-                                            <div class="form-group form-inline">
-                                                <label for="docNum">Doc Num: </label>
-                                                <input class="form-control" type="text" class="" id="docNum" name="docNum"
-                                                value="<?php
-                                                    if (isset($docNumRtv)) {
-                                                        echo $docNumRtv;
-                                                    }
-                                                ?>"
-                                                >&nbsp;&nbsp;
-                                                <label for="dateStart">Date Start: </label>
-                                                <input class="form-control" type="date" class="" id="dateStart" name="dateStart"
-                                                value="<?php
-                                                    if (isset($dateStartRtv)) {
-                                                        echo $dateStartRtv;
-                                                    }else{
-                                                        echo date("Y-m-d");
-                                                    }
-                                                    ?>"
-                                                >
-                                                &nbsp;&nbsp;
-                                                <label for="dateEnd">Date End: </label>
-                                                <input class="form-control" type="date" class="" id="dateEnd" name="dateEnd"
-                                                value="<?php
-                                                    if (isset($dateEndRtv)) {
-                                                        echo $dateEndRtv;
-                                                    }else{
-                                                        echo date("Y-m-d");
-                                                    }
-                                                    ?>"
-                                                >
-                                                &nbsp;&nbsp;
-
-                                                <label for="record">Record: </label>
-                                                <select class="form-control" id="maxRecord" name="maxRecord">
-                                                    <option <?php if(isset($maxRecordRtv) and $maxRecordRtv == "10") echo "selected"; ?> value="10"  >10</option>
-                                                    <option <?php if(isset($maxRecordRtv) and $maxRecordRtv == "100") echo "selected"; ?> value="100" >100</option>
-                                                    <option <?php if(isset($maxRecordRtv) and $maxRecordRtv == "1000") echo "selected"; ?> value="1000">1000</option>
-                                                </select>
-                                                &nbsp;&nbsp;
-                                                <label for="docType">Doc Type: </label>
-                                                <select class="form-control" id="docType" name="docType">
-                                                    <option <?php if(isset($docTypeRtv) and $docTypeRtv == "1") echo "selected"; ?> value="1">EXPENSE</option>
-                                                    <option <?php if(isset($docTypeRtv) and $docTypeRtv == "2") echo "selected"; ?> value="2">INVESTMENT</option>
-                                                </select>
-
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <button type="submit" class="btn btn-primary">Search</button>
-                                            <button type="button" class="btn btn-secondary" onclick="clearForm();">Clear</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
 
 {{-- ========================================================= --}}
 {{-- SEARCH OUTPUT --}}
 {{-- ========================================================= --}}
                     <div class="container-fluid">
+                        {{-- ========================================================= --}}
+                        {{-- SUBJECT --}}
+                        {{-- ========================================================= --}}
+                        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                            <h1 class="h5 mb-0 text-gray-800">【 EPS BG Checking PR Detail】</h1>
+                        </div>
                         {{-- ========================================================= --}}
                         {{-- CLASS ROW --}}
                         {{-- ========================================================= --}}
@@ -206,6 +124,7 @@
                                     {{-- ========================================================= --}}
                                     {{-- CARD BODY --}}
                                     {{-- ========================================================= --}}
+                                    <div class="card-body">
                                         <div class="table-responsive">
                                             {{-- ========================================================= --}}
                                             {{-- TABLE --}}
@@ -231,21 +150,9 @@
                                                         foreach ($result as $keyResult => $row) { ?>
                                                             <tr>
                                                                 <?php foreach ($row as $keyRow => $data) {
-                                                                    if($keyRow == 'PRNUM'){
-                                                                    ?>
-                                                                    <td><a href="wiss-sa-eps-report-budget-checking-pr-detail?docNum={{$row[$keyRow]}}" target="_blank">{{$row[$keyRow]}}</a></td>
-                                                                <?php }else if($keyRow == 'EXPENSEID'){
-                                                                    ?>
-                                                                    <td><a href="wiss_sa_eps_report_budget_checking_expense?docNum={{$row[$keyRow]}}" target="_blank">{{$row[$keyRow]}}</a></td>
-                                                                    <?php
-                                                                    }else if($keyRow == 'INVESTMENTID'){
-                                                                    ?>
-                                                                    <td><a href="wiss_sa_eps_report_budget_checking_investment?docNum={{$row[$keyRow]}}" target="_blank">{{$row[$keyRow]}}</a></td>
-                                                                    <?php
-                                                                    }else{ ?>
+                                                                   ?>
                                                                     <td>{{$row[$keyRow]}}</td>
                                                                     <?php
-                                                                    }
                                                                 }
                                                                 ?>
                                                             </tr>
@@ -310,6 +217,3 @@
         @include('theme.footer')
 </body>
 </html>
-<script>
-
-</script>
