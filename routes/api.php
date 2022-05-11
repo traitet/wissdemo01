@@ -180,6 +180,7 @@ Route::get('report_budget_checking_obj/{obj}/{search}', function ($obj,$search) 
 // 9.1 Drill down from PRNUM
 // wiss_sa_eps_report_budget_checking_pr_detail (sqlsrv_eps_db,SIAM_EPSDB)
 //=========================================================================
+// http://10.100.1.94:8080/wissdemo01/public/api/wiss_sa_eps_report_budget_checking_pr_detail/doc_num=PR22000571
 Route::get('wiss_sa_eps_report_budget_checking_pr_detail/{obj}', function ($obj) {
     parse_str($obj,$myArray);
     $doc_num = $myArray['doc_num'];
@@ -187,7 +188,31 @@ Route::get('wiss_sa_eps_report_budget_checking_pr_detail/{obj}', function ($obj)
     return json_encode($result);
 });
 
+//=========================================================================
+// 9.2 Drill down from INVESTMENT
+// wiss_sa_eps_report_budget_checking_investment (sqlsrv_eps_db,SIAM_EPSDB)
+//=========================================================================
+// http://10.100.1.94:8080/wissdemo01/public/api/wiss_sa_eps_report_budget_checking_investment/doc_num=Y22IT017CO01&period=SAP
+Route::get('wiss_sa_eps_report_budget_checking_investment/{obj}', function ($obj) {
+    parse_str($obj,$myArray);
+    $doc_num = $myArray['doc_num'];
+    $period = $myArray['period'];
+    $result = DB::connection('sqlsrv_eps_db')->select("EXEC wiss_sa_eps_report_budget_checking_investment '$doc_num','$period'");
+    return json_encode($result);
+});
 
+//=========================================================================
+// 9.3 Drill down from EXPENSE
+// wiss_sa_eps_report_budget_checking_expense (sqlsrv_eps_db,SIAM_EPSDB)
+//=========================================================================
+// http://10.100.1.94:8080/wissdemo01/public/api/wiss_sa_eps_report_budget_checking_expense/doc_num=61830-B200&period=SAP
+Route::get('wiss_sa_eps_report_budget_checking_expense/{obj}', function ($obj) {
+    parse_str($obj,$myArray);
+    $doc_num = $myArray['doc_num'];
+    $period = $myArray['period'];
+    $result = DB::connection('sqlsrv_eps_db')->select("EXEC wiss_sa_eps_report_budget_checking_expense '$doc_num','$period'");
+    return json_encode($result);
+});
 
 //========================================================================
 // 10.emfg_shipping_order_status_obj (sqlsrv_shipping_db,SIAM_SHIPPINGDB)
