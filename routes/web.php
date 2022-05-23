@@ -27,6 +27,7 @@ use App\Http\Controllers\EpsPrProductionErrorApiController;
 use App\Http\Controllers\EpsCpApprovePrApiController;
 use App\Http\Controllers\EmfgInventoryStockOutErrorApiController;
 use App\Http\Controllers\EdrawingCheckPasswordApiController;
+use App\Http\Controllers\EmfgAtacShoppingLogApiController;
 //==================================================================================================================
 //                                                     Maintain
 //==================================================================================================================

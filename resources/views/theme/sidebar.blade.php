@@ -60,6 +60,7 @@
                         <a class="collapse-item" href="emfg-shipping-log-ng">NG Log</a>
                         <a class="collapse-item" href="emfg-shipping-log-event">Event Log</a>
                         <a class="collapse-item" href="emfg-inventory-stock-out-error">Stock Error</a>
+                        <a class="collapse-item" href="wiss-atac-emfg-shopping-log">ATAC Shipping Log</a>
                    </div>
                </div>
            </li>
