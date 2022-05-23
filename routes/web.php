@@ -89,6 +89,9 @@ Route::post('emfg-shipping-status',[EmfgShippingStatusApiController::class,'getD
 Route::view('emfg-inventory-stock-out-error','emfg-inventory-stock-out-error');
 Route::post('emfg-inventory-stock-out-error',[EmfgInventoryStockOutErrorApiController::class,'getData']);
 
+Route::view('wiss-atac-emfg-shopping-log','wiss-atac-emfg-shopping-log');
+Route::post('wiss-atac-emfg-shopping-log',[EmfgAtacShoppingLogApiController::class,'getData']);
+
 //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< EPS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 // ==========================================================================
 // ROUTE GET/POST "BASIC-REPORT-API"

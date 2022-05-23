@@ -321,6 +321,32 @@ Route::get('eps_pr_for_cp_report_obj/{obj}', function ($obj) {
     return json_encode($result);
 });
 
+//========================================================================
+// 15.wiss_atac_emfg_shopping_log (sqlsrv_atac_arisa_p02_db, ATAC_ARISA_P02)
+//========================================================================
+// http://10.100.1.94:8080/wissdemo01/public/api/wiss_atac_emfg_complete_pkl/picking_list_num=P323A470640&pallet_Number=urlencode(PAL-01|0117|20191029)
+Route::get('wiss_atac_emfg_shopping_log/{obj}', function ($obj) {
+    parse_str($obj,$myArray);
+    $picking_list_num = $myArray['picking_list_num'];
+    $pallet_Number = $myArray['pallet_Number'];
+    $result = DB::connection('sqlsrv_atac_arisa_p02_db')->select("EXEC wiss_atac_emfg_shopping_log @picking_list_num ='$picking_list_num', @pallet_Number = '$pallet_Number'");
+    return json_encode($result);
+});
+
+//========================================================================
+// 15) wiss_atac_emfg_shopping_log  (sqlsrv_atac_arisa_p02_db, ATAC_ARISA_P02)
+//========================================================================
+// http://10.100.1.94:8080/wissdemo01/public/api/interface_sap_po_obj/doc_num=P325A559860&start_date=20190101&end_date=20220225&max_record=100
+Route::get('wiss_atac_emfg_shopping_log/{obj}', function ($obj) {
+    parse_str($obj,$myArray);
+    $doc_num = $myArray['doc_num'];
+    $start_date = $myArray['start_date'];
+    $end_date = $myArray['end_date'];
+    $max_record = $myArray['max_record'];
+    $result = DB::select("EXEC wiss_atac_emfg_shopping_log '$start_date','$end_date','$doc_num',$max_record");
+    return json_encode($result);
+});
+
 // **********************************************************************************************************************************************
 // PART 2 : FIX PROGRAM
 // **********************************************************************************************************************************************
@@ -460,8 +486,10 @@ Route::get('wiss_atac_emfg_revert_shopping_status/{obj}', function ($obj) {
 //========================================================================
 // 11.wiss-atac-emfg-complete-pkl (sqlsrv_atac_arisa_p02_db, ATAC_ARISA_P02)
 //========================================================================
+// http://10.100.1.94:8080/wissdemo01/public/api/wiss_atac_emfg_complete_pkl/picking_list_num=P323A470640&pallet_Number=PAL-01|0117|20191029
 // http://10.100.1.94:8080/wissdemo01/public/api/wiss_atac_emfg_complete_pkl/picking_list_num=P323A470640&pallet_Number=htmlentities(PAL-01|0117|20191029)
-Route::get('wiss_atac_emfg_complete_pkl/{obj}', function ($obj) {
+// http://10.100.1.94:8080/wissdemo01/public/api/wiss_atac_emfg_complete_pkl/picking_list_num=P323A470640&pallet_Number=urlencode(PAL-01|0117|20191029)
+    Route::get('wiss_atac_emfg_complete_pkl/{obj}', function ($obj) {
     parse_str($obj,$myArray);
     $picking_list_num = $myArray['picking_list_num'];
     $pallet_Number = $myArray['pallet_Number'];
