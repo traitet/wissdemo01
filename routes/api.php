@@ -336,14 +336,14 @@ Route::get('wiss_atac_emfg_shopping_log/{obj}', function ($obj) {
 //========================================================================
 // 15) wiss_atac_emfg_shopping_log  (sqlsrv_atac_arisa_p02_db, ATAC_ARISA_P02)
 //========================================================================
-// http://10.100.1.94:8080/wissdemo01/public/api/interface_sap_po_obj/doc_num=P325A559860&start_date=20190101&end_date=20220225&max_record=100
+// http://10.100.1.94:8080/wissdemo01/public/api/wiss_atac_emfg_shopping_log/doc_num=P325A559860&start_date=20190101&end_date=20220225&max_record=100
 Route::get('wiss_atac_emfg_shopping_log/{obj}', function ($obj) {
     parse_str($obj,$myArray);
     $doc_num = $myArray['doc_num'];
     $start_date = $myArray['start_date'];
     $end_date = $myArray['end_date'];
     $max_record = $myArray['max_record'];
-    $result = DB::select("EXEC wiss_atac_emfg_shopping_log '$start_date','$end_date','$doc_num',$max_record");
+    $result = DB::connection('sqlsrv_atac_arisa_p02_db')->select("EXEC wiss_atac_emfg_shopping_log '$start_date','$end_date','$doc_num',$max_record");
     return json_encode($result);
 });
 
