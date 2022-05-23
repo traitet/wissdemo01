@@ -456,3 +456,16 @@ Route::get('wiss_atac_emfg_revert_shopping_status/{obj}', function ($obj) {
     $result = DB::connection('sqlsrv_atac_arisa_p02_db')->select("EXEC wiss_atac_emfg_revert_shopping_status @picking_list_num ='$picking_list_num', @pallet_Number = '$pallet_Number'");
     return json_encode($result);
 });
+
+//========================================================================
+// 11.wiss-atac-emfg-complete-pkl (sqlsrv_atac_arisa_p02_db, ATAC_ARISA_P02)
+//========================================================================
+// http://10.100.1.94:8080/wissdemo01/public/api/wiss_atac_emfg_complete_pkl/picking_list_num=P323A470640&pallet_Number=PAL-01|0117|20191029
+Route::get('wiss_atac_emfg_complete_pkl/{obj}', function ($obj) {
+    parse_str($obj,$myArray);
+    $picking_list_num = $myArray['picking_list_num'];
+    $pallet_Number = $myArray['pallet_Number'];
+    $result = DB::connection('sqlsrv_atac_arisa_p02_db')->select("EXEC wiss_atac_emfg_complete_pkl @picking_list_num ='$picking_list_num', @pallet_Number = '$pallet_Number'");
+    return json_encode($result);
+});
+

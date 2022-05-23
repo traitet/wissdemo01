@@ -40,6 +40,7 @@ use App\Http\Controllers\EmfgSaAddShelfApiController;
 use App\Http\Controllers\IfinRevertDocApiController;
 use App\Http\Controllers\IfinRegisterAdminApiController;
 use App\Http\Controllers\EmfgRevertShoppingStatusApiController;
+use App\Http\Controllers\EmfgCompletePKLApiController;
 //##################################################################################################################
 //#                                                    Report                                                      #
 //##################################################################################################################
@@ -152,6 +153,9 @@ Route::post('wiss-atac-emfg-add-shelf',[EmfgAddShelfApiController::class,'getDat
 
 Route::view('wiss-atac-emfg-revert-shopping-status','wiss-atac-emfg-revert-shopping-status');
 Route::post('wiss-atac-emfg-revert-shopping-status',[EmfgRevertShoppingStatusApiController::class,'getData']);
+
+Route::view('wiss-atac-emfg-complete-pkl','wiss-atac-emfg-complete-pkl');
+Route::post('wiss-atac-emfg-complete-pkl',[EmfgCompletePKLApiController::class,'getData']);
 
 //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< SA EMFG >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 Route::view('wiss-sa-emfg-add-shelf','wiss-sa-emfg-add-shelf');

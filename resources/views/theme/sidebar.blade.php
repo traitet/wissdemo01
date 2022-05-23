@@ -140,6 +140,7 @@
                      <a class="collapse-item" href="wiss-atac-emfg-add-model">Add Model ATAC</a>
                      <a class="collapse-item" href="wiss-atac-emfg-add-shelf">Add Shelf ATAC</a>
                      <a class="collapse-item" href="wiss-atac-emfg-revert-shopping-status">Revert Shopping ATAC</a>
+                     <a class="collapse-item" href="wiss-atac-emfg-complete-pkl">Complete PKL ATAC</a>
                      <a class="collapse-item" href="wiss-sa-emfg-add-shelf">Add Shelf SA</a>
                 </div>
             </div>
