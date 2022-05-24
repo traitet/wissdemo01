@@ -215,7 +215,7 @@ Route::get('wiss_sa_eps_report_budget_checking_expense/{obj}', function ($obj) {
 });
 
 //========================================================================
-// 10.emfg_shipping_order_status_obj (sqlsrv_shipping_db,SIAM_SHIPPINGDB)
+// 10.emfg_shipping_order_status (sqlsrv_shipping_db,SIAM_SHIPPINGDB)
 //========================================================================
 // http://10.100.1.94:8080/wissdemo01/public/api/emfg_shipping_order_status_obj/start_date=20210101&end_date=20220225&doc_num=SA11AP1M0147&max_record=100
 Route::get('emfg_shipping_order_status_obj/{obj}', function ($obj) {
@@ -227,7 +227,9 @@ Route::get('emfg_shipping_order_status_obj/{obj}', function ($obj) {
     $result = DB::connection('sqlsrv_shipping_db')->select("EXEC emfg_shipping_order_status '$start_date','$end_date','$doc_num',$max_record");
     return json_encode($result);
 });
-//eps_pr_productionid_error_report
+//========================================================================
+// 11.eps_pr_productionid_error_report (sqlsrv_eps_db,SIAM_EPSDB)
+//========================================================================
 Route::get('eps_pr_productionid_error_report_obj/{obj}', function ($obj) {
     parse_str($obj,$myArray);
     $doc_num = $myArray['doc_num'];
@@ -237,7 +239,9 @@ Route::get('eps_pr_productionid_error_report_obj/{obj}', function ($obj) {
     $result = DB::connection('sqlsrv_eps_db')->select("EXEC eps_pr_productionid_error_report '$start_date','$end_date','$doc_num',$max_record");
     return json_encode($result);
 });
-// http://10.100.1.94:8080/wissdemo01/public/api/eps_pr_for_cp_report_obj/doc_num=&start_date=20220101&end_date=20220225&max_record=100
+//========================================================================
+// 12.emfg_shipping_order_status_obj (sqlsrv_shipping_db,SIAM_SHIPPINGDB)
+//========================================================================
 Route::get('eps_pr_for_cp_report_obj/{obj}', function ($obj) {
     parse_str($obj,$myArray);
     $doc_num = $myArray['doc_num'];
@@ -250,7 +254,7 @@ Route::get('eps_pr_for_cp_report_obj/{obj}', function ($obj) {
 
 
 //========================================================================
-// 11.edrawing_check_password (sqlsrv_ags_j614_db,AGS_J614_J614)
+// 13.edrawing_check_password (sqlsrv_ags_j614_db,AGS_J614_J614)
 //========================================================================
 Route::get('edrawing_check_password_obj/{obj}', function ($obj) {
     parse_str($obj,$myArray);
@@ -264,7 +268,7 @@ Route::get('edrawing_check_password_obj/{obj}', function ($obj) {
 
 
 //========================================================================
-// 12.eps_pr_issue_error_report (sqlsrv_eps_db,SIAM_EPSDB)
+// 14.eps_pr_issue_error_report (sqlsrv_eps_db,SIAM_EPSDB)
 //========================================================================
 // http://10.100.1.94:8080/wissdemo01/public/api/eps_pr_issue_error_report_obj/doc_num=PR22&start_date=20190101&end_date=20220225&max_record=100
 Route::get('eps_pr_issue_error_report_obj/{obj}', function ($obj) {
@@ -278,7 +282,7 @@ Route::get('eps_pr_issue_error_report_obj/{obj}', function ($obj) {
 });
 
 //========================================================================
-// 13.wiss_sa_eps_pr_productionid_error (sqlsrv_eps_db,SIAM_EPSDB)
+// 15.wiss_sa_eps_pr_productionid_error (sqlsrv_eps_db,SIAM_EPSDB)
 //========================================================================
 // http://10.100.1.94:8080/wissdemo01/public/api/eps_pr_productionid_error_report_obj/doc_num=PR22&start_date=20190101&end_date=20220225&max_record=100
 Route::get('eps_pr_productionid_error_report_obj/{obj}', function ($obj) {
@@ -292,7 +296,7 @@ Route::get('eps_pr_productionid_error_report_obj/{obj}', function ($obj) {
 });
 
 //========================================================================
-// 14. emfg_inventory_stock_out_error_obj (sqlsrv_siam_arisa_p01_db,SIAM_ARISA_P01)
+// 16. emfg_inventory_stock_out_error_obj (sqlsrv_siam_arisa_p01_db,SIAM_ARISA_P01)
 //========================================================================
 // http://10.100.1.94:8080/wissdemo01/public/api/emfg_inventory_stock_out_error_obj/doc_num=T344&start_date=20220101&end_date=20990101&max_record=100
 // doc_num is PARTCODE
@@ -308,7 +312,7 @@ Route::get('emfg_inventory_stock_out_error_obj/{obj}', function ($obj) {
 
 
 //========================================================================
-// 15.eps_pr_for_cp_report (sqlsrv_eps_db,SIAM_EPSDB)
+// 17.eps_pr_for_cp_report (sqlsrv_eps_db,SIAM_EPSDB)
 //========================================================================
 // http://10.100.1.94:8080/wissdemo01/public/api/eps_interface_pr_po_to_planner_obj/doc_num=PR22&start_date=20190101&end_date=20220225&max_record=100
 Route::get('eps_pr_for_cp_report_obj/{obj}', function ($obj) {
@@ -322,7 +326,7 @@ Route::get('eps_pr_for_cp_report_obj/{obj}', function ($obj) {
 });
 
 //========================================================================
-// 15.wiss_atac_emfg_shopping_log (sqlsrv_atac_arisa_p02_db, ATAC_ARISA_P02)
+// 18.wiss_atac_emfg_shopping_log (sqlsrv_atac_arisa_p02_db, ATAC_ARISA_P02)
 //========================================================================
 // http://10.100.1.94:8080/wissdemo01/public/api/wiss_atac_emfg_complete_pkl/picking_list_num=P323A470640&pallet_Number=urlencode(PAL-01|0117|20191029)
 Route::get('wiss_atac_emfg_shopping_log/{obj}', function ($obj) {
@@ -334,7 +338,7 @@ Route::get('wiss_atac_emfg_shopping_log/{obj}', function ($obj) {
 });
 
 //========================================================================
-// 15) wiss_atac_emfg_shopping_log  (sqlsrv_atac_arisa_p02_db, ATAC_ARISA_P02)
+// 19) wiss_atac_emfg_shopping_log  (sqlsrv_atac_arisa_p02_db, ATAC_ARISA_P02)
 //========================================================================
 // http://10.100.1.94:8080/wissdemo01/public/api/wiss_atac_emfg_shopping_log/doc_num=P325A559860&start_date=20190101&end_date=20220525&max_record=100
 Route::get('wiss_atac_emfg_shopping_log/{obj}', function ($obj) {
