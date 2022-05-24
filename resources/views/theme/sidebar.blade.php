@@ -55,12 +55,12 @@
                </a>
                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="emfg-shipping-status">SA Oder Status</a>
-                        <a class="collapse-item" href="emfg-shipping-log-ok">SA OK Log</a>
-                        <a class="collapse-item" href="emfg-shipping-log-ng">SA NG Log</a>
-                        <a class="collapse-item" href="emfg-shipping-log-event">SA Event Log</a>
-                        <a class="collapse-item" href="emfg-inventory-stock-out-error">SA Stock Error</a>
-                        <a class="collapse-item" href="wiss-atac-emfg-shopping-log">ATAC Shipping Log</a>
+                        <a class="collapse-item" href="emfg-shipping-status">Oder Status SA</a>
+                        <a class="collapse-item" href="emfg-shipping-log-ok">OK Log SA</a>
+                        <a class="collapse-item" href="emfg-shipping-log-ng">NG Log SA</a>
+                        <a class="collapse-item" href="emfg-shipping-log-event">Event Log SA</a>
+                        <a class="collapse-item" href="emfg-inventory-stock-out-error">Stock Error SA</a>
+                        <a class="collapse-item" href="wiss-atac-emfg-shopping-log">Shipping Log ATAC</a>
                    </div>
                </div>
            </li>
