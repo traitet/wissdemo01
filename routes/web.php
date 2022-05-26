@@ -190,10 +190,12 @@ Route::get('/welcome', function () {
 Route::get('/menu', function () {
     return view('menu');
 });
-
-
+// ==========================================================================
+// ROUTE VIEW DASHBOARD
+// ==========================================================================
+Route::view('dashboard','dashboard');
 Route::get('/', function () {
-    return view('basic-report');
+    return view('dashboard');
 });
 
 Route::get('/demo', function () {
