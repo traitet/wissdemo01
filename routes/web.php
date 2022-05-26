@@ -42,6 +42,7 @@ use App\Http\Controllers\IfinRevertDocApiController;
 use App\Http\Controllers\IfinRegisterAdminApiController;
 use App\Http\Controllers\EmfgRevertShoppingStatusApiController;
 use App\Http\Controllers\EmfgCompletePKLApiController;
+use App\Http\Controllers\EmfgCreatePalletDataFromShoppingApiController;
 //##################################################################################################################
 //#                                                    Report                                                      #
 //##################################################################################################################
@@ -160,6 +161,9 @@ Route::post('wiss-atac-emfg-revert-shopping-status',[EmfgRevertShoppingStatusApi
 
 Route::view('wiss-atac-emfg-complete-pkl','wiss-atac-emfg-complete-pkl');
 Route::post('wiss-atac-emfg-complete-pkl',[EmfgCompletePKLApiController::class,'getData']);
+
+Route::view('wiss-atac-emfg-create-pallet-data-from-shopping','wiss-atac-emfg-create-pallet-data-from-shopping');
+Route::post('wiss-atac-emfg-create-pallet-data-from-shopping',[EmfgCreatePalletDataFromShoppingApiController::class,'getData']);
 
 //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< SA EMFG >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 Route::view('wiss-sa-emfg-add-shelf','wiss-sa-emfg-add-shelf');

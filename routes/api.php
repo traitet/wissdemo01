@@ -506,7 +506,7 @@ Route::get('wiss_atac_emfg_revert_shopping_status/{obj}', function ($obj) {
 //========================================================================
 // 12.wiss_atac_emfg_create_pallet_data_from_shopping (sqlsrv_atac_arisa_p02_db, ATAC_ARISA_P02)
 //========================================================================
-// http://10.100.1.94:8080/wissdemo01/public/wiss_atac_emfg_create_pallet_data_from_shopping/picking_list_num=P325A567860&pallet_Number=R008-0|00|20200822
+// http://10.100.1.94:8080/wissdemo01/public/api/wiss_atac_emfg_create_pallet_data_from_shopping/picking_list_num=P325A567860&pallet_Number=R008-0|00|20200822
 Route::get('wiss_atac_emfg_create_pallet_data_from_shopping/{obj}', function ($obj) {
     parse_str($obj,$myArray);
     $picking_list_num = $myArray['picking_list_num'];
