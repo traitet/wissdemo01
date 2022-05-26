@@ -60,7 +60,7 @@ class EmfgCompletePKLApiController extends Controller
             if ($response->status() == 200) {
                 $result = json_decode($response->body(), true);
                 if(!empty($result)){
-                    $keyArray = array_keys($result[0]);
+                    $keyArray = array_keys($result[6]);
                     return view('wiss-atac-emfg-complete-pkl', compact('result', 'keyArray'));
                 }else{
                     //need to return no data msg
