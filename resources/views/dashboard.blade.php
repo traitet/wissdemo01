@@ -20,6 +20,38 @@
     <!-- Custom styles for this template-->
     <link href="theme/css/sb-admin-2.min.css" rel="stylesheet">
 
+    <style>
+        @import url(//fonts.googleapis.com/css?family=Lato:700);
+        body {
+            margin: 0;
+            font-family: 'Lato', sans-serif;
+            /* text-align: center; */
+            color: #999;
+        }
+        .container {
+            width: 100%;
+            height: 20%;
+            /* position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -150px;
+            margin-top: -100px; */
+        }
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
 
 </head>
 
