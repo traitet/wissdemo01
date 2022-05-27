@@ -56,7 +56,7 @@ Route::get('interface_sap_po_obj/{obj}', function ($obj) {
 });
 
 //========================================================================
-// 2.interface_sap_rec (DEFAULT, SIAM_EPSINFDB)
+// 2) interface_sap_rec (DEFAULT, SIAM_EPSINFDB)
 //========================================================================
 // http://10.100.1.94:8080/wissdemo01/public/api/interface_sap_rec_obj/doc_num=PO19007289&start_date=20190101&end_date=20220225&max_record=100
 Route::get('interface_sap_rec_obj/{obj}', function ($obj) {
@@ -72,7 +72,7 @@ Route::get('interface_sap_rec_obj/{obj}', function ($obj) {
 });
 
 //========================================================================
-// 3.interface_sap_inv (DEFAULT, SIAM_EPSINFDB)
+// 3) interface_sap_inv (DEFAULT, SIAM_EPSINFDB)
 //========================================================================
 // http://10.100.1.94:8080/wissdemo01/public/api/interface_sap_inv_obj/doc_num=PO19&start_date=20190101&end_date=20220225&max_record=100
 Route::get('interface_sap_inv_obj/{obj}', function ($obj) {
@@ -86,7 +86,7 @@ Route::get('interface_sap_inv_obj/{obj}', function ($obj) {
 });
 
 //========================================================================
-// 4.emfg_shipping_log_ok (sqlsrv_shipping_db,SIAM_EPSINFDB)
+// 4) emfg_shipping_log_ok (sqlsrv_shipping_db,SIAM_EPSINFDB)
 //========================================================================
 // http://10.100.1.94:8080/wissdemo01/public/api/emfg_shipping_log_ok_obj/doc_num=SA11AD1C5079&start_date=20190101&end_date=20220225&max_record=100
 Route::get('emfg_shipping_log_ok_obj/{obj}', function ($obj) {
@@ -115,7 +115,7 @@ Route::get('emfg_shipping_log_ng_obj/{obj}', function ($obj) {
 
 
 //========================================================================
-// 6.emfg_shipping_log_event (sqlsrv_shipping_db, SIAM_SHIPPINGDB)
+// 6) emfg_shipping_log_event (sqlsrv_shipping_db, SIAM_SHIPPINGDB)
 //========================================================================
 // http://10.100.1.94:8080/wissdemo01/public/api/emfg_shipping_log_event_obj/doc_num=&start_date=20190101&end_date=20220225&max_record=100
 Route::get('emfg_shipping_log_event_obj/{obj}', function ($obj) {
@@ -129,7 +129,7 @@ Route::get('emfg_shipping_log_event_obj/{obj}', function ($obj) {
 });
 
 //========================================================================
-// 7.eps_interface_pr_po_to_planner (sqlsrv_eps_db, SIAM_EPSDB)
+// 7) eps_interface_pr_po_to_planner (sqlsrv_eps_db, SIAM_EPSDB)
 //========================================================================
 // http://10.100.1.94:8080/wissdemo01/public/api/eps_interface_pr_po_to_planner_obj/doc_num=PO19007289&start_date=20190101&end_date=20220225&max_record=100
 Route::get('eps_interface_pr_po_to_planner_obj/{obj}', function ($obj) {
@@ -143,7 +143,7 @@ Route::get('eps_interface_pr_po_to_planner_obj/{obj}', function ($obj) {
 });
 
 //========================================================================
-// 8.eps_interface_sap_pr_outstanding (sqlsrv_eps_db, SIAM_EPSDB)
+// 8) eps_interface_sap_pr_outstanding (sqlsrv_eps_db, SIAM_EPSDB)
 // Maybe need to add EXPENSE_ID
 //========================================================================
 // http://10.100.1.94:8080/wissdemo01/public/api/eps_interface_sap_pr_outstanding_obj/doc_num=PR21&start_date=20190101&end_date=20220225&max_record=100
@@ -158,7 +158,7 @@ Route::get('eps_interface_sap_pr_outstanding_obj/{obj}', function ($obj) {
 });
 
 //========================================================================
-// 9.report_budget_checking (sqlsrv_eps_db,SIAM_EPSDB)
+// 9) report_budget_checking (sqlsrv_eps_db,SIAM_EPSDB)
 // doc_type : 1=PR, 2=PO, 0 or else =BOTH
 //========================================================================
 // http://10.100.1.94:8080/wissdemo01/public/api/report_budget_checking_obj/doc_num=F400&start_date=20190101&end_date=20220225&max_record=100/doc_type=0
@@ -176,46 +176,8 @@ Route::get('report_budget_checking_obj/{obj}/{search}', function ($obj,$search) 
     return json_encode($result);
 });
 
-//=========================================================================
-// 9.1 Drill down from PRNUM
-// wiss_sa_eps_report_budget_checking_pr_detail (sqlsrv_eps_db,SIAM_EPSDB)
-//=========================================================================
-// http://10.100.1.94:8080/wissdemo01/public/api/wiss_sa_eps_report_budget_checking_pr_detail/doc_num=PR22000571
-Route::get('wiss_sa_eps_report_budget_checking_pr_detail/{obj}', function ($obj) {
-    parse_str($obj,$myArray);
-    $doc_num = $myArray['doc_num'];
-    $result = DB::connection('sqlsrv_eps_db')->select("EXEC wiss_sa_eps_report_budget_checking_pr_detail '$doc_num'");
-    return json_encode($result);
-});
-
-//=========================================================================
-// 9.2 Drill down from INVESTMENT
-// wiss_sa_eps_report_budget_checking_investment (sqlsrv_eps_db,SIAM_EPSDB)
-//=========================================================================
-// http://10.100.1.94:8080/wissdemo01/public/api/wiss_sa_eps_report_budget_checking_investment/doc_num=Y22IT017CO01&period=SAP
-Route::get('wiss_sa_eps_report_budget_checking_investment/{obj}', function ($obj) {
-    parse_str($obj,$myArray);
-    $doc_num = $myArray['doc_num'];
-    $period = $myArray['period'];
-    $result = DB::connection('sqlsrv_eps_db')->select("EXEC wiss_sa_eps_report_budget_checking_investment '$doc_num','$period'");
-    return json_encode($result);
-});
-
-//=========================================================================
-// 9.3 Drill down from EXPENSE
-// wiss_sa_eps_report_budget_checking_expense (sqlsrv_eps_db,SIAM_EPSDB)
-//=========================================================================
-// http://10.100.1.94:8080/wissdemo01/public/api/wiss_sa_eps_report_budget_checking_expense/doc_num=61830-B200&period=SAP
-Route::get('wiss_sa_eps_report_budget_checking_expense/{obj}', function ($obj) {
-    parse_str($obj,$myArray);
-    $doc_num = $myArray['doc_num'];
-    $period = $myArray['period'];
-    $result = DB::connection('sqlsrv_eps_db')->select("EXEC wiss_sa_eps_report_budget_checking_expense '$doc_num','$period'");
-    return json_encode($result);
-});
-
 //========================================================================
-// 10.emfg_shipping_order_status (sqlsrv_shipping_db,SIAM_SHIPPINGDB)
+// 10) emfg_shipping_order_status (sqlsrv_shipping_db,SIAM_SHIPPINGDB)
 //========================================================================
 // http://10.100.1.94:8080/wissdemo01/public/api/emfg_shipping_order_status_obj/start_date=20210101&end_date=20220225&doc_num=SA11AP1M0147&max_record=100
 Route::get('emfg_shipping_order_status_obj/{obj}', function ($obj) {
@@ -227,34 +189,9 @@ Route::get('emfg_shipping_order_status_obj/{obj}', function ($obj) {
     $result = DB::connection('sqlsrv_shipping_db')->select("EXEC emfg_shipping_order_status '$start_date','$end_date','$doc_num',$max_record");
     return json_encode($result);
 });
-//========================================================================
-// 11.eps_pr_productionid_error_report (sqlsrv_eps_db,SIAM_EPSDB)
-//========================================================================
-Route::get('eps_pr_productionid_error_report_obj/{obj}', function ($obj) {
-    parse_str($obj,$myArray);
-    $doc_num = $myArray['doc_num'];
-    $start_date = $myArray['start_date'];
-    $end_date = $myArray['end_date'];
-    $max_record = $myArray['max_record'];
-    $result = DB::connection('sqlsrv_eps_db')->select("EXEC eps_pr_productionid_error_report '$start_date','$end_date','$doc_num',$max_record");
-    return json_encode($result);
-});
-//========================================================================
-// 12.emfg_shipping_order_status_obj (sqlsrv_shipping_db,SIAM_SHIPPINGDB)
-//========================================================================
-Route::get('eps_pr_for_cp_report_obj/{obj}', function ($obj) {
-    parse_str($obj,$myArray);
-    $doc_num = $myArray['doc_num'];
-    $start_date = $myArray['start_date'];
-    $end_date = $myArray['end_date'];
-    $max_record = $myArray['max_record'];
-    $result = DB::connection('sqlsrv_eps_db')->select("EXEC eps_pr_for_cp_report '$start_date','$end_date','$doc_num',$max_record");
-    return json_encode($result);
-});
-
 
 //========================================================================
-// 13.edrawing_check_password (sqlsrv_ags_j614_db,AGS_J614_J614)
+// 11) edrawing_check_password (sqlsrv_ags_j614_db,AGS_J614_J614)
 //========================================================================
 Route::get('edrawing_check_password_obj/{obj}', function ($obj) {
     parse_str($obj,$myArray);
@@ -268,7 +205,7 @@ Route::get('edrawing_check_password_obj/{obj}', function ($obj) {
 
 
 //========================================================================
-// 14.eps_pr_issue_error_report (sqlsrv_eps_db,SIAM_EPSDB)
+// 12) eps_pr_issue_error_report (sqlsrv_eps_db,SIAM_EPSDB)
 //========================================================================
 // http://10.100.1.94:8080/wissdemo01/public/api/eps_pr_issue_error_report_obj/doc_num=PR22&start_date=20190101&end_date=20220225&max_record=100
 Route::get('eps_pr_issue_error_report_obj/{obj}', function ($obj) {
@@ -282,7 +219,7 @@ Route::get('eps_pr_issue_error_report_obj/{obj}', function ($obj) {
 });
 
 //========================================================================
-// 15.wiss_sa_eps_pr_productionid_error (sqlsrv_eps_db,SIAM_EPSDB)
+// 13) wiss_sa_eps_pr_productionid_error (sqlsrv_eps_db,SIAM_EPSDB)
 //========================================================================
 // http://10.100.1.94:8080/wissdemo01/public/api/eps_pr_productionid_error_report_obj/doc_num=PR22&start_date=20190101&end_date=20220225&max_record=100
 Route::get('eps_pr_productionid_error_report_obj/{obj}', function ($obj) {
@@ -296,7 +233,7 @@ Route::get('eps_pr_productionid_error_report_obj/{obj}', function ($obj) {
 });
 
 //========================================================================
-// 16. emfg_inventory_stock_out_error_obj (sqlsrv_siam_arisa_p01_db,SIAM_ARISA_P01)
+// 14) emfg_inventory_stock_out_error_obj (sqlsrv_siam_arisa_p01_db,SIAM_ARISA_P01)
 //========================================================================
 // http://10.100.1.94:8080/wissdemo01/public/api/emfg_inventory_stock_out_error_obj/doc_num=T344&start_date=20220101&end_date=20990101&max_record=100
 // doc_num is PARTCODE
@@ -312,7 +249,7 @@ Route::get('emfg_inventory_stock_out_error_obj/{obj}', function ($obj) {
 
 
 //========================================================================
-// 17.eps_pr_for_cp_report (sqlsrv_eps_db,SIAM_EPSDB)
+// 15) eps_pr_for_cp_report (sqlsrv_eps_db,SIAM_EPSDB)
 //========================================================================
 // http://10.100.1.94:8080/wissdemo01/public/api/eps_interface_pr_po_to_planner_obj/doc_num=PR22&start_date=20190101&end_date=20220225&max_record=100
 Route::get('eps_pr_for_cp_report_obj/{obj}', function ($obj) {
@@ -325,15 +262,41 @@ Route::get('eps_pr_for_cp_report_obj/{obj}', function ($obj) {
     return json_encode($result);
 });
 
-//========================================================================
-// 18.wiss_atac_emfg_shopping_log (sqlsrv_atac_arisa_p02_db, ATAC_ARISA_P02)
-//========================================================================
-// http://10.100.1.94:8080/wissdemo01/public/api/wiss_atac_emfg_complete_pkl/picking_list_num=P323A470640&pallet_Number=urlencode(PAL-01|0117|20191029)
-Route::get('wiss_atac_emfg_shopping_log/{obj}', function ($obj) {
+//=========================================================================
+// 16) Drill down from PRNUM
+// wiss_sa_eps_report_budget_checking_pr_detail (sqlsrv_eps_db,SIAM_EPSDB)
+//=========================================================================
+// http://10.100.1.94:8080/wissdemo01/public/api/wiss_sa_eps_report_budget_checking_pr_detail/doc_num=PR22000571
+Route::get('wiss_sa_eps_report_budget_checking_pr_detail/{obj}', function ($obj) {
     parse_str($obj,$myArray);
-    $picking_list_num = $myArray['picking_list_num'];
-    $pallet_Number = $myArray['pallet_Number'];
-    $result = DB::connection('sqlsrv_atac_arisa_p02_db')->select("EXEC wiss_atac_emfg_shopping_log @picking_list_num ='$picking_list_num', @pallet_Number = '$pallet_Number'");
+    $doc_num = $myArray['doc_num'];
+    $result = DB::connection('sqlsrv_eps_db')->select("EXEC wiss_sa_eps_report_budget_checking_pr_detail '$doc_num'");
+    return json_encode($result);
+});
+
+//=========================================================================
+// 17) Drill down from INVESTMENT
+// wiss_sa_eps_report_budget_checking_investment (sqlsrv_eps_db,SIAM_EPSDB)
+//=========================================================================
+// http://10.100.1.94:8080/wissdemo01/public/api/wiss_sa_eps_report_budget_checking_investment/doc_num=Y22IT017CO01&period=SAP
+Route::get('wiss_sa_eps_report_budget_checking_investment/{obj}', function ($obj) {
+    parse_str($obj,$myArray);
+    $doc_num = $myArray['doc_num'];
+    $period = $myArray['period'];
+    $result = DB::connection('sqlsrv_eps_db')->select("EXEC wiss_sa_eps_report_budget_checking_investment '$doc_num','$period'");
+    return json_encode($result);
+});
+
+//=========================================================================
+// 18) Drill down from EXPENSE
+// wiss_sa_eps_report_budget_checking_expense (sqlsrv_eps_db,SIAM_EPSDB)
+//=========================================================================
+// http://10.100.1.94:8080/wissdemo01/public/api/wiss_sa_eps_report_budget_checking_expense/doc_num=61830-B200&period=SAP
+Route::get('wiss_sa_eps_report_budget_checking_expense/{obj}', function ($obj) {
+    parse_str($obj,$myArray);
+    $doc_num = $myArray['doc_num'];
+    $period = $myArray['period'];
+    $result = DB::connection('sqlsrv_eps_db')->select("EXEC wiss_sa_eps_report_budget_checking_expense '$doc_num','$period'");
     return json_encode($result);
 });
 
@@ -350,6 +313,8 @@ Route::get('wiss_atac_emfg_shopping_log/{obj}', function ($obj) {
     $result = DB::connection('sqlsrv_atac_arisa_p02_db')->select("EXEC wiss_atac_emfg_shopping_log '$start_date','$end_date','$doc_num',$max_record");
     return json_encode($result);
 });
+
+
 
 // **********************************************************************************************************************************************
 // PART 2 : FIX PROGRAM
