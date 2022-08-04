@@ -52,26 +52,6 @@
                 dom:  '<lf<t>ip>'
             });
         });
-
-        // ================================================================
-        // DATE HANDLE
-        // ================================================================
-        // function dateStartHandler() {
-        //     const dateStart = $('#dateStart').val();
-        //     console.log(dateStart);
-        //     $('#dateStart').val(dateStart);
-        // }
-
-
-        // ================================================================
-        // DATE HANDLE
-        // ================================================================
-        // function dateEndHandler() {
-        //     const dateEnd = $('#dateEnd').val();
-        //     console.log(dateStart);
-        //     $('#dateEnd').val(dateEnd);
-        // }
-
         // ================================================================
         // CLEAR FORM
         // ================================================================
@@ -114,7 +94,7 @@
                 {{-- =============================================================== --}}
                 {{-- FORM  ACTION = VIEW --}}
                 {{-- =============================================================== --}}
-                <form method="POST" action="eps-bg-checking" id="myForm">
+                <form method="POST" action="{{ route('BGChecking.show', $permissionName) }}" id="myForm">
                     @csrf
                     <div class="container-fluid">
                         {{-- ========================================================= --}}
@@ -176,15 +156,15 @@
                                                 &nbsp;&nbsp;
                                                 <label for="docType">Doc Type: </label>
                                                 <select class="form-control" id="docType" name="docType">
-                                                    <option <?php if(isset($docTypeRtv) and $docTypeRtv == "1") echo "selected"; ?> value="1">EXPENSE</option>
-                                                    <option <?php if(isset($docTypeRtv) and $docTypeRtv == "2") echo "selected"; ?> value="2">INVESTMENT</option>
+                                                    <option <?php if(isset($docTypeRtv) and $docTypeRtv == "1") echo "selected"; ?> value="1">INVESTMENT</option>
+                                                    <option <?php if(isset($docTypeRtv) and $docTypeRtv == "2") echo "selected"; ?> value="2">EXPENSE</option>
                                                 </select>
 
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <button type="submit" class="btn btn-primary">Search</button>
-                                            <button type="button" class="btn btn-secondary" onclick="clearForm();">Clear</button>
+                                            <button type="button" class="btn btn-secondary" onclick="clearForm()">Clear</button>
                                         </div>
                                     </div>
                                 </div>
@@ -206,6 +186,7 @@
                                     {{-- ========================================================= --}}
                                     {{-- CARD BODY --}}
                                     {{-- ========================================================= --}}
+                                    <div class="card-body">
                                         <div class="table-responsive">
                                             {{-- ========================================================= --}}
                                             {{-- TABLE --}}
@@ -233,14 +214,14 @@
                                                                 <?php foreach ($row as $keyRow => $data) {
                                                                     if($keyRow == 'PRNUM'){
                                                                     ?>
-                                                                    <td><a href="wiss-sa-eps-report-budget-checking-pr-detail?docNum={{$row[$keyRow]}}" target="_blank">{{$row[$keyRow]}}</a></td>
+                                                                    <td><a href="{{ route('PRDetail',$row[$keyRow]) }}" target="_blank">{{$row[$keyRow]}}</a></td>
                                                                 <?php }else if($keyRow == 'EXPENSEID'){
                                                                     ?>
-                                                                    <td><a href="wiss_sa_eps_report_budget_checking_expense?docNum={{$row[$keyRow]}}" target="_blank">{{$row[$keyRow]}}</a></td>
+                                                                    <td><a href="{{ route('ExpenseDetail',$row[$keyRow]) }}" target="_blank">{{$row[$keyRow]}}</a></td>
                                                                     <?php
                                                                     }else if($keyRow == 'INVESTMENTID'){
                                                                     ?>
-                                                                    <td><a href="wiss_sa_eps_report_budget_checking_investment?docNum={{$row[$keyRow]}}" target="_blank">{{$row[$keyRow]}}</a></td>
+                                                                    <td><a href="{{ route('InvesetmentDetail',$row[$keyRow]) }}" target="_blank">{{$row[$keyRow]}}</a></td>
                                                                     <?php
                                                                     }else{ ?>
                                                                     <td>{{$row[$keyRow]}}</td>
@@ -310,6 +291,4 @@
         @include('theme.footer')
 </body>
 </html>
-<script>
 
-</script>

@@ -18,6 +18,7 @@ return [
     //'default' => env('DB_CONNECTION', 'mysql'),
     'default' => env('DB_CONNECTION', 'mysql'),
 
+
     /*
     |--------------------------------------------------------------------------
     | Database Connections
@@ -49,11 +50,11 @@ return [
         'mysql' => [
             'driver' => 'mysql',
             'url' => env('DATABASE_URL'),
-            'host' => env('DB_HOST_MYSQL', '127.0.0.1'),
-            'port' => env('DB_PORT_MYSQL', '3306'),
-            'database' => env('DB_DATABASE_MYSQL', 'forge'),
-            'username' => env('DB_USERNAME_MYSQL', 'forge'),
-            'password' => env('DB_PASSWORD_MYSQL', ''),
+            'host' => env('DB_HOST_MYSQL_WISS', '127.0.0.1'),
+            'port' => env('DB_PORT_MYSQL_WISS', '3306'),
+            'database' => env('DB_DATABASE_MYSQL_WISS', 'forge'),
+            'username' => env('DB_USERNAME_MYSQL_WISS', 'forge'),
+            'password' => env('DB_PASSWORD_MYSQL_WISS', ''),
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
@@ -81,15 +82,46 @@ return [
             'sslmode' => 'prefer',
         ],
 
-        //=====================================
-        // DB_DATABASE_SIAM_EPSINFDB (CONFIG AT .ENV)
-        //=====================================
         'sqlsrv' => [
             'driver' => 'sqlsrv',
             'url' => env('DATABASE_URL'),
             'host' => env('DB_HOST', 'localhost'),
             'port' => env('DB_PORT', '1433'),
             'database' => env('DB_DATABASE', 'forge'),
+            'username' => env('DB_USERNAME', 'forge'),
+            'password' => env('DB_PASSWORD', ''),
+            'charset' => 'utf8',
+            'prefix' => '',
+            'prefix_indexes' => true,
+            // 'encrypt' => env('DB_ENCRYPT', 'yes'),
+            // 'trust_server_certificate' => env('DB_TRUST_SERVER_CERTIFICATE', 'false'),
+        ],
+
+        //=====================================
+        // DB_DATABASE_SIAM_EPSINFDB (CONFIG AT .ENV)
+        //=====================================
+        'sqlsrv_epsinfdb_db' => [
+            'driver' => 'sqlsrv',
+            'url' => env('DATABASE_URL'),
+            'host' => env('DB_HOST', 'localhost'),
+            'port' => env('DB_PORT', '1433'),
+            'database' => env('DB_DATABASE_SIAM_EPSINFDB', 'forge'),
+            'username' => env('DB_USERNAME', 'forge'),
+            'password' => env('DB_PASSWORD', ''),
+            'charset' => 'utf8',
+            'prefix' => '',
+            'prefix_indexes' => true,
+        ],
+
+        //=====================================
+        // DB_DATABASE_SIAM_SHIPPINGDB (CONFIG AT .ENV)
+        //=====================================
+        'sqlsrv_shipping_db' => [
+            'driver' => 'sqlsrv',
+            'url' => env('DATABASE_URL'),
+            'host' => env('DB_HOST', 'localhost'),
+            'port' => env('DB_PORT', '1433'),
+            'database' => env('DB_DATABASE_SIAM_SHIPPINGDB', 'forge'),
             'username' => env('DB_USERNAME', 'forge'),
             'password' => env('DB_PASSWORD', ''),
             'charset' => 'utf8',
