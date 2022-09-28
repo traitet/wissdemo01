@@ -547,12 +547,22 @@ var myLineChart = new Chart(ctx, {
   type: 'line',
   data: {
     // labels: ["Jan 2022", "Feb", "Mar"],
-    <?php $wissUsages = \App\Models\log::getWissUsagePerMonth(); ?>
+    <?php $wissUsages = \App\Models\log::getWissUsagePerMonth();
+    $logInd =0;
+    foreach($wissUsages as $wissUsage){
+            $logMonth[$logInd] = $wissUsage->month." ".$wissUsage->year;
+            $logCount[$logInd] = $wissUsage->counts;
+            $logInd++;
+        }
+    ?>
     labels: [
     <?php
-        foreach($wissUsages as $wissUsage){
-            echo "'".$wissUsage->monthYear."',";
+        foreach (array_reverse($logMonth) as $key => $layer){
+            echo "'".$layer."',";
         }
+        // foreach($wissUsages as $wissUsage){
+        //     echo "'".$wissUsage->month." ".$wissUsage->year."',";
+        // }
     ?>
     ],
     datasets: [{
@@ -571,9 +581,13 @@ var myLineChart = new Chart(ctx, {
     //   data: [1000, 10000, 5000],
     data: [
         <?php
-        foreach($wissUsages as $wissUsage){
-            echo $wissUsage->counts.",";
+
+        foreach (array_reverse($logCount) as $key => $layer){
+            echo "'".$layer."',";
         }
+        // foreach($wissUsages as $wissUsage){
+        //     echo $wissUsage->counts.",";
+        // }
     ?>
     ]
     }],

@@ -1,4 +1,5 @@
-       <!-- Sidebar -->
+
+<!-- Sidebar -->
        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
            <!-- Sidebar - Brand -->
@@ -10,7 +11,7 @@
                     <img class="img-profile rounded-circle" src="{{ asset('theme/img/wisslogo.svg') }}">
                </div>
 
-               <div class="sidebar-brand-text mx-3">WISS Dev<sup>3</sup></div>
+               <div class="sidebar-brand-text mx-3">WISS PRD<sup>2</sup></div>
 
            </a>
 

@@ -187,7 +187,8 @@
                                             <tr>
                                                 <th class="text-center">Permission \ Name</th>
                                                 @foreach ($users as $user)
-                                                    <th class="text-center">{{ $user->first_name }}</th>
+                                                    {{-- <th class="text-center">{{ $user->first_name }}</th> --}}
+                                                    <th><a class="text-center" target="_blank" href="{{ route('Authorization.edit', $user->email) }}">{{ $user->first_name }}</a></th>
                                                 @endforeach
                                             </tr>
                                         </thead>
@@ -242,17 +243,13 @@
                                                             $status = \App\Models\UserPermission::getPermissionActive($email, $permissionid) ;
                                                             if($status == "1"){
                                                         ?>
-                                                            {{-- <input name="{{ $names[$j] }}[]" type="checkbox"
-                                                                value="{{ $permissionid }}" onclick="checkFluency()" checked /> --}}
                                                             <input name="permissionCHB" type="checkbox"
-                                                                value="{{ $permissionid}}|{{ $email }}" checked />
+                                                                value="{{ $permissionid}}|{{ $email }}" checked disabled="disabled" />
                                                             <?php
                                                             }else{
                                                             ?>
-                                                            {{-- <input name="{{ $names[$j] }}[]" type="checkbox"
-                                                                value="{{ $permissionid }}" onclick="checkFluency()" /> --}}
                                                             <input name="permissionCHB" type="checkbox"
-                                                                value="{{ $permissionid}}|{{ $email }}" />
+                                                                value="{{ $permissionid}}|{{ $email }}" disabled="disabled"/>
                                                             <?php
                                                             }
                                                         ?>
